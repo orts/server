@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+
+<announce delay="1000" type="event" message="Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere." />
+<announce delay="10000" type="event" message="Pirates have invaded the city." />
+
+  <areaspawn delay="11000" fromx="32261" fromy="32771" fromz="7" tox="32345" toy="32854" toz="7">
+    <monster name="Pirate Corsair" amount="105" />
+    <monster name="Pirate Buccaneer" amount="100" />
+    <monster name="Pirate Cutthroat" amount="105" />
+    <monster name="Pirate Marauder" amount="105" />
+    <monster name="Smuggler" amount="105" />
+  </areaspawn>
+
+  <singlespawn delay="11000" name="Deadeye Devious" x="32349" y="32841" z="7" />
+
+  <singlespawn delay="1000" name="Ron the Ripper" x="32247" y="32839" z="7" />
+
+  <singlespawn delay="1000" name="Brutus Bloodbeard" x="32302" y="32879" z="7" />
+
+  <singlespawn delay="1000" name="Lethal Lissy" x="32300" y="32774" z="7" />
+  </raid>

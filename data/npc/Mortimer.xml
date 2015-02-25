@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Mortimer" script="Mortimer.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="133" head="0" body="115" legs="102" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="ectoplasm container,4863,750;botanists container,4869,500;orichalcum pearl,5022,80;crown backpack,10522,10000;" />
+		<parameter key="shop_sellable" value="hydra egg,4850,500" />
+	</parameters>
+</npc>

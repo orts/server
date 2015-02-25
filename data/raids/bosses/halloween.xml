@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+    <!--
+	// Raid System by 5mok3
+	// DO NOT CHANGE INTERVAL UNLESS YOU ARE SURE WHAT YOU ARE DOING!!
+	-->
+
+<announce delay="1000" type="event" message="Beware! Beware of the Halloween Hare!" />
+
+  <!--Single Spawns-->
+  <singlespawn delay="1000" name="The Halloween Hare" x="32369" y="32228" z="7" />
+  <!--Area Spawns-->
+
+
+</raid>

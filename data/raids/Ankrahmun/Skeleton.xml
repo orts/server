@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+	<announce delay="1000" type="event" message="Some skeletons are assembling north of Ankrahmun!" />
+	<areaspawn delay="1000" fromx="33159" fromy="32565" fromz="7" tox="33191" toy="32577" toz="7">
+		<monster name="Ghoul" amount="35" />
+		<monster name="Ghost" amount="25" />
+		<monster name="Goblin" amount="25" />
+		<monster name="Skeleton" amount="40" />
+	</areaspawn>
+</raid>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gorn" script="Gorn.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="129" head="58" body="68" legs="101" feet="95" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			shovel,2554,50;
+			fishing rod,2580,150;
+			rope,2120,50;
+			machete,2420,40;
+			orange backpack,10519,20;
+			orange bag,10520,5;
+			pick,2553,50;
+			scythe,2550,50;
+			torch,2050,2;
+			bottle,2007,3,1;
+			book,1955,15;
+			book,1950,15;
+			document,1952,12;
+			book,1958,15;
+			parchment,1948,8;
+			scroll,1949,5;
+			valentines card,6538,30;
+			plate,2035,6;
+			present box,1990,10;
+			watch,2036,20;
+			worm,3976,1;
+			crowbar,10223,1000;" />
+	</parameters>
+</npc>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npc name="Gnommander" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="493" head="97" body="38" legs="78" feet="3" addons="0" />
+</npc>

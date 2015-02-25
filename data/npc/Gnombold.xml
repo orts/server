@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npc name="Gnombold" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="493" head="59" body="81" legs="28" feet="19" addons="0" />
+</npc>

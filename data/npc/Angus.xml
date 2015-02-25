@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Angus" script="Angus.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="128" head="57" body="132" legs="114" feet="113" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="ectoplasm container,4863,750;botanist s container,4869,500;orichalcum pearl,5022,80;crown backpack,10522,10000" />
+		<parameter key="shop_sellable" value="hydra egg,4850,500" />
+		<parameter key="message_greet" value="Be greeted, noble |PLAYERNAME| and welcome to the Explorer Society."/>
+		<parameter key="message_farewell" value="Come back soon, noble |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Come back soon, noble." />
+	</parameters>
+</npc>

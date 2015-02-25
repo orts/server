@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Wyda" script="Wyda.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="54" head="0" body="119" legs="119" feet="126" />
+	<parameters>
+		<parameter key="message_greet" value="In the end, I will only be nice to they who know my name." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;blood herb" />
+		<parameter key="keyword_reply1" value="I have always wanted one of those blood herbs, and I have a chest in my room. You can have the thing in there if you give me a blood herb..." />
+		<parameter key="keyword_reply2" value="I have always wanted one of those blood herbs, and I have a chest in my room. You can have the thing in there if you give me a blood herb..." />
+		<parameter key="keyword_reply3" value="Do you have it!? No! I don't trust you! What is my name then?" />
+	</parameters>
+</npc>

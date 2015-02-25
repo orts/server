@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npc name="Gnomux" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="493" head="32" body="102" legs="121" feet="20" addons="0" />
+</npc>

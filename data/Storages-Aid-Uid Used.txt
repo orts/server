@@ -1,0 +1,339 @@
+---//////////////////////////////////////////----
+Last Used Storage = 50214
+Last Used Aid = 50244
+Last Used Uid = 50147
+---//////////////////////////////////////////----
+---//////////////////Storages////////////////////////----
+allowMovement Storage	=		100000 --Reserved to cancel player movement
+allowMovement actionId = 		60000 --Reserved to cancel player movement
+---/////////////////////////////////////////////////////////////----
+Default Start Outfits Quest:		12010
+citizen Outfits (Feather Hat):		12011
+citizen Outfits (Backpack):		12012
+Druid Outfits (Bear Fur):		12013
+Druid Outfits (Bear Paws):		12014
+Barbarian Outfits:			12013, 12014
+hunter outfit quest storage:		12050-12055
+Knight Outfits storage:			12060
+Knight Sword storage:			12061
+mage/summoner addon (wand):		12062
+mage/summoner addon (tiara/cloak): 	12063
+mage/summoner addon (Fluid Belt):	12064
+Norseman Outfits Quest:			12065
+Wizard Outfits Quest:			12066
+Warrior Shoulder Outfits:		12067
+Warrior Sword Outfits:			12068
+Nobleman Addons:			12069-12070
+the ancient tombs storage:		12100-12109
+The Ape City storage:			12120-12129
+The New Frontier Quest:			12130-12150
+inquisition storage:			12160-12180
+barbarian test quest:			12190-12199
+ice islands quest storage:		12200-12230
+in service of yalahar storage:		12240-12280
+ChildrenoftheRevolution storage:	12300-12329
+UnnaturalSelection storage:		12330-12349
+WrathoftheEmperor storage:		12350-12399
+FriendsandTraders storage:		12400-12449
+postman storage:			12450-12500
+Thieves Guild storage:			12501-12513
+Captain Haba storage:			12540
+Secret Service storage:			12550-12599
+The Hidden City of Beregar storage:	12600-12649
+Tibia Tales Quest storage:		12650-12699
+
+Lugri necromancer task storage: 	50000/50001
+The Pirate Outfits (Sabre): 		50002
+horestisjars (Aid=storage)		50006-50010
+
+Assassin Outfit Quest: 50080-50082
+
+
+---/////////////////////Aid/Uid/////////////////////----
+the ancient tombs storage Uid:		12100-12109
+The Ape City Aid/Uid:			12120-12130
+The New Frontier Quest:			12130-12150
+inquisition storage:			12160-12180
+barbarian test quest:			12190-12199
+ice islands quest storage:		12200-12230
+in service of yalahar storage:		12240-12280
+ChildrenoftheRevolution storage:	12300-12329
+UnnaturalSelection storage:		12330-12349
+WrathoftheEmperor storage:		12350-12399
+FriendsandTraders storage:		12400-12449
+postman Aid/Uid:			12450-12500
+Thieves Guild Aid/Uid:			12501-12513
+Secret Service Aid/Uid:			12550-12599
+The Hidden City of BeregarAid/Uid:	12600-12649
+Tibia Tales Quest Aid/Uid:		12650-12699
+
+horestisjars Aid:			50006-50010
+kazordoonElevatorLever Aid:		50011-50012
+
+Waterfall Quest:                        50022
+Thais Lighthouse Quest Aid:		50023-50026
+
+The Queen of banshee Quest:
+Kiss storage =					50020
+
+First Seal:
+	2 magic wall lever uid:			50000/50001/50002
+	Human dead body "quest" aid/uid:	2000/50003
+	firstSeal FlameTp uid: 			50004
+	firstSeal Flame storage:		50013
+
+Sixth Seal:
+	Switches campfire uid = 		50005-50010
+	secondSeal Flame uid = 			50011
+	secondSeal Flame storage =		50014
+
+Fifth Seal:
+	fifthSeal Flame uid = 			50012
+	fifthSeal storage = 			50015
+	Tiles Path aids =			50014/50015
+
+Fourth Seal:
+	sacrifice tile uid = 			50013
+	fourthSeal Flame uid = 			50014
+	fourthSeal storage =			50016
+
+Third Seal:
+	warlockSummon Tile aid/stor =		50016/50017
+	switchesToAccess uids =			50015-50019
+	thirdSeal Flame uid =			50020
+	thirdSeal storage =			50018
+
+Second Seal:
+	pearlsTeleport aid =			50019
+	secondSeal Flame uid =			50021
+	secondSeal Flame storage =		50019
+
+Last room:
+	doors aid =				50020
+	last door aid =				50021
+	last quest storage =			50021
+	last flame uid =			50022
+
+Triangle Tower lever uid	=	50023
+
+
+Hot Cuisine Quest:
+	Quest Start storage =				50022
+	Dishes Storages =				50023
+	Questlog storage =				50024
+	Door storage/aid =				50028
+	Chest storage/uid =				50029
+
+Thais Exhibition:
+	aid 50030 - 50056
+
+6 Small Rubies Quest: aid = 50057
+
+Naginata Quest (Stone): aid = 50058
+
+Hellgate exit bridge lever AID 	=	50027
+Vampire Shield Quest storage/uid	=	50030
+Bone Key (3520) storage/uid		=	50031
+Blood Herb quest tree storage/uid	=	50032
+Whisper Moss quest storage/uid		=	50033
+old parchment quest tree storage/uid	=	50034
+orc fortress quest UIDs = 50035-50037
+Frost Dragon Quest UID = 50038
+Fishing Box Quest UID = 50039
+Formorgar Mine Quest (skeleton) UID = 50040
+Berserker Treasure Quest UID = 50041
+Shaman Treasure Quest UID = 50042
+Berserk Potion Quest UID = 50043
+Inukaya Quest UID = 50044
+Dead Archer Quest UID = 50045
+Power Ring Quest UIDs = 50046-50047
+Orc Shaman Quest UID = 50048
+Elvenbane Quest UIDs  = 50049-50052
+Mastermind Potion Quest UIDs = 50053-50054
+Lion Trophy Quest UID = 50055
+Skeleton Decoration Quest UID = 50056
+Waterskin of Mead Quest UID = 50057
+Voodoo Doll Quest UIDs = 50058-50059
+Time Ring Quest UIDs = 50060-50062
+Throwing Star Quest UID = 50063
+Stealth Ring Quest UIDs = 50064-50065
+Geomancer Quest UID = 50066
+Heaven Blossom Quest UID = 50067
+Steel Helmet Quest UID's = 50068-50071
+Dragon Tower Quest UID's = 50072-50073
+Iron Hammer Quest UID = 50074
+Iron Ore Quest UID = 50075
+Scale Armor Quest UID = 50076
+Isle of the Mists Quest UID = 50077
+Lone Medusa Quest UID = 50078
+First wand/rod storage = 50079
+
+Rook Santiago House Quest Coat UID = 50080
+Rook Santiago Cellar Snake Head Lever UID = 50081
+Rook Santiago Cellar Quest Torch Uid = 50082
+Rook Santiago Cellar Ladder Uid = 50083
+Rook Zirella Shovel Quest Uid = 50093
+Rook Zirella Door Uid = 50085
+Rook Tutorial Rope Quest Uid = 50094
+Rook tutorial tiles aid = 50058-50069/50075-50078
+Rook stopFromGoingBackorForward tiles aid = 50070-50074
+Rook tutorial Hints Storage = 50085
+Rook Santiago Npc Greet Storage = 50086
+Rook Santiago Quest Log Storage = 50087
+Rook cockroach Kill Storage = 50088
+Rook cockroach Legs Msg Storage = 50089
+Rook cockroach Body Msg Storage = 50090
+Rook Zirella greet Storage = 50091
+Rook Zirella questlog Storage = 50092
+Rook Carlos greet Storage = 50097
+Rook Carlos Questlog Storage = 50098
+Rook Try skipping rope & shovel tutorial aid = 50088
+Rook Step Into First Time Rookaard tiles aid = 50089
+
+HCoB some cracks aid = 50090
+HCoB rock aid = 50091
+HCoB forcefield aid = 50092,50093
+HCoB closed door aid = 50095-50097
+HCoB orewagon aid = 50098-50108
+HCoB rock soil aid = 50109
+HCoB orewagon aid = 50112
+HCoB rock soil aid = 50113
+HCoB rubble aid = 50114
+HCoB orewagon aid = 50115
+HCoB rails aid = 50116
+HCoB orewagon aid = 50117
+HCoB coal aid = 50118
+HCoB steam aid = 50127
+HCoB orewagon aid = 50128
+
+HCoB bellow uid = 50107
+HCoB lever uid = 50108-50111
+HCoB glimmer cap uid = 50112
+HCoB lever uid = 50113-50123
+HCoB ore wagon uid = 50124
+HCoB large crystal uid = 50125
+HCoB forcefield uid = 50127
+Prison Cell Key chest uid = 50128
+Royal Rescue quest - skeleton rusty armor uid = 50129
+Justice for all - skeleton gold ingot uid = 50130
+Justice for all - corpse small topaz uid = 50131
+
+leverbridge liferingquest aid = 50129
+
+Key 3620 uid = 50132
+Key 3650 uid = 50133
+mininghelmet uid+storage = 50134
+
+Kaz wagons aid = 50136-50159
+PoI Maze Stone aid = 50160
+
+Vengoth Teleports (strange whirl's) aid = 50220-50229
+Kaz wagons aid = 50230-50233
+
+Svarground Arena Quest Quest Log Storages = 50140-50142
+
+Kazordoon exit AID: 50237-50238
+Wooden coffin (Family Brooch Quest) UID: 2286
+A Father's Burden Quest, UID: 3500-3505
+Rookgard levers aid 50239
+Rookgard level2check tiles aid 50240
+Rookgard premiumcheck tiles aid 50241
+
+Draconia Quest:
+	AID: 4246-4253
+	UID: 4006-4008
+
+Serpentine Tower (White Pearl):
+	aid: 5630, 5631
+Serpentine Tower (Torchbearer):
+	aid: 5632
+Serpentine Tower (Lever):
+	aid: 5633
+
+Edron Rope Quest:
+	aid: 4254
+	uid: 4009
+
+Bright Sword Quest:
+	entrance (aid): 5634
+
+Alawar's Vault Quest:
+	aid: 4210
+	uid: 9211-9214, 9230
+
+Sword Of Fury disappear:
+	aid: 5635, 5636
+
+Katana Quest (Rookgaard):
+	Key Corpse: 64110 (uid)
+	Katana Corpse: 64111 (uid)
+	Viking Helmet Corpse: 64112 (uid)
+	Door: 1002 (aid)
+	Lever: 5637 (aid)
+
+Bear Room Quest (Rookgaard):
+	Key Chest: 64113 (uid)
+	Lever: 5638
+	Reward Chests: 64114, 64115, 64116 (uid)
+
+Present Quest (Rookgaard): 64117 (uid)
+
+Captain Iglue Quest (Rookgaard): 64118 (uid)
+
+Combat Knife Quest (Rookgaard): 64119 (uid)
+
+Rapier Quest (Rookgaard): 64120 (uid)
+
+Double Quest: 5639 (aid) (Storage 64121)
+
+Dragon Corpse Quest (Rookgaard): 64122 (uid)
+
+Goblin Temple Quest (Rookgaard): 64123, 64124 (uid)
+
+Minotaur Hell Quest (Rookgaard): 64125, 64126, 64127 (uid)
+
+Brown Mushroom Quest (Rookgaard): 64128 (uid)
+
+Student Book Quest (Rookgaard): 64129 (uid)
+
+Amber's Logbook Quest (Rookgaard): 64130 (uid)
+
+Honey Flower Quest: 5640 (aid, also in events) (Storage 64131)
+Banana Palm Quest: 5641 (aid) (Storage 64132)
+
+The Ancient Of Tombs Quest
+	Chest Storage Uids = 12100-12109
+	Tomb Teleports Uid = 3951-3956
+
+	Thalas switches Aid = 50242
+	Thalas switches done teleport Uid = 50135
+	Thalas poison tile Uid = 50136
+
+	Diprath Switches Aid = 50243
+	Diprath Switches Done Teleport Uid = 50137
+
+	Ashmunrah Switches Aid = 50244
+	Ashmunrah Switches Done Teleport Uid = 50138
+
+	Morguthis Flames Uid = 50139-50145
+	Morguthis Done All Flames Uid = 50146
+	Morguthis Flames Storage Value = 50214-50220
+
+Dream Challenge Quest
+	Riddle Teleport Uid = 50147
+
+Pick only one item Quests (system.lua)
+	uid: 4011-4042
+
+Marid Entrance Door
+	aid: 50718
+
+Efreet Entrance Door
+	aid: 50719
+
+Roshamuul Carpet
+	aid: 4256
+
+Pythius The Rotten
+	aid: 50125-50127
+	storage: 9130, 12609
