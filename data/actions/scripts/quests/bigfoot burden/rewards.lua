@@ -10,8 +10,7 @@ local rewards = {
 			{itemId = 18415, count = 7},
 			{itemId = 18423, count = 2}
 		},
-		achievement = {'Final Strike', 'Death on Strike'},
-		achievementStorage = Storage.Achievements.DeathOnStrike
+		achievement = {'Final Strike', 'Death on Strike'}
 	},
 	[3149] = {
 		storage = Storage.BigfootBurden.Warzone2Reward,

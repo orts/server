@@ -16,7 +16,7 @@ local sounds = {
 function onThink(interval, lastExecution)
 	local spectators, spectator = Game.getSpectators(DEMON_OAK_POSITION, false, true, 0, 15, 0, 15)
 	for i = 1, #spectators do
-		spectators = spectator[i]
+		spectator = spectators[i]
 		if isInRange(spectator:getPosition(), questArea[1], questArea[2]) then
 			return true
 		end
