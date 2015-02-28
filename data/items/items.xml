@@ -6463,7 +6463,7 @@
 	<item id="3111" article="a" name="dead bear">
 		<attribute key="containerSize" value="10" />
 	</item>
-	<item id="3112" article="a" name="dead bear"/>
+	<item id="3112" article="a" name="dead bear" />
 	<item id="3113" article="a" name="slain ghoul">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="8" />
@@ -7930,7 +7930,7 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="4860" name="wooden trash" />
-	<item id="4861" article="a" name="cobra statue"/>
+	<item id="4861" article="a" name="cobra statue" />
 	<item id="4862" name="destroyed cobra statue" >
 		<attribute key="decayTo" value="4861" />
 		<attribute key="duration" value="60" />
@@ -8467,6 +8467,7 @@
 		<attribute key="description" value="Enables underwater exploration." />
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="head" />
+		<attribute key="suppressdrown" value="1" />
 		<attribute key="absorbPercentDrown" value="100" />
 	</item>
 	<item id="5462" name="pirate boots">
@@ -15326,7 +15327,7 @@
 		<attribute key="weight" value="900" />
 	</item>
 	<item id="8708" name="rock soil" />
-	<item id="8709" name="wooden stairs"/>
+	<item id="8709" name="wooden stairs" />
 	<item id="8710" name="cockroach leg">
 		<attribute key="weight" value="10" />
 		<attribute key="description" value="This is proof for Santiago that you have killed a cockroach." />
@@ -17597,6 +17598,7 @@
 	<item id="10018" article="a" name="voodoo doll">
 		<attribute key="weight" value="650" />
 	</item>
+	<item id="10019" name="ocean floor" />
 	<item id="10020" article="a" name="dragon claw">
 		<attribute key="weight" value="1250" />
 	</item>
@@ -17698,6 +17700,7 @@
 		<attribute key="description" value="He talks, moves and sings just like a real person." />
 		<attribute key="weight" value="777" />
 	</item>
+	<item id="10065" name="iron floor" />
 	<item id="10066" article="a" name="dark essence">
 		<attribute key="weight" value="260" />
 	</item>
@@ -21405,6 +21408,7 @@
 	</item>
 	<item fromid="13134" toid="13142" article="a" name="giant cake" />
 	<item fromid="13143" toid="13144" article="a" name="tomb wall" />
+	<item id="13145" article="a" name="mountain" />
 	<item id="13158" name="handcrafted ribbon">
 		<attribute key="description" value="This ribbon was handcrafted by Rottin Wood and the Married Men of the forest." />
 		<attribute key="weight" value="50" />
@@ -22896,7 +22900,10 @@
 		<attribute key="description" value="There is a hole in the ceiling." />
 	</item>
 	<item fromid="14437" toid="14438" article="an" name="insectoid cell" />
-	<item fromid="14439" toid="14460" article="a" name="hive structure" />
+	<item fromid="14439" toid="14441" article="a" name="hive structure" />
+	<item fromid="14442" toid="14450" article="a" name="hive spike" />
+	<item fromid="14451" toid="14452" article="a" name="hive claw" />
+	<item fromid="14453" toid="14460" article="a" name="hive structure" />
 	<item id="14461" article="an" name="insectoid hive">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -22912,19 +22919,36 @@
 	<item id="14654" article="a" name="small fossil volute" />
 	<item fromid="14655" toid="14658" name="moist stones" />
 	<item fromid="14659" toid="14665" name="small moist stones" />
+	<item fromid="14668" toid="14693" name="hive structure" />
+	<item fromid="14694" toid="14695" article="a" name="hive spike" />
+	<item fromid="14696" toid="14697" article="a" name="hive claw" />
+	<item fromid="14698" toid="14705" name="hive structure" />
 	<item fromid="14668" toid="14705" name="hive structure" />
-	<item fromid="14706" toid="14715" article="a" name="hive structure" />
-	<item fromid="14755" toid="14757" article="a" name="hive gate" />
-	<item fromid="14767" toid="14769" article="a" name="hive gate" />
+	<item fromid="14706" toid="14749" article="a" name="hive structure" />
+	<item fromid="14750" toid="14771" article="a" name="hive gate" />
+	<item id="14772" article="an" name="insectoid antenna" />
+	<item fromid="14774" toid="14777" name="insectoid eggs" />
+	<item id="14778" name="cracked insectoid eggs" />
+	<item id="14779" name="insectoid eggs" />
+	<item fromid="14780" toid="14788" name="cracked insectoid eggs" />
+	<item fromid="14789" toid="14791" article="a" name="dry insectoid hivecomb" />
+	<item fromid="14792" toid="14794" article="an" name="insectoid hivecomb" />
+	<item fromid="14795" toid="14797" article="a" name="dry insectoid hivecomb" />
+	<item fromid="14789" toid="14800" article="an" name="insectoid hivecomb" />
+	<item fromid="14801" toid="14811" article="a" name="hive structure" />
 	<item id="14818" article="a" name="ramp">
 		<attribute key="floorchange" value="north" />
 	</item>
 	<item id="14819" article="a" name="ramp">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item fromid="14820" toid="14828" article="an" name="insectoid cocoon" />
 	<item fromid="14829" toid="14844" article="an" name="insectoid pore" />
 	<item fromid="14853" toid="14854" name="small insectoid hairs" />
+	<item fromid="14855" toid="14856" name="strange growth" />
+	<item id="14857" name="mud" />
 	<item fromid="14858" toid="14871" article="an" name="insectoid meatball" />
+	<item id="14874" article="a" name="hive structure" />
 	<item fromid="14887" toid="14898" article="a" name="rockboy" />
 	<item id="14903" article="a" name="bag with stolen gold">
 		<attribute key="weight" value="5000" />
@@ -23561,10 +23585,11 @@
 	</item>
 	<item id="15408" article="a" name="depth galea">
 		<attribute key="description" value="Enables underwater exploration." />
-		<attribute key="absorbPercentDrown" value="100" />
 		<attribute key="weight" value="4600" />
 		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="head" />
+		<attribute key="suppressdrown" value="1" />
+		<attribute key="absorbPercentDrown" value="100" />
 	</item>
 	<item id="15409" article="a" name="depth ocrea">
 		<attribute key="weight" value="4800" />
@@ -29322,6 +29347,7 @@
 		<attribute key="description" value="It is said to freeze time itself to capture your fondest memories. Awarded by TibiaEvents.com" />
 		<attribute key="weight" value="2000" />
 	</item>
+	<item fromid="21811" toid="21826" name="flowing water" />
 	<item fromid="21892" toid="21923" name="wasteland" />
 	<item fromid="22133" toid="22134" name="instable vortex">
 		<attribute key="description" value="This vortex seems suck you right in.." />
@@ -29329,6 +29355,8 @@
 	<item id="22137" article="a" name="large vortex" />
 	<item id="22138" article="a" name="strange vortex" />
 	<item id="22139" article="a" name="tiny vortex" />
+	<item fromid="22159" toid="22166" name="stone pebble floor" />
+	<item fromid="22167" toid="22174" name="stone pavement" />
 	<item id="21924" article="a" name="ruined stair">
 		<attribute key="floorchange" value="north" />
 	</item>
@@ -29633,6 +29661,7 @@
 	<item id="22458" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="22471" name="flowing water" />
 	<item id="22472" name="essence of dread">
 		<attribute key="description" value="You don't like holding it. Really don't. As if something bad was just waiting to happen." />
 		<attribute key="weight" value="30" />
