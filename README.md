@@ -3,7 +3,7 @@
  * Map version 10.35
 
 # Contributions
-Every contributions is highly appreciated as this resembles a community project. You can help by either finding and reporting bug or by submitting a pull request.
+Every contribution is highly appreciated as this resembles a community project. You can help by either finding and reporting bugs or by submitting a pull request.
 
 ## Found a bug?
 To report a bug and post ideas or suggestions please create [a new issue](https://github.com/orts/server/issues). Keep in mind to include necessary information:
