@@ -341,4 +341,6 @@ function Game.broadcastMessage(message, messageType)
 	end
 end
 
-Game.setStorageValue("stamina", {})
+if Game.getStorageValue("stamina") == -1 then
+	Game.setStorageValue("stamina", {})
+end
