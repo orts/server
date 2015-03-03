@@ -7,11 +7,11 @@ local wallPositions = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local wallItem
-	for _, wallPosition in pairs(wallPositions) do
-		wallItem = Tile(wallPosition):getItemById(1498)
+	for i = 1, #wallPositions do
+		wallItem = Tile(wallPositions[i]):getItemById(1498)
 		if wallItem then
+			wallItem:getPosition():sendMagicEffect(CONST_ME_POFF)
 			wallItem:remove()
-			wallPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 	end
 

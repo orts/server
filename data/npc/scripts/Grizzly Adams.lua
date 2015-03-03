@@ -52,14 +52,17 @@ local grizzlyAdamsConfig = {
 	}
 }
 
-local items = {}
-for _, data in ipairs(grizzlyAdamsConfig.ranks.huntsMan_rank) do
+local items, data = {}
+for i = 1, #grizzlyAdamsConfig.ranks.huntsMan_rank do
+	data = grizzlyAdamsConfig.ranks.huntsMan_rank[i]
 	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
 end
-for _, data in ipairs(grizzlyAdamsConfig.ranks.bigGameHunter_rank) do
+for i = 1, #grizzlyAdamsConfig.ranks.bigGameHunter_rank do
+	data = grizzlyAdamsConfig.ranks.bigGameHunter_rank[i]
 	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
 end
-for _, data in ipairs(grizzlyAdamsConfig.ranks.trophyHunter_rank) do
+for i = 1, #grizzlyAdamsConfig.ranks.trophyHunter_rank do
+	data = grizzlyAdamsConfig.ranks.trophyHunter_rank[i]
 	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
 end
 
@@ -74,8 +77,9 @@ local function greetCallback(cid)
 end
 
 local function getTradeItems(t)
-	local list = {}
-	for _, obj in ipairs(t) do
+	local list, obj = {}
+	for i = 1, #t do
+		obj = t[i]
 		list[obj.id] = {id = obj.id, buy = obj.buy, sell = obj.sell, name = ItemType(obj.id):getName():lower()}
 	end
 	return list
@@ -122,7 +126,9 @@ local function creatureSayCallback(cid, type, msg)
 			local sep = ', '
 			table.sort(can, function(a, b) return a < b end)
 			local t = 0
-			for _, id in ipairs(can) do
+			local id
+			for i = 1, #can do
+				id = can[i]
 				t = t + 1
 				if t == #can - 1 then
 					sep = ' and '
@@ -161,7 +167,9 @@ local function creatureSayCallback(cid, type, msg)
 			local sep = ', '
 			table.sort(started, (function(a, b) return (a < b) end))
 			local t = 0
-			for _, id in ipairs(started) do
+			local id
+			for i = 1, #started do
+				id = started[i]
 				t = t + 1
 				if t == #started - 1 then
 					sep = ' and '
@@ -179,9 +187,12 @@ local function creatureSayCallback(cid, type, msg)
 		local finishedAtLeastOne = false
 		local finished = 0
 		if started and #started > 0 then
-			for _, id in ipairs(started) do
+			local id, reward
+			for i = 1, #started do
+				id = started[i]
 				if player:getStorageValue(KILLSSTORAGE_BASE + id) >= tasks[id].killsRequired then
-					for _, reward in ipairs(tasks[id].rewards) do
+					for j = 1, #tasks[id].rewards do
+						reward = tasks[id].rewards[j]
 						local deny = false
 						if reward.storage then
 							if player:getStorageValue(reward.storage[1]) >= reward.storage[2] then
@@ -222,7 +233,9 @@ local function creatureSayCallback(cid, type, msg)
 					local sep = ', '
 					table.sort(started, (function(a, b) return (a < b) end))
 					local t = 0
-					for _, id in ipairs(started) do
+					local id
+					for i = 1, #started do
+						id = started[i]
 						t = t + 1
 						if (t == #started - 1) then
 							sep = ' and '
@@ -246,7 +259,9 @@ local function creatureSayCallback(cid, type, msg)
 			local sep = ', '
 			table.sort(started, (function(a, b) return (a < b) end))
 			local t = 0
-			for _, id in ipairs(started) do
+			local id
+			for i = 1, #started do
+				id = started[i]
 				t = t + 1
 				if t == #started - 1 then
 					sep = ' and '
@@ -267,7 +282,9 @@ local function creatureSayCallback(cid, type, msg)
 		local sep = ', '
 		table.sort(started, (function(a, b) return (a < b) end))
 		local t = 0
-		for _, id in ipairs(started) do
+		local id
+		for i = 1, #started do
+			id = started[i]
 			t = t + 1
 			if t == #started - 1 then
 				sep = ' or '

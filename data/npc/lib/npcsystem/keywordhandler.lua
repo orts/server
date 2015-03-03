@@ -60,13 +60,15 @@ if KeywordHandler == nil then
 
 		local data = {}
 		local last = 0
-		for i,v in ipairs(self.keywords) do
-			if type(v) == 'string' then
-				local a, b = string.find(message, v)
-				if a == nil or b == nil or a < last then
+		local keyword
+		for i = 1, #self.keywords do
+			keyword = self.keywords[i]
+			if type(keyword) == 'string' then
+				local a, b = string.find(message, keyword)
+				if not a or not b or a < last then
 					return false
 				end
-				if v:sub(1, 1) == '%' then
+				if keyword:sub(1, 1) == '%' then
 					data[#data + 1] = tonumber(message:sub(a, b)) or nil
 				end
 				last = a
@@ -178,7 +180,9 @@ if KeywordHandler == nil then
 	--	Returns the childNode which processed the message or nil if no such node was found.
 	function KeywordHandler:processNodeMessage(node, cid, message)
 		local messageLower = message:lower()
-		for i, childNode in pairs(node.children) do
+		local childNode
+		for i = 1, #node.children do
+			childNode = node.children[i]
 			if childNode:checkMessage(cid, messageLower) then
 				local oldLast = self.lastNode[cid]
 				self.lastNode[cid] = childNode

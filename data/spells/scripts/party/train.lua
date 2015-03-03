@@ -21,14 +21,15 @@ function onCastSpell(creature, var)
 		return false
 	end
 
-	local affectedList = {}
-	for _, members in ipairs(party:getMembers()) do
-		if members:getPosition():getDistance(position) <= 36 then
-			table.insert(affectedList, members)
+	local partyMembers, affected = party:getMembers(), {}
+	for i = 1, #partyMembers do
+		member = partyMembers[i]
+		if member:getPosition():getDistance(position) <= 36 then
+			affected[#affected + 1] = member
 		end
 	end
 
-	local tmp = #affectedList
+	local tmp = #affected
 	if tmp < 1 then
 		creature:sendCancelMessage('No party members in range.')
 		position:sendMagicEffect(CONST_ME_POFF)
@@ -51,8 +52,8 @@ function onCastSpell(creature, var)
 	creature:addMana(-(mana - 60), false)
 	creature:addManaSpent((mana - 60) * configManager.getNumber(configKeys.RATE_MAGIC))
 	creature:addCondition(condition)
-	for _, members in ipairs(affectedList) do
-		members:addCondition(condition)
+	for i = 1, #affected do
+		affected[i]:addCondition(condition)
 	end
 
 	return true

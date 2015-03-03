@@ -132,7 +132,7 @@ function Player.getTasks(self)
 			end
 
 			if able[k] then
-				table.insert(canmake, k)
+				canmake[#canmake + 1] = k
 			end
 		end
 	end
@@ -197,7 +197,7 @@ function Player.getStartedTasks(self)
 	local tmp = {}
 	for k, v in pairs(tasks) do
 		if self:getStorageValue(QUESTSTORAGE_BASE + k) > 0 and self:getStorageValue(QUESTSTORAGE_BASE + k) < 2 then
-			table.insert(tmp, k)
+			tmp[#tmp + 1] = k
 		end
 	end
 	return tmp

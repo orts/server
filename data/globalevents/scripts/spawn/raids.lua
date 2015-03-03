@@ -21,10 +21,10 @@ function onThink(interval, lastExecution, thinkInterval)
 
 	local raidDays = {}
 	if raids[day] then
-		table.insert(raidDays, raids[day])
+		raidDays[#raidDays + 1] = raids[day]
 	end
 	if raids[date] then
-		table.insert(raidDays, raids[date])
+		raidDays[#raidDays + 1] = raids[date]
 	end
 
 	if #raidDays == 0 then
@@ -34,8 +34,8 @@ function onThink(interval, lastExecution, thinkInterval)
 	for i = 1, #raidDays do
 		local settings = raidDays[i][getRealTime()]
 		if settings and not settings.alreadyExecuted then
-				Game.startRaid(settings.raidName)
-				settings.alreadyExecuted = true
+			Game.startRaid(settings.raidName)
+			settings.alreadyExecuted = true
 		end
 	end
 

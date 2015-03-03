@@ -8,8 +8,8 @@ local walls = {
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 1945 then
 		local wallItem
-		for _, wall in pairs(walls) do
-			wallItem = Tile(wall.position):getItemById(1498)
+		for i = 1, #walls do
+			wallItem = Tile(wall.position[i]):getItemById(1498)
 			if wallItem then
 				wallItem:remove()
 			end
@@ -17,8 +17,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		item:transform(1946)
 	else
-		for _, wall in pairs(walls) do
-			Tile(wall.position):relocateTo(wall.relocatePosition)
+		for i = 1, #walls do
+			Tile(wall.position[i]):relocateTo(wall.relocatePosition)
 			Game.createItem(1498, 1, wall.position)
 		end
 

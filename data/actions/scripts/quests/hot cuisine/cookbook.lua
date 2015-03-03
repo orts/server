@@ -14,7 +14,7 @@ local config = {
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local text = {}
 	for i = 1, 10 do
-		table.insert(text, config[i])
+		text[#text + 1] = config[i]
 	end
 	player:showTextDialog(item.itemid, table.concat(text))
 	return true

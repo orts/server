@@ -155,8 +155,9 @@ if NpcHandler == nil then
 
 	-- Function used to verify if npc is focused to certain player
 	function NpcHandler:isFocused(focus)
-		for k,v in pairs(self.focuses) do
-			if v == focus then
+		local focuses = self.focuses
+		for i = 1, #focuses do
+			if focuses[i] == focus then
 				return true
 			end
 		end
@@ -166,7 +167,9 @@ if NpcHandler == nil then
 	-- This function should be called on each onThink and makes sure the npc faces the player it is talking to.
 	--	Should also be called whenever a new player is focused.
 	function NpcHandler:updateFocus()
-		for pos, focus in pairs(self.focuses) do
+		local focus
+		for i = 1, #self.focuses do
+			focus = self.focuses[i]
 			if focus ~= nil then
 				doNpcSetCreatureFocus(focus)
 				return
@@ -199,7 +202,7 @@ if NpcHandler == nil then
 		end
 
 		local pos = nil
-		for k,v in pairs(self.focuses) do
+		for k, v in pairs(self.focuses) do
 			if v == focus then
 				pos = k
 			end
@@ -249,7 +252,9 @@ if NpcHandler == nil then
 	-- Calls the callback function represented by id for all modules added to this npchandler with the given arguments.
 	function NpcHandler:processModuleCallback(id, ...)
 		local ret = true
-		for i, module in pairs(self.modules) do
+		local module
+		for i = 1, #self.modules do
+			module = self.modules[i]
 			local tmpRet = true
 			if id == CALLBACK_CREATURE_APPEAR and module.callbackOnCreatureAppear ~= nil then
 				tmpRet = module:callbackOnCreatureAppear(...)
@@ -508,7 +513,9 @@ if NpcHandler == nil then
 			end
 
 			if self:processModuleCallback(CALLBACK_ONTHINK) then
-				for pos, focus in pairs(self.focuses) do
+				local focus
+				for i = 1, #self.focuses do
+					focus = self.focuses[i]
 					if focus ~= nil then
 						if not self:isInRange(focus) then
 							self:onWalkAway(focus)

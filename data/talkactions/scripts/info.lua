@@ -23,8 +23,10 @@ function onSay(player, words, param)
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Position: ' .. string.format('(%0.5d / %0.5d / %0.3d)', target:getPosition().x, target:getPosition().y, target:getPosition().z))
 	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'IP: ' .. Game.convertIpToString(targetIp))
 
+	local tmpPlayers, tmpPlayer = Game.getPlayers()
 	local players = {}
-	for _, tmpPlayer in ipairs(Game.getPlayers()) do
+	for i = 1, #tmpPlayers do
+		tmpPlayer = tmpPlayers[i]
 		if tmpPlayer:getIp() == targetIp and tmpPlayer ~= target then
 			players[#players + 1] = tmpPlayer:getName() .. ' [' .. tmpPlayer:getLevel() .. ']'
 		end

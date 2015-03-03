@@ -7,7 +7,9 @@ function onSay(player, words, param)
 
 	local i = 0
 	local msg = ""
-	for k, tmpPlayer in ipairs(players) do
+	local tmpPlayer
+	for k = 1, #players do
+		tmpPlayer = players[k]
 		if hasAccess or not tmpPlayer:isInGhostMode() then
 			if i > 0 then
 				msg = msg .. ", "

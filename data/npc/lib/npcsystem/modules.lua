@@ -119,21 +119,16 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		if parameters.premium and player:isPremium() then
-			if player:hasLearnedSpell(parameters.spellName) then
-				npcHandler:say("You already know this spell.", cid)
-			elseif player:getLevel() < parameters.level then
-				npcHandler:say("You need to obtain a level of " .. parameters.level .. " or higher to be able to learn " .. parameters.spellName .. ".", cid)
-			elseif player:getVocation():getId() ~= parameters.vocation and player:getVocation():getId() ~= parameters.vocation + 4 and vocation ~= 9 then
-				npcHandler:say("This spell is not for your vocation", cid)
-			elseif not player:removeMoney(parameters.price) then
-				npcHandler:say("You do not have enough money, this spell costs " .. parameters.price .. " gold.", cid)
-			else
-				npcHandler:say("You have learned " .. parameters.spellName .. ".", cid)
-				player:learnSpell(parameters.spellName)
-			end
+		if player:hasLearnedSpell(parameters.spellName) then
+			npcHandler:say("You already know how to cast this spell.", cid)
+		elseif player:getLevel() < parameters.level then
+			npcHandler:say("You have to be level " .. parameters.level .. " to learn this spell.", cid)
+		elseif not player:removeMoney(parameters.price) then
+			npcHandler:say("Return when you have enough gold.", cid)
 		else
-			npcHandler:say("You need a premium account in order to buy " .. parameters.spellName .. ".", cid)
+			npcHandler:say("Here you are. Look in your spellbook for the pronunciation of this spell.", cid)
+			player:learnSpell(parameters.spellName)
+			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
 
 		npcHandler:resetNpc(cid)
@@ -151,7 +146,7 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
+		local parseInfo = {[TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
 		if player:hasBlessing(parameters.bless) then
 			npcHandler:say("You already possess this blessing.", cid)
 		elseif parameters.bless == 4 and player:getStorageValue(Storage.KawillBlessing) ~= 1 then
@@ -232,17 +227,17 @@ if Modules == nil then
 		self.npcHandler = handler
 
 		local greetWords = self.greetWords or FOCUS_GREETWORDS
-		for i, word in pairs(greetWords) do
+		for i = 1, #greetWords do
 			local obj = {}
-			obj[#obj + 1] = word
+			obj[#obj + 1] = greetWords[i]
 			obj.callback = self.greetCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 		end
 
 		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
-		for i, word in pairs(farewellWords) do
+		for i = 1, #farewellWords do
 			local obj = {}
-			obj[#obj + 1] = word
+			obj[#obj + 1] = farewellWords[i]
 			obj.callback = self.farewellCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
 		end
@@ -258,10 +253,10 @@ if Modules == nil then
 
 
 		if type(message) == 'string' then
-			table.insert(self.greetWords, message)
+			self.greetWords[#self.greetWords + 1] = message
 		else
 			for i = 1, #message do
-				table.insert(self.greetWords, message[i])
+				self.greetWords[#self.greetWords + 1] = message[i]
 			end
 		end
 	end
@@ -273,10 +268,10 @@ if Modules == nil then
 		end
 
 		if type(message) == 'string' then
-			table.insert(self.farewellWords, message)
+			self.farewellWords[#self.farewellWords + 1] = message
 		else
 			for i = 1, #message do
-				table.insert(self.farewellWords, message[i])
+				self.farewellWords[#self.farewellWords + 1] = message
 			end
 		end
 	end
@@ -309,7 +304,9 @@ if Modules == nil then
 
 	-- Custom message matching callback function for greeting messages.
 	function FocusModule.messageMatcherDefault(keywords, message)
-		for i, word in pairs(keywords) do
+		local word
+		for i = 1, #keywords do
+			word = keywords[i]
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -320,7 +317,9 @@ if Modules == nil then
 	end
 
 	function FocusModule.messageMatcherStart(keywords, message)
-		for i, word in pairs(keywords) do
+		local word
+		for i = 1, #keywords do
+			word = keywords[i]
 			if type(word) == "string" then
 				if string.starts(message, word) then
 					return true
@@ -797,9 +796,9 @@ if Modules == nil then
 		self.noText = handler:getMessage(MESSAGE_DECLINE)
 
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
-			for i, word in pairs(SHOP_TRADEREQUEST) do
+			for i = 1, #SHOP_TRADEREQUEST do
 				local obj = {}
-				obj[#obj + 1] = word
+				obj[#obj + 1] = SHOP_TRADEREQUEST[i]
 				obj.callback = SHOP_TRADEREQUEST.callback or ShopModule.messageMatcher
 				handler.keywordHandler:addKeyword(obj, ShopModule.requestTrade, {module = self})
 			end
@@ -810,7 +809,9 @@ if Modules == nil then
 
 	-- Custom message matching callback function for requesting trade messages.
 	function ShopModule.messageMatcher(keywords, message)
-		for i, word in pairs(keywords) do
+		local word
+		for i = 1, #keywords do
+			word = keywords[i]
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -864,7 +865,7 @@ if Modules == nil then
 		end
 
 		if names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE then
-			for i, name in pairs(names) do
+			for i = 1, #names do
 				local parameters = {
 						itemid = itemid,
 						cost = cost,
@@ -876,7 +877,7 @@ if Modules == nil then
 
 				keywords = {}
 				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = name
+				keywords[#keywords + 1] = names[i]
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -918,7 +919,7 @@ if Modules == nil then
 	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
 		if names ~= nil then
-			for i, name in pairs(names) do
+			for i = 1, #names do
 				local parameters = {
 						container = container,
 						itemid = itemid,
@@ -931,7 +932,7 @@ if Modules == nil then
 
 				keywords = {}
 				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = name
+				keywords[#keywords + 1] = names[i]
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -952,14 +953,14 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or ItemType(itemid):getName()})
+				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or ItemType(itemid):getName()}
 			else
 				shopItem.sell = cost
 			end
 		end
 
 		if(names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE) then
-			for i, name in pairs(names) do
+			for i = 1, #names do
 				local parameters = {
 					itemid = itemid,
 					cost = cost,
@@ -969,8 +970,8 @@ if Modules == nil then
 				}
 
 				keywords = {}
-				table.insert(keywords, "sell")
-				table.insert(keywords, name)
+				keywords[#keywords + 1] = "sell"
+				keywords[#keywords + 1] = names[i]
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -1102,7 +1103,7 @@ if Modules == nil then
 
 		local itemWindow = {}
 		for i = 1, #module.npcHandler.shopItems do
-			table.insert(itemWindow, module.npcHandler.shopItems[i])
+			itemWindow[#itemWindow + 1] = module.npcHandler.shopItems[i]
 		end
 
 		if(itemWindow[1] == nil) then

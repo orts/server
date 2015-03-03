@@ -36,8 +36,8 @@ function onStepIn(creature, item, position, fromPosition)
 	Game.setStorageValue(GlobalStorage.SwordOfFury, storage + 1)
 	if storage == 0 then
 		local tmpItem
-		for _, firePosition in pairs(config.firePositions) do
-			tmpItem = Tile(firePosition):getItemById(1492)
+		for i = 1, #config.firePositions do
+			tmpItem = Tile(config.firePositions[i]):getItemById(1492)
 			if tmpItem then
 				tmpItem:transform(1494)
 			end

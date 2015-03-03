@@ -35,7 +35,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return true
 		end
 
-		table.insert(players, creature)
+		players[#players + 1] = creature
 	end
 
 	for i = 1, #players do

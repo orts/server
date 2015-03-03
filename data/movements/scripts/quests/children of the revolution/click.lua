@@ -24,24 +24,27 @@ local config = {
 function doClearMissionArea()
 	Game.setStorageValue(Storage.ChildrenoftheRevolution.Mission05, -1)
 
-	local spectators = Game.getSpectators(config.areaCenter, false, true, 26, 26, 20, 20)
-	for _, spectator in ipairs(spectators) do
-		spectator:teleportTo(config.zalamonPosition)
-		spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		if spectator:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 19 then
-			spectator:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 20)
+	local spectators, spectator = Game.getSpectators(config.areaCenter, false, true, 26, 26, 20, 20)
+	for i = 1, #spectators do
+		spectator = spectators[i]
+		if spectator:isPlayer() then
+			spectator:teleportTo(config.zalamonPosition)
+			spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			if spectator:getStorageValue(Storage.ChildrenoftheRevolution.Questline) == 19 then
+				spectator:setStorageValue(Storage.ChildrenoftheRevolution.Questline, 20)
+			end
+		else
+		    spectator:remove()
 		end
-	end
-
-	local monsters = Game.getSpectators(config.areaCenter, false, false, 26, 26, 20, 20)
-	for _, monster in ipairs(monsters) do
-		monster:remove()
 	end
 	return true
 end
 
 local function removeStairs()
-	Tile(config.stairPosition):getItemById(3687):transform(3653)
+	local stair = Tile(config.stairPosition):getItemById(3687)
+	if stair then
+		stair:transform(3653)
+	end
 end
 
 local function summonWave(i)
@@ -69,7 +72,7 @@ function onStepIn(creature, item, position, fromPosition)
 	for i = 1, #config.positions do
 		local creature = Tile(config.positions[i]):getTopCreature()
 		if creature and creature:isPlayer() then
-			table.insert(players, creature)
+			players[#players + 1] = creature
 		end
 	end
 
@@ -81,7 +84,10 @@ function onStepIn(creature, item, position, fromPosition)
 		players[i]:say('A clicking sound tatters the silence.', TALKTYPE_MONSTER_SAY)
 	end
 
-	Tile(config.stairPosition):getItemById(3653):transform(3687)
+	local stair = Tile(config.stairPosition):getItemById(3653)
+	if stair then
+		stair:transform(3687)
+	end
 	Game.setStorageValue(Storage.ChildrenoftheRevolution.Mission05, 1)
 
 	for wave = 1, #config.waves do

@@ -35,8 +35,8 @@ function onSay(player, words, param)
 	if result ~= nil then
 		if not itemType:isStackable() then
 			if type(result) == "table" then
-				for _, item in ipairs(result) do
-					item:decay()
+				for i = 1, #result do
+					result[i]:decay()
 				end
 			else
 				result:decay()

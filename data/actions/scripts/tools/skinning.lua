@@ -79,7 +79,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local random, effect, transform = math.random(1, 100000), CONST_ME_MAGIC_GREEN, true
 	if type(skin[1]) == 'table' then
 		local added = false
-		for _, _skin in ipairs(skin) do
+		local _skin
+		for i = 1, #skin do
+			_skin = skin[i]
 			if random <= _skin.value then
 				if target.itemid == 11343 then
 					effect = CONST_ME_ICEAREA

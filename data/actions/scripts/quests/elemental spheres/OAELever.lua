@@ -151,7 +151,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	for i = 1, #config.positions do
 		local creature = Tile(config.positions[i]):getTopCreature()
 		if creature then
-			table.insert(players, creature.uid)
+			players[#players + 1] = creature.uid
 		end
 	end
 

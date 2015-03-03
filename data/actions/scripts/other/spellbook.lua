@@ -8,12 +8,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if spell.manapercent > 0 then
 				spell.mana = spell.manapercent .. "%"
 			end
-			t[#t+1] = spell
+			t[#t + 1] = spell
 		end
 	end
 	table.sort(t, function(a, b) return a.level < b.level end)
 	local prevLevel = -1
-	for i, spell in ipairs(t) do
+	local spell
+	for i = 1, #t do
+		spell = t[i]
 		local line = ""
 		if prevLevel ~= spell.level then
 			if i ~= 1 then

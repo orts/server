@@ -98,14 +98,14 @@ local function getTable(player)
 	if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 3 then
 		-- 3 tomes
 		for i = 1, #tomes[1] do
-			table.insert(itemsList, tomes[1][i])
+			itemsList[#itemsList] = tomes[1][i]
 		end
 	end
 
 	if player:getStorageValue(Storage.TheNewFrontier.TomeofKnowledge) >= 9 then
 		-- 9 tomes
 		for i = 1, #tomes[2] do
-			table.insert(itemsList, tomes[2][i])
+			itemsList[#itemsList] = tomes[2][i]
 		end
 	end
 
@@ -113,9 +113,10 @@ local function getTable(player)
 end
 
 local function setNewTradeTable(table)
-	local items = {}
-	for _, v in ipairs(table) do
-		items[v.id] = {itemId = v.id, buyPrice = v.buy, sellPrice = v.sell, subType = 0, realName = v.name}
+	local items, item = {}
+	for i = 1, #table do
+		item = table[i]
+		items[item.id] = {itemId = item.id, buyPrice = item.buy, sellPrice = item.sell, subType = 0, realName = item.name}
 	end
 	return items
 end

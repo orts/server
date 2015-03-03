@@ -423,7 +423,7 @@ function SvargrondArena.sendPillarEffect(pitId)
 		positions = effectPositions
 	end
 
-	for _, position in ipairs(positions) do
-		position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	for i = 1, #positions do
+		positions[i]:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	end
 end

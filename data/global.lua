@@ -42,8 +42,9 @@ function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 		position = Creature(cid):getPosition()
 	end
 
-	local spectators = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
-	for _, spectator in ipairs(spectators) do
+	local spectators, spectator = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
+	for i = 1, #spectators do
+		spectator = spectators[i]
 		spectator:say(text, type, false, spectator, position)
 	end
 end
@@ -336,8 +337,9 @@ function Game.broadcastMessage(message, messageType)
 		messageType = MESSAGE_STATUS_WARNING
 	end
 
-	for _, player in ipairs(Game.getPlayers()) do
-		player:sendTextMessage(messageType, message)
+	local players = Game.getPlayers()
+	for i = 1, #players do
+		players[i]:sendTextMessage(messageType, message)
 	end
 end
 

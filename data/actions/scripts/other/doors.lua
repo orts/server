@@ -39,7 +39,7 @@ local function toggleDoorLock(doorItem, locked)
 	end
 
 	doorItem:transform(doors[doorId])
-	table.insert(unlockedDoors[keyId], doorPosition)
+	unlockedDoors[keyId][#unlockedDoors[keyId] + 1] = doorPosition
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

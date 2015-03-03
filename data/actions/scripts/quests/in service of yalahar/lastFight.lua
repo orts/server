@@ -14,13 +14,14 @@ local creatureName = {
 	[4] = 'war golem'
 }
 
-function doClearAreaAzerus()
+local function doClearAreaAzerus()
 	if Game.getStorageValue(GlobalStorage.InServiceOfYalahar.LastFight) == 1 then
-		local othermonsters = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
-		for _, othermonster in ipairs(othermonsters) do
-			if othermonster:isMonster() then
-				othermonster:getPosition():sendMagicEffect(CONST_ME_POFF)
-				othermonster:remove()
+		local spectators, spectator = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
+		for i = 1, #spectators do
+			spectator = spectators[i]
+			if spectator:isMonster() then
+				spectator:getPosition():sendMagicEffect(CONST_ME_POFF)
+				spectator:remove()
 			end
 		end
 		Game.setStorageValue(GlobalStorage.InServiceOfYalahar.LastFight, 0)
@@ -28,14 +29,14 @@ function doClearAreaAzerus()
 	return true
 end
 
-function doChangeAzerus()
-	local azeruses = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
-	for _, azerus in ipairs(azeruses) do
-		if azerus:isMonster() and azerus:getName():lower() == "azerus" then
-			azerus:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
-			local azeruspos = azerus:getPosition()
-			azerus:remove()
-			Game.createMonster("Azerus", azeruspos)
+local function doChangeAzerus()
+	local spectators, spectator = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
+	for i = 1, #spectators do
+		spectator = spectators[i]
+		if spectator:isMonster() and spectator:getName():lower() == "azerus" then
+			spectator:say("No! I am losing my energy!", TALKTYPE_MONSTER_SAY)
+			Game.createMonster("Azerus", spectator:getPosition())
+			spectator:remove()
 			return true
 		end
 	end
@@ -53,8 +54,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			local amountOfPlayers = 3
 			local spectators = Game.getSpectators(Position(32783, 31166, 10), false, true, 10, 10, 10, 10)
 			if #spectators < amountOfPlayers then
-				for _, spectator in ipairs(spectators) do
-					spectator:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need atleast "..amountOfPlayers.." players inside the quest room.")
+				for i = 1, #spectators do
+					spectators[i]:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need atleast "..amountOfPlayers.." players inside the quest room.")
 				end
 				return true
 			end
@@ -67,11 +68,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					addEvent(summonMonster, (i - 1) * 60 * 1000, azeruswavemonster, waves[k])
 				end
 			end
-			for x = 32779, 32787, 8 do
-				for y = 31161, 31171, 10 do
-					Position(x, y, 10):sendMagicEffect(CONST_ME_HOLYAREA)
-				end
-			end
+			iterateArea(function(position) position:sendMagicEffect(CONST_ME_HOLYAREA) end, Position(32779, 31161, 8), Position(32787, 31171, 10))
 			addEvent(doChangeAzerus, 4 * 20 * 1000)
 			addEvent(doClearAreaAzerus, 5 * 60 * 1000)
 		else

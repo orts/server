@@ -95,7 +95,7 @@ local function getTable(player)
 
 	if player:getStorageValue(Storage.thievesGuild.Quest) >= 9 then
 		for i = 1, #buyList do
-			table.insert(itemsList, buyList[i])
+			itemsList[#itemsList] = buyList[i]
 		end
 	end
 
@@ -103,9 +103,10 @@ local function getTable(player)
 end
 
 local function setNewTradeTable(table)
-	local items = {}
-	for _, v in ipairs(table) do
-		items[v.id] = {itemId = v.id, buybuy = v.buy, sellbuy = v.sell, subType = 0, realName = v.name}
+	local items, item = {}
+	for i = 1, #table do
+		item = table[i]
+		items[item.id] = {itemId = item.id, buyPrice = item.buy, sellPrice = item.sell, subType = 0, realName = item.name}
 	end
 	return items
 end

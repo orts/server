@@ -9,7 +9,7 @@ local config = {
 		Position(33355, 31410, 10),
 		Position(33364, 31410, 10)
 	},
-	startareaPosition = Position(33357, 31404, 9),
+	startAreaPosition = Position(33357, 31404, 9),
 	arenaPosition = Position(33359, 31406, 10)
 }
 
@@ -23,13 +23,18 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	Game.setStorageValue(Storage.WrathoftheEmperor.Mission11, 1)
 
-	local monsters = Game.getSpectators(config.arenaPosition, false, true, 10, 10, 10, 10)
-	for _, monster in ipairs(monsters) do
-		monster:remove()
+	local monsters = Game.getSpectators(config.arenaPosition, false, false, 10, 10, 10, 10)
+	local spectator
+	for i = 1, #monsters do
+		spectator = monsters[i]
+		if spectator:isMonster() then
+			spectator:remove()
+		end
 	end
 
-	local spectators = Game.getSpectators(config.startareaPosition, false, true, 0, 5, 0, 5)
-	for _, spectator in ipairs(spectators) do
+	local spectators = Game.getSpectators(config.startAareaPosition, false, true, 0, 5, 0, 5)
+	for i = 1, #spectators do
+		spectator = spectators[i]
 		spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		spectator:teleportTo(config.arenaPosition)
 		config.arenaPosition:sendMagicEffect(CONST_ME_TELEPORT)

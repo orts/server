@@ -1,9 +1,9 @@
 local exitPosition = {Position(33053, 31022, 7), Position(33049, 31017, 2)}
 
 local function clearArena()
-	local spectators = Game.getSpectators(Position(33063, 31034, 3), false, false, 10, 10, 10, 10)
+	local spectators, spectator = Game.getSpectators(Position(33063, 31034, 3), false, false, 10, 10, 10, 10)
 	for i = 1, #spectators do
-		local spectator = spectators[i]
+		spectator = spectators[i]
 		if spectator:isPlayer() then
 			spectator:teleportTo(exitPosition[2])
 			exitPosition[2]:sendMagicEffect(CONST_ME_TELEPORT)
@@ -23,8 +23,9 @@ function onKill(creature, target)
 		return true
 	end
 
-	local spectators = Game.getSpectators(Position({x = 33063, y = 31034, z = 3}), false, true, 10, 10, 10, 10)
-	for _, spectator in ipairs(spectators) do
+	local spectators, spectator = Game.getSpectators(Position({x = 33063, y = 31034, z = 3}), false, true, 10, 10, 10, 10)
+	for i = 1, #spectators do
+		spectator = spectators[i]
 		spectator:teleportTo(exitPosition[1])
 		exitPosition[1]:sendMagicEffect(CONST_ME_TELEPORT)
 		spectator:say('You have won! As new champion take the ancient armor as reward before you leave.', TALKTYPE_MONSTER_SAY)

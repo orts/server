@@ -40,8 +40,11 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 1
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		npcHandler:say("Here you go.", player)
-		for _, a in pairs(configMarks) do
-			player:addMapMark(a["position"], a["markId"], a["description"])
+		local mark
+
+		for i = 1, #configMarks do
+			mark = configMarks[i]
+			player:addMapMark(mark.position, mark.markId, mark.description)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, "no") and npcHandler.topic[cid] >= 1 then

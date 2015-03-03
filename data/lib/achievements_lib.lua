@@ -405,7 +405,7 @@ function getSecretAchievements()
 	local t = {}
 	for k, v in pairs(achievements) do
 		if v.secret then
-			table.insert(t, k)
+			t[#t + 1] = k
 		end
 	end
 	return t
@@ -413,9 +413,9 @@ end
 
 function getPublicAchievements()
 	local t = {}
-	for k, v in ipairs(achivements) do
+	for k, v in pairs(achivements) do
 		if not v.secret then
-			table.insert(t, k)
+			t[#t + 1] = k
 		end
 	end
 	return t
@@ -451,9 +451,9 @@ end
 
 function Player.getAchievements(self)
 	local t = {}
-	for k, v in pairs(achievements) do
+	for k = 1, #achievements do
 		if self:hasAchievement(k) then
-			table.insert(t, k)
+			t[#t + 1] = k
 		end
 	end
 	return t
@@ -500,7 +500,7 @@ function Player.addAllAchievements(self, denyMsg)
 end
 
 function Player.removeAllAchievements(self)
-	for k, v in pairs(achievements) do
+	for k = 1, #achievements do
 		if self:hasAchievement(k) then
 			self:removeAchievement(k)
 		end
@@ -512,7 +512,7 @@ function Player.getSecretAchievements(self)
 	local t = {}
 	for k, v in pairs(achievements) do
 		if self:hasAchievement(k) and v.secret then
-			table.insert(t, k)
+			t[#t + 1] = k
 		end
 	end
 	return t
@@ -522,7 +522,7 @@ function Player.getPublicAchievements(self)
 	local t = {}
 	for k, v in pairs(achievements) do
 		if self:hasAchievement(k) and not v.secret then
-			table.insert(t, k)
+			t[#t + 1] = k
 		end
 	end
 	return t
@@ -532,8 +532,8 @@ function Player.getAchievementPoints(self)
 	local points = 0
 	local list = self:getAchievements()
 	if #list > 0 then --has achievements
-		for _, id in ipairs(list) do
-			local a = getAchievementInfoById(id)
+		for i = 1, #list do
+			local a = getAchievementInfoById(list[i])
 			if a.points > 0 then --avoid achievements with unknow points
 				points = points + a.points
 			end

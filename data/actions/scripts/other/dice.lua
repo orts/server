@@ -6,8 +6,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	dicePosition:sendMagicEffect(CONST_ME_CRAPS, isInGhostMode and player)
 
 	local spectators = Game.getSpectators(dicePosition, false, true, 3, 3)
-	for _, pid in ipairs(spectators) do
-		player:say(player:getName() .. " rolled a " .. value .. ".", TALKTYPE_MONSTER_SAY, isInGhostMode, pid, dicePosition)
+	for i = 1, #spectators do
+		player:say(player:getName() .. " rolled a " .. value .. ".", TALKTYPE_MONSTER_SAY, isInGhostMode, spectators[i], dicePosition)
 	end
 
 	item:transform(5791 + value)

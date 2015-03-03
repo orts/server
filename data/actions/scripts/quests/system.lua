@@ -47,7 +47,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	else
 		local container = Container(item.uid)
 		for i = 0, container:getSize() - 1 do
-			table.insert(items, container:getItem(i):clone())
+			items[#items + 1] = container:getItem(i):clone()
 		end
 	end
 

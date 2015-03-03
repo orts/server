@@ -26,11 +26,12 @@ function onKill(creature, target)
 	addEvent(removeTeleport, 2 * 60 * 1000, position)
 
 	--clean arena of monsters
-	local monsters = Game.getSpectators(Position({x = 32783, y = 31166, z = 10}), false, false, 10, 10, 10, 10)
-	for _, monster in ipairs(monsters) do
-		if monster:isMonster() then
-			monster:getPosition():sendMagicEffect(CONST_ME_POFF)
-			monster:remove()
+	local spectators, spectator = Game.getSpectators(Position(32783, 31166, 10), false, false, 10, 10, 10, 10)
+	for i = 1, #spectators do
+		spectator = spectators[i]
+		if spectator:isMonster() then
+			spectator:getPosition():sendMagicEffect(CONST_ME_POFF)
+			spectator:remove()
 		end
 	end
 	return true

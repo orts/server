@@ -14,14 +14,18 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local leverLeft = item.itemid == 1945
-	for _, position in pairs(config.leverPositions) do
-		Tile(position):getItemById(leverLeft and 1945 or 1946):transform(leverLeft and 1946 or 1945)
+	local leverLeft, lever = item.itemid == 1945
+	for i = 1, #config.leverPositions do
+		lever = Tile(config.leverPositions[i]):getItemById(leverLeft and 1945 or 1946)
+		if lever then
+			lever:transform(leverLeft and 1946 or 1945)
+		end
 	end
 
-	local tile, tmpItem
+	local tile, tmpItem, bridge
 	if leverLeft then
-		for _, bridge in pairs(config.bridgePositions) do
+		for i = 1, #config.bridgePositions do
+			bridge = config.bridgePositions[i]
 			tile = Tile(bridge.position)
 
 			tmpItem = tile:getGround()
@@ -37,7 +41,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 	else
-		for _, bridge in pairs(config.bridgePositions) do
+		for i = 1, #config.bridgePositions do
+			bridge = config.bridgePositions[i]
 			tile = Tile(bridge.position)
 
 			tile:relocateTo(config.relocatePosition, true, config.relocateMonsterPosition)

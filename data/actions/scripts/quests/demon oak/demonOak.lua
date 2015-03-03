@@ -64,8 +64,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	local totalProgress = 0
-	for _, cStorage in pairs(config.storages) do
-		totalProgress = totalProgress + math.max(0, player:getStorageValue(cStorage))
+	for i = 1, #config.storages do
+		totalProgress = totalProgress + math.max(0, player:getStorageValue(config.storages[i]))
 	end
 
 	local spectators, hasMonsters = Game.getSpectators(DEMON_OAK_POSITION, false, false, 9, 9, 6, 6), false
