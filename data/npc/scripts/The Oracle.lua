@@ -28,3 +28,5 @@ keywordHandler:addAliasKeyword({'hello'})
 keywordHandler:addFarewellKeyword({'bye'}, {npcHandler = npcHandler, text = 'COME BACK WHEN YOU ARE PREPARED TO FACE YOUR DESTINY!'})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'COME BACK WHEN YOU ARE PREPARED TO FACE YOUR DESTINY!')
+
+npcHandler:addModule(FocusModule:new())

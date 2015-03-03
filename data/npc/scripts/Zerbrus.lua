@@ -168,3 +168,4 @@ keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, tex
 keywordHandler:addKeyword({'heal'}, StdModule.say, {npcHandler = npcHandler, text = 'You aren\'t looking really bad. Eat some food to regain strength.'})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Hm.')
+npcHandler:addModule(FocusModule:new())

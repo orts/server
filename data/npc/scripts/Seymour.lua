@@ -178,3 +178,5 @@ keywordHandler:addKeyword({'dallheim'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addKeyword({'zerbrus'}, StdModule.say, {npcHandler = npcHandler, text = 'He\'s the guard on the west {bridge} and a great fighter. He can show you {monster} locations. Just ask him about monsters!'})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye! And remember: No running up and down in the academy!')
+
+npcHandler:addModule(FocusModule:new())

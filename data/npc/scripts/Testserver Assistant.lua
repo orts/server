@@ -16,4 +16,6 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setMessage(MESSAGE_FAREWELL, "Happy hunting, old chap!")
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

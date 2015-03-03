@@ -32,7 +32,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 	end
 
-	local spectators = Game.getSpectators(config.startAareaPosition, false, true, 0, 5, 0, 5)
+	local spectators = Game.getSpectators(config.startAreaPosition, false, true, 0, 5, 0, 5)
 	for i = 1, #spectators do
 		spectator = spectators[i]
 		spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

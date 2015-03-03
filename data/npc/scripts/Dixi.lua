@@ -95,3 +95,5 @@ keywordHandler:addAliasKeyword({'zerbrus'})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Um yeah, good day.')
 npcHandler:setMessage(MESSAGE_SENDTRADE, 'Here, take a look and choose something nice for you!')
+
+npcHandler:addModule(FocusModule:new())

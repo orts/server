@@ -62,3 +62,5 @@ addBuyableKeyword('burka', 2406, 1, 30, 'Maruk goshak ta?')
 addBuyableKeyword('hakhak', 2388, 1, 85, 'Maruk goshak ta?')
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Futchi.')
+
+npcHandler:addModule(FocusModule:new())

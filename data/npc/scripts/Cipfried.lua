@@ -131,3 +131,4 @@ keywordHandler:addKeyword({'dallheim'}, StdModule.say, {npcHandler = npcHandler,
 keywordHandler:addAliasKeyword({'zerbrus'})
 
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Well, bye then.')
+npcHandler:addModule(FocusModule:new())
