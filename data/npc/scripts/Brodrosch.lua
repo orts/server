@@ -53,44 +53,31 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-local function getFarmineDestinationCallback(cid)
-	local player = Player(cid)
-
-	local destination = Position(33025, 31553, 14)
-	if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
-		destination.z = 10
-	elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
-		destination.z = 12
-	end
-
-	return destination
+local function addTravelKeyword(keyword, cost, discount, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a ride to ' .. keyword:titleCase() .. ' for |TRAVELCOST|?', cost = cost, discount = discount})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, text = 'Full steam ahead!', cost = cost, discount = discount, destination = destination}, nil, action)
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-local function cormayaOnTravelCallback(cid)
-	local player = Player(cid)
+addTravelKeyword('farmine', 210, {'postman', 'new frontier'},
+	function(player)
+		local destination = Position(33025, 31553, 14)
+		if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
+			destination.z = 10
+		elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
+			destination.z = 12
+		end
 
-	if player:getStorageValue(Storage.postman.Mission01) == 4 then
-		player:setStorageValue(Storage.postman.Mission01, 5)
+		return destination
 	end
-end
-
-local function newFrontierDiscount(cid, cost)
-	local discount = 0
-
-	if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission03) > 0 then
-		discount = 50
+)
+addTravelKeyword('cormaya', 160, 'postman', Position(33311, 31989, 15),
+	function(player)
+		if player:getStorageValue(Storage.postman.Mission01) == 4 then
+			player:setStorageValue(Storage.postman.Mission01, 5)
+		end
 	end
-
-	return discount + TravelLib.postmanDiscount(cid, cost)
-end
-
-local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Farmine for %s?', cost = 210, discount = newFrontierDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 210, discount = newFrontierDiscount, destination = getFarmineDestinationCallback})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
-
-local travelNode = keywordHandler:addKeyword({'cormaya'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a seek a ride to Cormaya for %s?',cost = 160, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full steam ahead!', level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = Position(33311, 31989, 15), onTravelCallback = cormayaOnTravelCallback})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
+)
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want me take you to {Cormaya} or {Farmine}?'})
 

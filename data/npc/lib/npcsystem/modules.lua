@@ -58,7 +58,18 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
-		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
+		local cost, costMessage = parameters.cost, '%d gold coins'
+		if cost and cost > 0 then
+			if parameters.discount then
+				cost = cost - StdModule.travelDiscount(player, parameters.discount)
+			end
+
+			costMessage = cost > 0 and string.format(costMessage, cost) or 'free'
+		else
+			costMessage = 'free'
+		end
+
+		local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel()), [TAG_TRAVELCOST] = costMessage}
 		if parameters.text then
 			npcHandler:say(npcHandler:parseMessage(parameters.text, parseInfo), cid, parameters.publicize and true)
 		end
@@ -179,24 +190,43 @@ if Modules == nil then
 		end
 
 		local player = Player(cid)
+		local cost = parameters.cost
+		if cost and cost > 0 then
+			if parameters.discount then
+				cost = cost - StdModule.travelDiscount(player, parameters.discount)
+
+				if cost < 0 then
+					cost = 0
+				end
+			end
+		else
+			cost = 0
+		end
+
 		if parameters.premium and not player:isPremium() then
 			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
-		elseif not player:removeMoney(parameters.cost) then
-			npcHandler:say("You don't have enough money.", cid)
-		elseif parameters.level ~= nil and player:getLevel() < parameters.level then
+		elseif parameters.level and player:getLevel() < parameters.level then
 			npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
 		elseif player:isPzLocked() then
 			npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+		elseif not player:removeMoney(cost) then
+			npcHandler:say("You don't have enough money.", cid)
 		else
 			npcHandler:releaseFocus(cid)
-			npcHandler:say(parameters.msg or "Set the sails!", cid)
+			npcHandler:say(parameters.text or "Set the sails!", cid)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:teleportTo(parameters.destination)
-			parameters.destination:sendMagicEffect(CONST_ME_TELEPORT)
+
+			local destination = parameters.destination
+			if type(destination) == 'function' then
+				destination = destination(player)
+			end
+
+			player:teleportTo(destination)
+			destination:sendMagicEffect(CONST_ME_TELEPORT)
 
 			-- What a foolish Quest - Mission 3
-			if parameters.destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
-				if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+			if player:getStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer) > os.time() then
+				if destination ~= Position(32660, 31957, 15) then -- kazordoon steamboat
 					player:setStorageValue(Storage.WhatAFoolishQuest.PieBoxTimer, 1)
 				end
 			end

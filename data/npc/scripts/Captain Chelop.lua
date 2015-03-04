@@ -16,13 +16,11 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local travelNode = keywordHandler:addKeyword({'thais'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Thais for %s?', cost = 210, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 210, discount = TravelLib.postmanDiscount, destination = Position(32310, 32210, 6) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = ' By direct edict of the honorable Henricus himself... well, you know.'})
-
-local travelNode = keywordHandler:addKeyword({'town'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Thais for %s?', cost = 210, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 210, discount = TravelLib.postmanDiscount, destination = Position(32310, 32210, 6) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = ' By direct edict of the honorable Henricus himself... well, you know.'})
+-- Travel
+local travelKeyword = keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Thais for |TRAVELCOST|?', cost = 210, discount = 'postman'})
+	travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = 210, discount = 'postman', destination = Position(32310, 32210, 6)})
+	travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'By direct edict of the honorable Henricus himself... well, you know.', reset = true})
+keywordHandler:addAliasKeyword({'town'})
 
 keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = "I can bring you back to {Thais} if you are weary or you can stay and fight. What shall it be?"})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "My name is Chelop and I am a captain of this {inquisition} ship."})

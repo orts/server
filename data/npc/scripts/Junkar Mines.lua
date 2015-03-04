@@ -22,17 +22,16 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local travelNode = keywordHandler:addKeyword({'kazordoon'}, TravelLib.say, {npcHandler = npcHandler, text = 'So you wish for a trip to Kazordoon? %s?', cost = 10, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, msg = 'Full steam ahead!', cost = 10, discount = TravelLib.postmanDiscount, destination = Position(32660, 31957, 15) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Well, then you stay here, simple as that.'})
+-- Travel
+local function addTravelKeyword(keyword, cost, destination)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text or 'So you wish for a trip to ' .. keyword:titleCase() .. '? |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, text = 'Full steam ahead!', cost = cost, discount = 'postman', destination = destination})
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, then you stay here, simple as that.', reset = true})
+end
 
-local travelNode = keywordHandler:addKeyword({'thais'}, TravelLib.say, {npcHandler = npcHandler, text = 'So you wish for a trip to Thais? %s?', cost = 90, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, msg = 'Full steam ahead!', cost = 90, discount = TravelLib.postmanDiscount, destination = Position(32370, 32180, 13) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Well, then you stay here, simple as that.'})
-
-local travelNode = keywordHandler:addKeyword({'robsons isle'}, TravelLib.say, {npcHandler = npcHandler, text = 'So you wish for a trip to Robsons Isle? %s?', cost = 70, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, msg = 'Full steam ahead!', cost = 70, discount = TravelLib.postmanDiscount, destination = Position(32527, 32036, 14) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Well, then you stay here, simple as that.'})
+addTravelKeyword('kazordoon', 10, Position(32660, 31957, 15))
+addTravelKeyword('thais', 90, Position(32370, 32180, 13))
+addTravelKeyword('robsons isle', 70, Position(32527, 32036, 14))
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want me to take you? To {Kazordoon}, {Thais} or to {Robsons Isle}?'})
 

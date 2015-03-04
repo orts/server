@@ -62,6 +62,7 @@ if NpcHandler == nil then
 	TAG_TIME = "|TIME|"
 	TAG_BLESSCOST = "|BLESSCOST|"
 	TAG_PVPBLESSCOST = "|PVPBLESSCOST|"
+	TAG_TRAVELCOST = "|TRAVELCOST|"
 
 	NpcHandler = {
 		keywordHandler = nil,

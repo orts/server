@@ -16,33 +16,37 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local function getFarmineDestination(cid)
-	local player, destination = Player(cid), Position(33025, 31553, 14)
-	if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
-		destination.z = 10
-	elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
-		destination.z = 12
-	end
-
-	return destination
+-- Travel
+local function addTravelKeyword(keyword, text, cost, destination)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text[1], cost = cost, discount = discount})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, text = text[2], cost = cost, discount = discount, destination = destination})
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = text[3], reset = true})
 end
 
-local function newFrontierDiscount(cid, cost)
-	local discount = 0
-	if Player(cid):getStorageValue(Storage.TheNewFrontier.Mission03) > 0 then
-		discount = 50
+addTravelKeyword('farmine',
+	{
+		'Do you seek a ride to Farmine for |TRAVELCOST|?',
+		'Hold on!',
+		'You shouldn\'t miss the experience.'
+	}, 110, {'postman', 'new frontier'},
+	function(player)
+		local destination = Position(33025, 31553, 14)
+		if player:getStorageValue(Storage.TheNewFrontier.Mission05) == 7 then --if The New Frontier Quest 'Mission 05: Getting Things Busy' complete then Stage 3
+			destination.z = 10
+		elseif player:getStorageValue(Storage.TheNewFrontier.Mission03) == 3 then --if The New Frontier Quest 'Mission 03: Strangers in the Night' complete then Stage 2
+			destination.z = 12
+		end
+
+		return destination
 	end
-
-	return discount + TravelLib.postmanDiscount(cid, cost)
-end
-
-local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Farmine for %s?', cost = 110, discount = newFrontierDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, msg = 'Full speed ahead!', level = 0, cost = 110, discount = newFrontierDiscount, destination = getFarmineDestination})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
-local travelNode = keywordHandler:addKeyword({'kazordoon'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you want to go to Kazordoon to try the beer there? %s gold?', cost = 160, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 160, discount = TravelLib.postmanDiscount, destination = Position(32660, 31957, 15) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Then not.'})
+)
+addTravelKeyword('kazordoon',
+	{
+		'Do you want to go to Kazordoon to try the beer there? |TRAVELCOST|?',
+		'Set the sails!',
+		'Then not.'
+	}, 160, Position(32660, 31957, 15)
+)
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want me take you to {Kazordoon} or {Farmine}?'})
 

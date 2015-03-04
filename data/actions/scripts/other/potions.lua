@@ -70,11 +70,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	player:addCondition(exhaust)
 	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2)
-	item:remove(1)
 	if fromPosition.x == CONTAINER_POSITION then
-		player:addItem(potion.emptyId, 1)
+		item:getParent():addItem(potion.emptyId, 1)
 	else
 		Game.createItem(potion.emptyId, 1, fromPosition)
 	end
+	item:remove(1)
 	return true
 end

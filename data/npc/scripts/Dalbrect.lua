@@ -54,8 +54,10 @@ local function creatureSayCallback(cid, type, msg)
 	return true
 end
 
-local travelNode = keywordHandler:addKeyword({'passage'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the isle of the kings for 10 gold coins?', storage = Storage.WhiteRavenMonasteryQuest.Passage, wrongValueMessage = 'I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission.'})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = false, level = 0, msg = 'Have a nice trip!', cost = 10, destination = Position(32190, 31957, 6) })
+keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission.'}, function(player) return player:getStorageValue(Storage.WhiteRavenMonasteryQuest.Passage) ~= 1 end)
+
+local travelNode = keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to the isle of the kings for 10 gold coins?'})
+	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, text = 'Have a nice trip!', cost = 10, destination = Position(32190, 31957, 6) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Well, I\'ll be here if you change your mind.'})
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "My name is Dalbrect Windtrouser, of the once proud Windtrouser family."})

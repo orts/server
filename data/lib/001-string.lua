@@ -13,3 +13,7 @@ end
 string.starts = function(str, substr)
 	return string.sub(str, 1, #substr) == substr
 end
+
+string.titleCase = function(str)
+	return str:gsub("(%a)([%w_']*)", function(first, rest) return first:upper() .. rest:lower() end)
+end

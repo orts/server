@@ -16,37 +16,25 @@ function onThink()
 	npcHandler:onThink()
 end
 
-local function edronOnTravelCallback(cid)
-	local player = Player(cid)
-	if player:getStorageValue(Storage.postman.Mission01) == 2 then
-		player:setStorageValue(Storage.postman.Mission01, 3)
+-- Travel
+local function addTravelKeyword(keyword, text, cost, destination, condition, action)
+	if condition then
+		keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Never heard about a place like this.'}, condition)
 	end
+
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text, cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, text = 'Hold on!', cost = cost, discount = 'postman', destination = destination}, nil, action)
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'You shouldn\'t miss the experience.', reset = true})
 end
 
-local travelNode = keywordHandler:addKeyword({'eclipse'}, TravelLib.say, {npcHandler = npcHandler, text = 'Oh no, so the time has come? Do you really want me to fly you to this unholy place?', storage = Storage.TheInquisition.Questline, value = 4})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, msg = 'Hold on!', destination = Position(32659, 31915, 0) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
+addTravelKeyword('eclipse', 'Oh no, so the time has come? Do you really want me to fly you to this unholy place?', 0, Position(32659, 31915, 0), function(player) return player:getStorageValue(Storage.TheInquisition.Questline) ~= 4 end)
+addTravelKeyword('farmine', 'Do you seek a ride to Farmine for |TRAVELCOST|?', 60, Position(32983, 31539, 1), function(player) return player:getStorageValue(Storage.TheNewFrontier.Mission10) ~= 1 end)
+addTravelKeyword('edron', 'Do you seek a ride to Edron for |TRAVELCOST|?', 60, Position(33193, 31783, 3), nil, function(player) if player:getStorageValue(Storage.postman.Mission01) == 2 then player:setStorageValue(Storage.postman.Mission01, 3) end end)
+addTravelKeyword('darashia', 'Do you seek a ride to Darashia on Darama for |TRAVELCOST|?', 60, Position(33270, 32441, 6))
+addTravelKeyword('svargrond', 'Do you seek a ride to Svargrond for |TRAVELCOST|?', 60, Position(32253, 31097, 4))
+addTravelKeyword('kazordoon', 'Do you seek a ride to Kazordoon for |TRAVELCOST|?', 80, Position(33193, 31784, 3))
 
-local travelNode = keywordHandler:addKeyword({'farmine'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Farmine for %s?', cost = 60, discount = TravelLib.postmanDiscount, storage = Storage.TheNewFrontier.Mission10})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, msg = 'Hold on!', cost = 60, discount = TravelLib.postmanDiscount, destination = Position(32983, 31539, 1) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
-local travelNode = keywordHandler:addKeyword({'edron'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Edron for %s?', cost = 60, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, discount = TravelLib.postmanDiscount, destination = Position(33193, 31783, 3), onTravelCallback = edronOnTravelCallback })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
-local travelNode = keywordHandler:addKeyword({'darashia'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Darashia on Darama for %s?', cost = 60, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, discount = TravelLib.postmanDiscount, destination = Position(33270, 32441, 6) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
-local travelNode = keywordHandler:addKeyword({'svargrond'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Svargrond for %s?', cost = 60, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 60, discount = TravelLib.postmanDiscount, destination = Position(32253, 31097, 4) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
-local travelNode = keywordHandler:addKeyword({'kazordoon'}, TravelLib.say, {npcHandler = npcHandler, text = 'Do you seek a ride to Kazordoon for %s?', cost = 80, discount = TravelLib.postmanDiscount})
-	travelNode:addChildKeyword({'yes'}, TravelLib.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = 80, discount = TravelLib.postmanDiscount, destination = Position(33193, 31784, 3) })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'You shouldn\'t miss the experience.'})
-
+-- Basic
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I am known as Uzon Ibn Kalith."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am a licensed Darashian carpetpilot. I can bring you to {Darashia}, {Kazordoon}, {Svargrond} or {Edron}."})
 keywordHandler:addKeyword({'caliph'}, StdModule.say, {npcHandler = npcHandler, text = "The caliph welcomes travellers to his land."})
