@@ -17,7 +17,7 @@ function onThink()
 end
 
 -- Travel
-local function addTravelKeyword(keyword, text, cost, destination)
+local function addTravelKeyword(keyword, text, cost, discount, destination)
 	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text[1], cost = cost, discount = discount})
 		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, text = text[2], cost = cost, discount = discount, destination = destination})
 		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = text[3], reset = true})
@@ -45,7 +45,7 @@ addTravelKeyword('kazordoon',
 		'Do you want to go to Kazordoon to try the beer there? |TRAVELCOST|?',
 		'Set the sails!',
 		'Then not.'
-	}, 160, Position(32660, 31957, 15)
+	}, 160, 'postman',Position(32660, 31957, 15)
 )
 
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want me take you to {Kazordoon} or {Farmine}?'})
