@@ -5,66 +5,95 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+
+local voices = {
+	'Where is Ben, the old walking bag of fleas? Oh well, he\'ll come back when he\'s hungry.',
+	'Hi there, do you want to join the \'Paw and Fur - Hunting Elite\'?.'
+}
+
+local lastSound = 0
+function onThink()
+	if lastSound < os.time() then
+		lastSound = (os.time() + 5)
+		if math.random(100) < 20 then
+			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
+		end
+	end
+	npcHandler:onThink()
+end
+
 
 local choose = {}
 local cancel = {}
 local available = {}
+local tradeItems = {}
 
-local grizzlyAdamsConfig = {
-	ranks = {
-		--NOTE: The variable 'name' is not necessary to be declared. I let it so people who wants to change the script will now wich item is each one.
-		huntsMan_rank = {
-			{id=11208, buy=0, sell=50, name='antlers'},
-			{id=10549, buy=0, sell=100, name='bloody pincers'},
-			{id=11183, buy=0, sell=35, name='crab pincers'},
-			{id=10573, buy=0, sell=55, name='cyclops toe'},
-			{id=10564, buy=0, sell=30, name='frosty ear of a troll'},
-			{id=11193, buy=0, sell=600, name='hydra head'},
-			{id=11366, buy=0, sell=80, name='lancer beetle shell'},
-			{id=10578, buy=0, sell=420, name='mutated bat ear'},
-			{id=11222, buy=0, sell=400, name='sabretooth'},
-			{id=11367, buy=0, sell=20, name='sandcrawler shell'},
-			{id=10547, buy=0, sell=280, name='scarab pincers'},
-			{id=11365, buy=0, sell=60, name='terramite legs'},
-			{id=11363, buy=0, sell=170, name='terramite shell'},
-			{id=11184, buy=0, sell=95, name='terrorbird beak'},
+local ranks = {
+		[2] = {
+			{id=5907, buy=34000, sell=0, name='Slingshot'},
 
-			{id=7398, buy=0, sell=500, name='cyclops trophy'},
-			{id=11315, buy=0, sell=15000, name='draken trophy'},
-			{id=11336, buy=0, sell=8000, name='lizard trophy'},
-			{id=7401, buy=0, sell=500, name='minotaur trophy'}
+			{id=11214, buy=0, sell=50, name='Antlers'},
+			{id=10550, buy=0, sell=100, name='Bloody Pincers'},
+			{id=13303, buy=0, sell=550, name='Cavebear Skull'},
+			{id=20098, buy=0, sell=150, name='Cheesy Gigurine'},
+			{id=12470, buy=0, sell=110, name='Colourful Feather'},
+			{id=11189, buy=0, sell=35, name='Crab Pincers'},
+			{id=10574, buy=0, sell=55, name='Cyclops Toe'},
+			{id=7398, buy=0, sell=500, name='Cyclops Trophy'},
+			{id=11315, buy=0, sell=15000, name='Draken Trophy'},
+			{id=13296, buy=0, sell=800, name='Draptor Scales'},
+			{id=21311, buy=0, sell=115, name='Elven Hoof'},
+			{id=10565, buy=0, sell=30, name='Frosty Ear Of a Troll'},
+			{id=13304, buy=0, sell=950, name='Giant Crab Pincer'},
+			{id=12495, buy=0, sell=20, name='Goblin Ear'},
+			{id=13301, buy=0, sell=400, name='Hollow Stampor Hoof'},
+			{id=11199, buy=0, sell=600, name='Hydra Head'},
+			{id=11372, buy=0, sell=80, name='Lancer Beetle Shell'},
+			{id=11336, buy=0, sell=8000, name='Lizard Trophy'},
+			{id=12445, buy=0, sell=280, name='Mantassin Tail'},
+			{id=19741, buy=0, sell=65, name='Marsh Stalker Beak'},
+			{id=19742, buy=0, sell=50, name='Marsh Stalker Feather'},
+			{id=13302, buy=0, sell=250, name='Maxilla'},
+			{id=7401, buy=0, sell=500, name='Minotaur Trophy'},
+			{id=10579, buy=0, sell=420, name='Mutated Bat Ear'},
+			{id=13026, buy=0, sell=750, name='Panther Head'},
+			{id=13027, buy=0, sell=300, name='Panther Paw'},
+			{id=12447, buy=0, sell=500, name='Quara Bone'},
+			{id=12444, buy=0, sell=350, name='Quara Eye'},
+			{id=12446, buy=0, sell=410, name='Quara Pincers'},
+			{id=12443, buy=0, sell=140, name='Quara Tentacle'},
+			{id=13159, buy=0, sell=50, name='Rabbit\'s Foot'},
+			{id=21310, buy=0, sell=70, name='Rorc Feather'},
+			{id=11228, buy=0, sell=400, name='Sabretooth'},
+			{id=11373, buy=0, sell=20, name='Sandcrawler Shell'},
+			{id=10548, buy=0, sell=280, name='Scarab Pincers'},
+			{id=13299, buy=0, sell=280, name='Stampor Horn'},
+			{id=13300, buy=0, sell=150, name='Stampor Talons'},
+			{id=11371, buy=0, sell=60, name='Terramite Legs'},
+			{id=11369, buy=0, sell=170, name='Terramite Shell'},
+			{id=11190, buy=0, sell=95, name='Terrorbird Beak'}
 		},
 
-		bigGameHunter_rank = {
-			{id=7397, buy=0, sell=3000, name='deer trophy'},
-			{id=7400, buy=0, sell=3000, name='lion trophy'},
-			{id=7394, buy=0, sell=3000, name='wolf trophy'}
+		[3] = {},
+		[4] = {
+			{id=11161, buy=0, sell=6000, name='Bonebeast Trophy'},
+			{id=7397, buy=0, sell=3000, name='Deer Trophy'},
+			{id=7400, buy=0, sell=3000, name='Lion Trophy'},
+			{id=7394, buy=0, sell=3000, name='Wolf Trophy'}
 		},
 
-		trophyHunter_rank = {
-			{id=7393, buy=0, sell=40000, name='demon trophy'},
-			{id=7396, buy=0, sell=20000, name='behemoth trophy'},
-			{id=7399, buy=0, sell=10000, name='dragon lord trophy'},
+		[5] = {
+			{id=7393, buy=0, sell=40000, name='Demon Trophy'},
+			{id=7396, buy=0, sell=20000, name='Behemoth Trophy'},
+			{id=7399, buy=0, sell=10000, name='Dragon Lord Trophy'},
+			{id=11338, buy=0, sell=3000, name='Disgusting Trophy'},
 
-			{id=10518, buy=1000, sell=0, name='demon backpack'},
+			{id=10518, buy=1000, sell=0, name='Demon Backpack'},
 		},
+		[6] = {},
+
 	}
-}
 
-local items, data = {}
-for i = 1, #grizzlyAdamsConfig.ranks.huntsMan_rank do
-	data = grizzlyAdamsConfig.ranks.huntsMan_rank[i]
-	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
-end
-for i = 1, #grizzlyAdamsConfig.ranks.bigGameHunter_rank do
-	data = grizzlyAdamsConfig.ranks.bigGameHunter_rank[i]
-	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
-end
-for i = 1, #grizzlyAdamsConfig.ranks.trophyHunter_rank do
-	data = grizzlyAdamsConfig.ranks.trophyHunter_rank[i]
-	items[data.id] = {id = data.id, buy = data.buy, sell = data.sell, name = ItemType(data.id):getName():lower()}
-end
 
 local function greetCallback(cid)
 	local player = Player(cid)
@@ -76,72 +105,59 @@ local function greetCallback(cid)
 	return true
 end
 
-local function getTradeItems(t)
-	local list, obj = {}
-	for i = 1, #t do
-		obj = t[i]
-		list[obj.id] = {id = obj.id, buy = obj.buy, sell = obj.sell, name = ItemType(obj.id):getName():lower()}
+local function createText(started)
+	local text, sep = '', ', '
+	table.sort(started, (function(a, b) return (a < b) end))
+	for i = 1, #started do
+		if (i == #started - 1) then
+			sep = ' and '
+		elseif (i == #started) then
+			sep = '.'
+		end
+		text = text .. '{' .. (tasks[started[i]].name or tasks[started[i]].raceName) .. '}' .. sep
 	end
-	return list
+	return text
 end
 
-local function joinTables(old, new)
-	for k, v in pairs(new) do
-		old[k] = v
-	end
-	return old
-end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then return false end
 
 	local player = Player(cid)
+	local rankPos = player:getPawAndFurRank()
+
 	if msgcontains('trade', msg) then
-		local tradeItems = {}
-		if player:getPawAndFurRank() >= 2 then
-			tradeItems = grizzlyAdamsConfig.ranks.huntsMan_rank
-			if player:getPawAndFurRank() == 4 then
-				tradeItems = joinTables(tradeItems, grizzlyAdamsConfig.ranks.bigGameHunter_rank)
-			elseif player:getPawAndFurRank() == 5 or player:getPawAndFurRank() == 6 then
-				tradeItems = joinTables(tradeItems, grizzlyAdamsConfig.ranks.bigGameHunter_rank)
-				tradeItems = joinTables(tradeItems, grizzlyAdamsConfig.ranks.trophyHunter_rank)
+		if rankPos >= 2 then
+
+			for i = 2, rankPos do
+				for _,v in pairs(ranks[i]) do
+					tradeItems[v.id] = v
+				end
 			end
+
 			openShopWindow(cid, tradeItems, onBuy, onSell)
+
 			return npcHandler:say('It\'s my offer.', cid)
 		else
 			return npcHandler:say('You don\'t have any rank.', cid)
 		end
-	elseif (msgcontains('join', msg) or msgcontains('yes', msg))
-			and npcHandler.topic[cid] == 0
-			and player:getStorageValue(JOIN_STOR) ~= 1 then
+
+	elseif table.contains(msg:lower(), {'join', 'yes'}) and npcHandler.topic[cid] == 0 and player:getStorageValue(JOIN_STOR) ~= 1 then
 		player:setStorageValue(JOIN_STOR, 1)
 		npcHandler:say('Great!, now you can start tasks.', cid) --I'm not sure if this is as real tibia. I let this piece of code because it was in the original file.
-	elseif isInArray({'tasks', 'task', 'mission'}, msg:lower()) then
+
+	elseif table.contains(msg:lower(), {'tasks', 'task', 'mission'}) then
 		local can = player:getTasks()
 		if player:getStorageValue(JOIN_STOR) == -1 then
 			return npcHandler:say('You\'ll have to {join}, to get any {tasks}.',cid)
 		end
 		if #can > 0 then
-			local text = ''
-			local sep = ', '
-			table.sort(can, function(a, b) return a < b end)
-			local t = 0
-			local id
-			for i = 1, #can do
-				id = can[i]
-				t = t + 1
-				if t == #can - 1 then
-					sep = ' and '
-				elseif t == #can then
-					sep = '.'
-				end
-				text = text .. '{' .. (tasks[id].name or tasks[id].raceName) .. '}' .. sep
-			end
-			npcHandler:say('The current task' .. (#can > 1 and 's' or '') .. ' that you can choose ' .. (#can > 1 and 'are' or 'is') .. ' ' .. text, cid)
+			npcHandler:say('The current task' .. (#can > 1 and 's' or '') .. ' that you can choose ' .. (#can > 1 and 'are' or 'is') .. ' ' .. createText(can), cid)
 			npcHandler.topic[cid] = 0
 		else
 			npcHandler:say('I don\'t have any task for you right now.', cid)
 		end
+
 	elseif msg ~= '' and player:canStartTask(msg) then
 		if #player:getStartedTasks() >= tasksByPlayer then
 			npcHandler:say('Sorry, but you already started ' .. tasksByPlayer .. ' tasks. You can check their {status} or {cancel} a task.', cid)
@@ -160,25 +176,11 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Excellent! You can check the {status} of your task saying {report} to me. Also you can {cancel} tasks to.', cid)
 		choose[cid] = nil
 		npcHandler.topic[cid] = 0
+
 	elseif msgcontains('status', msg) then
 		local started = player:getStartedTasks()
 		if started and #started > 0 then
-			local text = ''
-			local sep = ', '
-			table.sort(started, (function(a, b) return (a < b) end))
-			local t = 0
-			local id
-			for i = 1, #started do
-				id = started[i]
-				t = t + 1
-				if t == #started - 1 then
-					sep = ' and '
-				elseif t == #started then
-					sep = '.'
-				end
-				text = text .. 'Task name: ' .. tasks[id].raceName .. '. Current kills: ' .. player:getStorageValue(KILLSSTORAGE_BASE + id) .. '.\n'
-			end
-			npcHandler:say({'The status of your current tasks is:\n' .. text}, cid)
+			npcHandler:say('The status of your current tasks is:\n' .. createText(started), cid)
 		else
 			npcHandler:say('You haven\'t started any task yet.', cid)
 		end
@@ -199,17 +201,17 @@ local function creatureSayCallback(cid, type, msg)
 								deny = true
 							end
 						end
-						if isInArray({REWARD_MONEY, 'money'}, reward.type:lower()) and not deny then
+						if 'money' == reward.type and not deny then
 							player:addMoney(reward.value[1])
-						elseif isInArray({REWARD_EXP, 'exp', 'experience'}, reward.type:lower()) and not deny then
+						elseif isInArray({'exp', 'experience'}, reward.type:lower()) and not deny then
 							player:addExperience(reward.value[1], true)
-						elseif isInArray({REWARD_ACHIEVEMENT, 'achievement', 'ach'}, reward.type:lower()) and not deny then
+						elseif isInArray({'achievement', 'ach'}, reward.type:lower()) and not deny then
 							player:addAchievement(reward.value[1])
-						elseif isInArray({REWARD_STORAGE, 'storage', 'stor'}, reward.type:lower()) and not deny then
+						elseif isInArray({'storage', 'stor'}, reward.type:lower()) and not deny then
 							player:setStorageValue(reward.value[1], reward.value[2])
-						elseif isInArray({REWARD_POINT, 'points', 'point'}, reward.type:lower()) and not deny then
+						elseif isInArray({'points', 'point'}, reward.type:lower()) and not deny then
 							player:setStorageValue(POINTSSTORAGE, getPlayerTasksPoints(cid) + reward.value[1])
-						elseif isInArray({REWARD_ITEM, 'item', 'items', 'object'}, reward.type:lower()) and not deny then
+						elseif isInArray({'item', 'items', 'object'}, reward.type:lower()) and not deny then
 							player:addItem(reward.value[1], reward.value[2])
 						end
 
@@ -229,22 +231,7 @@ local function creatureSayCallback(cid, type, msg)
 			if not finishedAtLeastOne then
 				local started = player:getStartedTasks()
 				if started and #started > 0 then
-					local text = ''
-					local sep = ', '
-					table.sort(started, (function(a, b) return (a < b) end))
-					local t = 0
-					local id
-					for i = 1, #started do
-						id = started[i]
-						t = t + 1
-						if (t == #started - 1) then
-							sep = ' and '
-						elseif (t == #started) then
-							sep = '.'
-						end
-						text = text .. '{' .. (tasks[id].name or tasks[id].raceName) .. '}' .. sep
-					end
-					npcHandler:say('The current task' .. (#started > 1 and 's' or '') .. ' that you started ' .. (#started > 1 and 'are' or 'is') .. ' ' .. text, cid)
+					npcHandler:say('The current task' .. (#started > 1 and 's' or '') .. ' that you started ' .. (#started > 1 and 'are' or 'is') .. ' ' .. createText(started), cid)
 				end
 			else
 				npcHandler:say('Awesome! you finished ' .. (finished > 1 and 'various' or 'a') .. ' task' .. (finished > 1 and 's' or '') .. '. Talk to me again if you want to start a {task}.', cid)
@@ -252,54 +239,24 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('You haven\'t started any task yet.', cid)
 		end
-	elseif msg:lower() == 'started' then
+		--//////////////////////NEED To ReWork /////////////////////
+		elseif msg:lower() == 'started' then
 		local started = player:getStartedTasks()
 		if started and #started > 0 then
-			local text = ''
-			local sep = ', '
-			table.sort(started, (function(a, b) return (a < b) end))
-			local t = 0
-			local id
-			for i = 1, #started do
-				id = started[i]
-				t = t + 1
-				if t == #started - 1 then
-					sep = ' and '
-				elseif t == #started then
-					sep = '.'
-				end
-				text = text .. '{' .. (tasks[id].name or tasks[id].raceName) .. '}' .. sep
-			end
-
-			npcHandler:say('The current task' .. (#started > 1 and 's' or '') .. ' that you started ' .. (#started > 1 and 'are' or 'is') .. ' ' .. text, cid)
+			npcHandler:say('The current task' .. (#started > 1 and 's' or '') .. ' that you started ' .. (#started > 1 and 'are' or 'is') .. ' ' .. createText(started), cid)
 		else
 			npcHandler:say('You haven\'t started any task yet.', cid)
 		end
 	elseif msg:lower() == 'cancel' then
 		local started = player:getStartedTasks()
 		local task = getTaskByName(msg)
-		local text = ''
-		local sep = ', '
-		table.sort(started, (function(a, b) return (a < b) end))
-		local t = 0
-		local id
-		for i = 1, #started do
-			id = started[i]
-			t = t + 1
-			if t == #started - 1 then
-				sep = ' or '
-			elseif t == #started then
-				sep = '?'
-			end
-			text = text .. '{' .. (tasks[id].name or tasks[id].raceName) .. '}' .. sep
-		end
 		if started and #started > 0 then
-			npcHandler:say('Cancelling a task will make the counter restart. Which of these tasks you want cancel?' .. (#started > 1 and '' or '') .. ' ' .. text, cid)
+			npcHandler:say('Cancelling a task will make the counter restart. Which of these tasks you want cancel?' .. (#started > 1 and '' or '') .. ' ' .. createText(started), cid)
 			npcHandler.topic[cid] = 2
 		else
 			npcHandler:say('You haven\'t started any task yet.', cid)
 		end
-	elseif getTaskByName(msg) and npcHandler.topic[cid] == 2 and isInArray(getPlayerStartedTasks(cid), getTaskByName(msg)) then
+	elseif getTaskByName(msg) and npcHandler.topic[cid] == 2 and isInArray(player:getStartedTasks(), getTaskByName(msg)) then
 		local task = getTaskByName(msg)
 		if player:getStorageValue(KILLSSTORAGE_BASE + task) > 0 then
 			npcHandler:say('You currently killed ' .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. '/' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '. Cancelling this task will restart the count. Are you sure you want to cancel this task?', cid)
@@ -308,7 +265,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 		npcHandler.topic[cid] = 3
 		cancel[cid] = task
-	elseif getTaskByName(msg) and npcHandler.topic[cid] == 1 and isInArray(getPlayerStartedTasks(cid), getTaskByName(msg)) then
+	elseif getTaskByName(msg) and npcHandler.topic[cid] == 1 and isInArray(player:getStartedTasks(), getTaskByName(msg)) then
 		local task = getTaskByName(msg)
 		if player:getStorageValue(KILLSSTORAGE_BASE + task) > 0 then
 			npcHandler:say('You currently killed ' .. player:getStorageValue(KILLSSTORAGE_BASE + task) .. '/' .. tasks[task].killsRequired .. ' ' .. tasks[task].raceName .. '.', cid)
@@ -323,13 +280,23 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'points', 'rank'}, msg:lower()) then
 		if player:getPawAndFurPoints() < 1 then
-			npcHandler:say('At this time, you have ' .. player:getPawAndFurPoints() .. ' Paw & Fur points. You ' .. (player:getPawAndFurRank() == 6 and 'are an Elite Hunter' or player:getPawAndFurRank() == 5 and 'are a Trophy Hunter' or player:getPawAndFurRank() == 4 and 'are a Big Game Hunter' or player:getPawAndFurRank() == 3 and 'are a Ranger' or player:getPawAndFurRank() == 2 and 'are a Huntsman' or player:getPawAndFurRank() == 1 and 'are a Member'  or 'haven\'t been ranked yet') .. '.', cid)
+			npcHandler:say('At this time, you haven\'t been ranked yet', cid)
 		else
-			npcHandler:say('At this time, you have ' .. player:getPawAndFurPoints() .. ' Paw & Fur points. You ' .. (player:getPawAndFurRank() == 6 and 'are an Elite Hunter' or player:getPawAndFurRank() == 5 and 'are a Trophy Hunter' or player:getPawAndFurRank() == 4 and 'are a Big Game Hunter' or player:getPawAndFurRank() == 3 and 'are a Ranger' or player:getPawAndFurRank() == 2 and 'are a Huntsman' or player:getPawAndFurRank() == 1 and 'are a Member'  or 'haven\'t been ranked yet') .. '.', cid)
+			local rankString = {
+								[0] = 'haven\'t been ranked yet.',
+								[1] = 'are a Member.',
+								[2] = 'are a Huntsman.',
+								[3] = 'are a Ranger.',
+								[4] = 'are a Big Game Hunter.',
+								[5] = 'are a Trophy Hunter.',
+								[6] = 'are an Elite Hunter.',
+								}
+
+			npcHandler:say('At this time, you have ' .. player:getPawAndFurPoints() .. ' Paw & Fur points. You ' .. rankString[rankPos], cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif isInArray({'special task'}, msg:lower()) then
-		if player:getPawAndFurPoints() >= 90 then -- Tiquandas Revenge 90 points
+		if rankPos >= 5 then -- Tiquandas Revenge 90 points
 			if player:getStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the task. Go find Tiquandas Revenge and take revenge yourself!', cid)
 			else
@@ -341,7 +308,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.KillingInTheNameOf.MissionTiquandasRevenge, 1) -- Won't give this task again.
 			end
 		end
-		if player:getPawAndFurPoints() >= 100 then -- Demodras 100 points
+		if rankPos >= 6 then -- Demodras 100 points
 			if player:getStorageValue(Storage.KillingInTheNameOf.MissionDemodras) == 1 then  -- Check if he has already started the task.
 				npcHandler:say('You have already started the special task. Find Demodras and kill it.', cid)
 			else
@@ -354,27 +321,25 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
-local function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
+function onBuy(cid, item, subType, amount, ignoreCap, inBackpacks)
 	local player = Player(cid)
-	if not ignoreCap and player:getFreeCapacity() < ItemType(items[item].id):getWeight(amount) then
+
+	if not ignoreCap and player:getFreeCapacity() < ItemType(item):getWeight(amount) then
 		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'You don\'t have enough cap.')
 	end
-	if items[item].buy then
-		player:removeMoney(amount * items[item].buy)
-		player:addItem(items[item].id, amount)
-		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'Bought '..amount..'x '..items[item].name..' for '..items[item].buy * amount..' gold coins.')
+	if player:addItem(tradeItems[item].id, amount, false) then --addItem(arg, arg, FALSE) to not drop on ground
+		player:removeMoney(amount * tradeItems[item].buy)
+		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'Bought '..amount..'x '..tradeItems[item].name..' for '..tradeItems[item].buy * amount..' gold coins.')
+	else
+		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'You don\'t have enough container.')
 	end
-	return true
 end
 
-local function onSell(cid, item, subType, amount, ignoreCap, inBackpacks)
+function onSell(cid, item, subType, amount, ignoreCap, inBackpacks) 
 	local player = Player(cid)
-	if items[item].sell then
-		player:addMoney(items[item].sell * amount)
-		player:removeItem(items[item].id, amount)
-		return player:sendTextMessage(MESSAGE_INFO_DESCR, 'Sold '..amount..'x '..items[item].name..' for '..items[item].sell * amount..' gold coins.')
-	end
-	return true
+	player:removeItem(tradeItems[item].id, amount)
+	player:addMoney(tradeItems[item].sell * amount)
+	return player:sendTextMessage(MESSAGE_INFO_DESCR, 'Sold '..amount..'x '..tradeItems[item].name..' for '..tradeItems[item].sell * amount..' gold coins.')
 end
 
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Happy hunting, old chap!')
