@@ -21,7 +21,7 @@ function onCastSpell(creature, var)
 		return false
 	end
 
-	local partyMembers, affected = party:getMembers(), {}
+	local partyMembers, affected, member = party:getMembers(), {}
 	for i = 1, #partyMembers do
 		member = partyMembers[i]
 		if member:getPosition():getDistance(position) <= 36 then

@@ -10,7 +10,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:setStorageValue(Storage.TheInquisition.Mission03, 4) -- The Inquisition Questlog- "Mission 3: Vampire Hunt"
 		local k = {}
 		for i = 1, #altars do
-			local tmp = Tile(i):getItemById(2199)
+			local tmp = Tile(altars[i]):getItemById(2199)
 			if not tmp then
 				Game.createMonster("The Count", toPosition)
 				return true

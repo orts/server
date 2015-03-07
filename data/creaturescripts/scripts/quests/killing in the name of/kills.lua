@@ -3,9 +3,9 @@ function onKill(player, target)
 		return true
 	end
 
-	local targetName, taskId = target:getName():lower()
-	for i = 1, #player:getStartedTasks() do
-		taskId = player:getStartedTasks()[i]
+	local targetName, startedTasks, taskId = target:getName():lower(), player:getStartedTasks()
+	for i = 1, #startedTasks do
+		taskId = startedTasks[i]
 		if isInArray(tasks[taskId].creatures, targetName) then
 			local killAmount = player:getStorageValue(KILLSSTORAGE_BASE + taskId)
 			if killAmount < tasks[taskId].killsRequired then
