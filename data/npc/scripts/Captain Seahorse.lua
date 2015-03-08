@@ -24,6 +24,10 @@ addTravelKeyword('liberty bay', 170, Position(32285, 32892, 6))
 addTravelKeyword('ankrahmun', 160, Position(33092, 32883, 6))
 addTravelKeyword('cormaya', 20, Position(33288, 31956, 6))
 
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, destination = {Position(33174, 31773, 6), Position(33175, 31771, 6), Position(33177, 31772, 6)}})
+
+-- Basic
 keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Thais}, {Carlin}, {Ab\'Dendriel}, {Venore}, {Port Hope}, {Ankrahmun}, {Liberty Bay}, {Gray Island} or the isle {Cormaya}?'})
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Thais}, {Carlin}, {Ab\'Dendriel}, {Venore}, {Port Hope}, {Ankrahmun}, {Liberty Bay}, {Gray Island} or the isle {Cormaya}?'})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'My name is Captain Seahorse from the Royal Tibia Line.'})
@@ -33,4 +37,5 @@ keywordHandler:addKeyword({'yalahar'}, StdModule.say, {npcHandler = npcHandler, 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome on board, |PLAYERNAME|. Where may I {sail} you today?')
 npcHandler:setMessage(MESSAGE_FAREWELL, 'Good bye. Recommend us if you were satisfied with our service.')
 npcHandler:setMessage(MESSAGE_WALKAWAY, 'Good bye then.')
+
 npcHandler:addModule(FocusModule:new())

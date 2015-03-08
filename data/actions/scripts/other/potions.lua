@@ -72,7 +72,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	doCreatureSayWithRadius(target, 'Aaaah...', TALKTYPE_MONSTER_SAY, 2, 2)
 
 	local topParent = item:getTopParent()
-	if topParent.isItem and (not topParent:isItem() or topParent:getId() ~= 460) then
+	if topParent.isItem and (not topParent:isItem() or topParent.itemid ~= 460) then
 		if item:getParent():addItem(potion.emptyId, 1) or topParent:addItem(potion.emptyId, 1) then
 			item:remove(1)
 			return true

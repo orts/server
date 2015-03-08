@@ -32,6 +32,10 @@ addTravelKeyword('liberty bay', 275, Position(32285, 32892, 6))
 addTravelKeyword('venore', 185, Position(32954, 32022, 6))
 addTravelKeyword('ankrahmun', 230, Position(33092, 32883, 6))
 
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, destination = {Position(32811, 31267, 6), Position(32811, 31270, 6), Position(32811, 31273, 6)}})
+
+-- Basic
 keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Thais}, {Carlin}, {Ab\'Dendriel}, {Ankrahmun}, {Darashia}, {Venore}, {Port Hope} or {Liberty Bay}?'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I am the captain of this ship.'})
 keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, text = 'I am the captain of this ship.'})

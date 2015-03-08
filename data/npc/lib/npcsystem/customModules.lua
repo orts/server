@@ -23,6 +23,30 @@ function StdModule.travelDiscount(player, discounts)
 	return discountPrice
 end
 
+function StdModule.kick(cid, message, keywords, parameters, node)
+	local npcHandler = parameters.npcHandler
+	if npcHandler == nil then
+		error("StdModule.travel called without any npcHandler instance.")
+	end
+
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
+	npcHandler:releaseFocus(cid)
+	npcHandler:say(parameters.text or "Off with you!", cid)
+
+	local destination = parameters.destination
+	if type(destination) == 'table' then
+		destination = destination[math.random(#destination)]
+	end
+
+	Player(cid):teleportTo(destination, true)
+
+	npcHandler:resetNpc(cid)
+	return true
+end
+
 local GreetModule = {}
 function GreetModule.greet(cid, message, keywords, parameters)
 	if not parameters.npcHandler:isInRange(cid) then

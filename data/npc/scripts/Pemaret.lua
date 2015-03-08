@@ -43,6 +43,9 @@ end
 addTravelKeyword('edron', 'Do you want to get to Edron for |TRAVELCOST|?', 20, Position(33176, 31764, 6))
 addTravelKeyword('eremo', 'Oh, you know the good old sage Eremo. I can bring you to his little island. Do you want me to do that?', 0, Position(33314, 31883, 7))
 
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, destination = {Position(33293, 31957, 6), Position(33294, 31955, 6), Position(33294, 31958, 6)}})
+
 -- Basic
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m a fisherman and I take along people to Edron. You can also buy some fresh fish.'})
 keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m a fisherman and I take along people to Edron. You can also buy some fresh fish.'})

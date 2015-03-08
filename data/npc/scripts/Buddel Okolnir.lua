@@ -7,24 +7,13 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function creatureSayCallback(cid, type, msg)
-	if not npcHandler:isFocused(cid) then
-		return false
-	end
-	if msgcontains(msg, 'kick') then
-		local player = Player(cid)
-		local pos = Position(math.random(32222,32231), math.random(31384,31387), 7)
-		player:teleportTo(pos)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		npcHandler:releaseFocus(cid)
-		npcHandler:resetNpc(cid)
-	end
-	return true
-end
-
+-- Travel
 local travelNode = keywordHandler:addKeyword({'svargrond'}, StdModule.say, {npcHandler = npcHandler, text = 'Give me |TRAVELCOST| and I bring you to Svargrond. Alright?', cost = 50, discount = 'postman'})
 	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = 50, discount = 'postman', destination = Position(32255, 31197, 7) })
 	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'SHIP AHOY! I AM BUDDEL THE ..... did you say no??? Alright.'})
+
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, text = 'Get out o\' here!*HICKS*', destination = {Position(32224, 31385, 7), Position(32227, 31387, 7), Position(32229, 31385, 7)}})
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

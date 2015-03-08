@@ -21,6 +21,10 @@ addTravelKeyword('edron', 70, Position(33175, 31764, 6))
 addTravelKeyword('venore', 90, Position(32954, 32022, 6))
 addTravelKeyword('yalahar', 160, Position(32816, 31272, 6))
 
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, destination = {Position(32724, 31669, 6), Position(32726, 31665, 6)}})
+
+-- Basic
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "My name is Captain Seagull from the Royal Tibia Line."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am the captain of this sailing-ship."})
 keywordHandler:addKeyword({'captain'}, StdModule.say, {npcHandler = npcHandler, text = "I am the captain of this sailing-ship."})
