@@ -771,7 +771,9 @@ Storage = {
 		BananaPalm = 64132,
 
 		WhisperMoss = 50033,
-		OldParchment = 50034
+		OldParchment = 50034,
+
+		DragahsSpellbook = 50148
 	},
 	PitsOfInferno = {
 		ShortcutHub = 8819,

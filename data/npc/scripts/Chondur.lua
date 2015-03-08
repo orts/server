@@ -180,5 +180,41 @@ local stakeKeyword = keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHan
 	)
 	stakeKeyword:addChildKeyword({''}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe another time.', reset = true})
 
+-- Counterspell
+keywordHandler:addKeyword({'counterspell'}, StdModule.say, {npcHandler = npcHandler, text = 'You should not talk about things you don\'t know anything about.'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.DragahsSpellbook) == -1 end)
+keywordHandler:addAliasKeyword({'energy field'})
+
+-- Start mission
+local counterspellKeyword = keywordHandler:addKeyword({'counterspell'}, StdModule.say, {npcHandler = npcHandler, text = 'You mean, you are interested in a counterspell to cross the energy barrier on Goroma?'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.TheCounterspell) == -1 end)
+	local acceptKeyword = counterspellKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'This is really not advisable. Behind this barrier, strong forces are raging violently. Are you sure that you want to go there?'})
+		acceptKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler,
+			text = {
+				'I guess I cannot stop you then. Since you told me about my apprentice, it\'s my turn to help you. I\'ll perform a ritual for you, but I need a few ingredients. ...',
+				'Bring me one fresh dead chicken, one fresh dead rat and one fresh dead black sheep, in that order.'
+			}, reset = true}, nil, function(player) player:setStorageValue(Storage.TheShatteredIsles.TheCounterspell, 1) end
+		)
+		acceptKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'It\'s much safer for you to stay here anyway, trust me.', reset = true})
+
+	counterspellKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'It\'s much safer for you to stay here anyway, trust me.', reset = true})
+
+-- Deliver in corpses
+local function addCounterspellKeyword(text, value, itemId)
+	local counterspellKeyword = keywordHandler:addKeyword({'counterspell'}, StdModule.say, {npcHandler = npcHandler, text = text[1]}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.TheCounterspell) == value end)
+		counterspellKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[2], reset = true}, function(player) return player:getItemCount(itemId) > 0 end, function(player) player:removeItem(itemId, 1) player:setStorageValue(Storage.TheShatteredIsles.TheCounterspell, value + 1) end)
+end
+
+addCounterspellKeyword({'Did you bring the fresh dead chicken?', 'Very good! <mumblemumble> \'Your soul shall be protected!\' Now, I need a fresh dead rat.'}, 1, 4265)
+addCounterspellKeyword({'Did you bring the fresh dead rat?', 'Very good! <chants and dances> \'You shall face black magic without fear!\' Now, I need a fresh dead black sheep.'}, 2, 2813)
+addCounterspellKeyword({'Did you bring the fresh dead black sheep?', 'Very good! <stomps staff on ground> \'EVIL POWERS SHALL NOT KEEP YOU ANYMORE! SO BE IT!\''}, 3, 2914)
+
+-- Completed the Counterspell
+keywordHandler:addKeyword({'counterspell'}, StdModule.say, {npcHandler = npcHandler, text = 'Hm. I don\'t think you need another one of my counterspells to cross the barrier on Goroma.'})
+
+-- Spellbook
+keywordHandler:addKeyword({'spellbook'}, StdModule.say, {npcHandler = npcHandler, text = 'Ah, thank you very much! I\'ll honour his memory.'}, function(player) return player:getItemCount(6120) > 0 end, function(player) player:removeItem(6120, 1) player:setStorageValue(Storage.TheShatteredIsles.DragahsSpellbook, 1) end)
+
+-- Energy Field
+keywordHandler:addKeyword({'energy field'}, StdModule.say, {npcHandler = npcHandler, text = 'Ah, the energy barrier set up by the cult is maintained by lousy magic, but it\'s still effective. Without a proper counterspell, you won\'t be able to pass it.'})
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -1011,10 +1011,11 @@
 		<mission name="Access to Goroma" storageid="12707" startvalue="1" endvalue="1" description="After helping Jack Fate to collect the 30 woodpieces, Jack Fate in Liberty Bay will bring you to Goroma."/>
 		<mission name="Access to Laguna Island" storageid="12706" startvalue="1" endvalue="1" description="After arranging a date for Marina and Ocelus, you are allowed to use Marina's sea turtles. They will bring you to the idyllic Laguna Islands."/>
 		<mission name="Access to Meriana" storageid="12703" startvalue="1" endvalue="1" description="After earning the trust of the governor's daughter Eleonore, Captain Waverider in Liberty Bay will bring you to Meriana if you tell him the secret codeword 'peg leg'."/>
-		<mission name="The Counterspell" storageid="12710" startvalue="1" endvalue="3">
-			<missionstate id="1" description="xxx"/>
-			<missionstate id="2" description="xxx"/>
-			<missionstate id="3" description="You may pass the energy barrier on Goroma. The counterspell Chondur created for you with his ritual will allow you to withstand the evil magic of the cultist."/>
+		<mission name="The Counterspell" storageid="12710" startvalue="1" endvalue="4">
+			<missionstate id="1" description="You have begun Chondur's ritual. Bring him a fresh dead chicken so that he can begin to create a counterspell which will allow you to pass the magical barrier on Goroma."/>
+			<missionstate id="2" description="You have begun Chondur's ritual. Bring him a fresh dead rat so that he can continue creating a counterspell which will allow you to pass the magical barrier on Goroma."/>
+			<missionstate id="3" description="You have begun Chondur's ritual. Bring him a fresh dead black sheep so that he can complete his which will allow you to pass the magical barrier on Goroma."/>
+			<missionstate id="4" description="You may pass the energy barrier on Goroma. The counterspell Chondur created for you with his ritual will allow you to withstand the evil magic of the cultist."/>
 		</mission>
 		<mission name="The Errand" storageid="12702" startvalue="1" endvalue="2">
 			<missionstate id="1" description="You told Eleonore to run a small errand. Deliver the 200 gold pieces she gave to the herbalist Charlotta in the south-western part of Liberty Bay."/>

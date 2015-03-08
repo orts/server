@@ -1,7 +1,7 @@
 local config = {
 	[7737] = {'orc warrior', 'pirate cutthroat', 'dworc voodoomaster', 'dwarf guard', 'minotaur mage'}, -- common
 	[7739] = {'serpent spawn', 'demon', 'juggernaut', 'behemoth', 'ashmunrah'}, -- uncommon
-	[9076] = {'quara hydromancer', 'diabolical imp', 'banshee', 'frost giant', 'lich'} -- deluxe
+	[9076] = {'quara hydromancer', 'diabolic imp', 'banshee', 'frost giant', 'lich'} -- deluxe
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

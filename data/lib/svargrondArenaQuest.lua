@@ -136,35 +136,7 @@ ARENA = {
 		reward = {
 			trophy = 5807,
 			trophyStorage = Storage.SvargrondArena.TrophyGreenhorn,
-			desc = 'A brave warrior that finished the Greenhorn mode. Awarded to %s.',
-			[26300] = {
-				container = true,
-				id = 1990,
-				inside = {
-					{2114, 1},
-					{9570, 1},
-					{6574, 1},
-					{2688, 10},
-					{7372, 1}
-				}
-			},
-			[26400] = {
-				container = true,
-				id = 7342,
-				inside = {
-					{7364, 100},
-					{7365, 100}
-				},
-			},
-			[26500] = {
-				id = {7406, 1}
-			},
-			[26600] = {
-				id = {7380, 1}
-			},
-			[26700] = {
-				id = {7392, 1}
-			}
+			desc = 'It is given to the courageous victor of the barbarian arena in greenhorn difficulty. Awarded to %s',
 		}
 	},
 	[2] = {
@@ -187,36 +159,7 @@ ARENA = {
 		reward = {
 			trophy = 5806,
 			trophyStorage = Storage.SvargrondArena.TrophyScrapper,
-			desc = 'A brave warrior that finished the Scrapper mode. Awarded to %s.',
-			[27300] = {
-				container = true,
-				id = 1990,
-				inside = {
-					{7183, 1},
-					{6574, 1},
-					{7373, 1},
-					{2688, 10}
-				}
-			},
-			[27400] = {
-				container = true,
-				id = 7342,
-				inside = {
-					{2304, 50},
-					{2311, 50},
-					{2547, 200},
-					{7365, 100}
-				},
-			},
-			[27500] = {
-				id = {7384, 1}
-			},
-			[27600] = {
-				id = {7389, 1}
-			},
-			[27700] = {
-				id = {7415, 1}
-			}
+			desc = 'It is given to the courageous victor of the barbarian arena in scrapper difficulty. Awarded to %s.',
 		}
 	},
 	[3] = {
@@ -239,37 +182,7 @@ ARENA = {
 		reward = {
 			trophy = 5805,
 			trophyStorage = Storage.SvargrondArena.TrophyWarlord,
-			desc = 'A brave warrior that finished the Warlord mode. Awarded to %s.',
-			[28300] = {
-				container = true,
-				id = 1990,
-				inside = {
-					{6568, 1},
-					{6574, 1},
-					{7374, 1},
-					{2688, 10}
-				}
-			},
-			[28400] = {
-				container = true,
-				id = 7342,
-				inside = {
-					{6529, 100},
-					{7440, 1},
-					{7443, 1},
-					{2268, 50},
-					{2273, 50}
-				},
-			},
-			[28500] = {
-				id = {7390, 1}
-			},
-			[28600] = {
-				id = {7434, 1}
-			},
-			[28700] = {
-				id = {7429, 1}
-			}
+			desc = 'It is given to the courageous victor of the barbarian arena in warlord difficulty. Awarded to %s.',
 		}
 	}
 }

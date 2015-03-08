@@ -68,6 +68,9 @@
 	<!-- Serpentine Tower - White Pearl Quest -->
 	<movevent event="StepIn" fromaid="5630" toaid="5631" script="others/ankrahmun/whitepearlquest.lua"/>
 
+	<!-- Goroma Energy Barrier -->
+	<movevent event="StepIn" actionid="4000" script="others/goromaenergybarrier.lua"/>
+
 	<!--- Others -->
 	<movevent event="StepIn" actionid="4256" script="others/roshamuulcarpet.lua"/>
 	<movevent event="StepIn" uniqueid="9238" script="others/GrayBeachVortex.lua"/>

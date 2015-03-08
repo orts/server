@@ -337,3 +337,8 @@ Roshamuul Carpet
 Pythius The Rotten
 	aid: 50125-50127
 	storage: 9130, 12609
+
+The Counterspell
+	aid: 4000
+	uid: 50148
+	storage = 12709, 12710
