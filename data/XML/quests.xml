@@ -1014,7 +1014,7 @@
 		<mission name="The Counterspell" storageid="12710" startvalue="1" endvalue="4">
 			<missionstate id="1" description="You have begun Chondur's ritual. Bring him a fresh dead chicken so that he can begin to create a counterspell which will allow you to pass the magical barrier on Goroma."/>
 			<missionstate id="2" description="You have begun Chondur's ritual. Bring him a fresh dead rat so that he can continue creating a counterspell which will allow you to pass the magical barrier on Goroma."/>
-			<missionstate id="3" description="You have begun Chondur's ritual. Bring him a fresh dead black sheep so that he can complete his which will allow you to pass the magical barrier on Goroma."/>
+			<missionstate id="3" description="You have begun Chondur's ritual. Bring him a fresh dead black sheep so that he can complete his counterspell which will allow you to pass the magical barrier on Goroma."/>
 			<missionstate id="4" description="You may pass the energy barrier on Goroma. The counterspell Chondur created for you with his ritual will allow you to withstand the evil magic of the cultist."/>
 		</mission>
 		<mission name="The Errand" storageid="12702" startvalue="1" endvalue="2">
