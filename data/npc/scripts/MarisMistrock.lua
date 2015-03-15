@@ -10,8 +10,8 @@ function onThink()				npcHandler:onThink()					end
 -- Travel
 local function addTravelKeyword(keyword, text, cost, destination)
 	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want go to ' .. text .. ' for |TRAVELCOST|?', cost = cost})
-		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = cost, destination = destination})
-		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Alright then!', reset = true})
+	travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = cost, destination = destination})
+	travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Alright then!', reset = true})
 end
 
 addTravelKeyword('yalahar', 'back to Yalahar', 100, Position(32649, 31292, 6))
@@ -25,7 +25,7 @@ keywordHandler:addKeyword({'mistrock'}, StdModule.say, {npcHandler = npcHandler,
 	text = {
 		"Do you smell this? It's the smell of fire... the fire of a forge. Many people searched this rock here for a hidden path, but they haven't found anything. ...",
 		"I'd search on Fenrock if I were you. Even though there's snow on the surface, it's still warm underground. There are often caves under fresh lava streams."
-	}}, nil, function(player) if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) ~= 1 then player:setStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar, 1) end end)
+	}}, nil, function(player) if player:getStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar) ~= 1 then player:setStorageValue(Storage.hiddenCityOfBeregar.WayToBeregar, 1) end end
 )
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, text = 'I can take you to {Yalahar} or {Fenrock}!'})
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'I can take you to {Yalahar} or {Fenrock}!'})
