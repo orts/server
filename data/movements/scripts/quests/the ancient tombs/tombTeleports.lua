@@ -1,4 +1,5 @@
 local config = {
+	[3950]  = {removeId = 2350, destination = Position(33182, 32714, 14), exitDestination = Position(33231, 32705, 8)}, -- from Morguthis Boss
 	[3951]  = {removeId = 2351, destination = Position(33174, 32934, 15), exitDestination = Position(33282, 32744, 8)}, -- from Thalas Boss
 	[3952]  = {removeId = 2353, destination = Position(33126, 32591, 15), exitDestination = Position(33250, 32832, 8)}, -- from Mahrdis Boss
 	[3953]  = {removeId = 2352, destination = Position(33145, 32665, 15), exitDestination = Position(33025, 32868, 8)}, -- from Omruc Boss
@@ -14,6 +15,10 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 
 	local teleport = config[item.uid]
+	if not teleport then
+		return true
+	end
+
 	if not player:removeItem(teleport.removeId, 1) then
 		player:teleportTo(teleport.exitDestination)
 		teleport.exitDestination:sendMagicEffect(CONST_ME_TELEPORT)
