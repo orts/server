@@ -1,52 +1,52 @@
 local lava = {
-	{x = 32808, y = 32336, z = 11, stackpos = 0},
-	{x = 32809, y = 32336, z = 11, stackpos = 0},
-	{x = 32810, y = 32336, z = 11, stackpos = 0},
-	{x = 32808, y = 32334, z = 11, stackpos = 0},
-	{x = 32807, y = 32334, z = 11, stackpos = 0},
-	{x = 32807, y = 32335, z = 11, stackpos = 0},
-	{x = 32807, y = 32336, z = 11, stackpos = 0},
-	{x = 32807, y = 32337, z = 11, stackpos = 0},
-	{x = 32806, y = 32337, z = 11, stackpos = 0},
-	{x = 32805, y = 32337, z = 11, stackpos = 0},
-	{x = 32805, y = 32338, z = 11, stackpos = 0},
-	{x = 32805, y = 32339, z = 11, stackpos = 0},
-	{x = 32806, y = 32339, z = 11, stackpos = 0},
-	{x = 32806, y = 32338, z = 11, stackpos = 0},
-	{x = 32807, y = 32338, z = 11, stackpos = 0},
-	{x = 32808, y = 32338, z = 11, stackpos = 0},
-	{x = 32808, y = 32337, z = 11, stackpos = 0},
-	{x = 32809, y = 32337, z = 11, stackpos = 0},
-	{x = 32810, y = 32337, z = 11, stackpos = 0},
-	{x = 32811, y = 32337, z = 11, stackpos = 0},
-	{x = 32811, y = 32338, z = 11, stackpos = 0},
-	{x = 32806, y = 32338, z = 11, stackpos = 0},
-	{x = 32810, y = 32338, z = 11, stackpos = 0},
-	{x = 32810, y = 32339, z = 11, stackpos = 0},
-	{x = 32809, y = 32339, z = 11, stackpos = 0},
-	{x = 32809, y = 32338, z = 11, stackpos = 0},
-	{x = 32811, y = 32336, z = 11, stackpos = 0},
-	{x = 32811, y = 32335, z = 11, stackpos = 0},
-	{x = 32810, y = 32335, z = 11, stackpos = 0},
-	{x = 32809, y = 32335, z = 11, stackpos = 0},
-	{x = 32808, y = 32335, z = 11, stackpos = 0},
-	{x = 32809, y = 32334, z = 11, stackpos = 0},
-	{x = 32809, y = 32333, z = 11, stackpos = 0},
-	{x = 32810, y = 32333, z = 11, stackpos = 0},
-	{x = 32811, y = 32333, z = 11, stackpos = 0},
-	{x = 32806, y = 32338, z = 11, stackpos = 0},
-	{x = 32810, y = 32334, z = 11, stackpos = 0},
-	{x = 32811, y = 32334, z = 11, stackpos = 0},
-	{x = 32812, y = 32334, z = 11, stackpos = 0},
-	{x = 32813, y = 32334, z = 11, stackpos = 0},
-	{x = 32814, y = 32334, z = 11, stackpos = 0},
-	{x = 32812, y = 32333, z = 11, stackpos = 0},
-	{x = 32810, y = 32334, z = 11, stackpos = 0},
-	{x = 32812, y = 32335, z = 11, stackpos = 0},
-	{x = 32813, y = 32335, z = 11, stackpos = 0},
-	{x = 32814, y = 32335, z = 11, stackpos = 0},
-	{x = 32814, y = 32333, z = 11, stackpos = 0},
-	{x = 32813, y = 32333, z = 11, stackpos = 0}
+	Position(32808, 32336, 11, 0),
+	Position(32809, 32336, 11, 0),
+	Position(32810, 32336, 11, 0),
+	Position(32808, 32334, 11, 0),
+	Position(32807, 32334, 11, 0),
+	Position(32807, 32335, 11, 0),
+	Position(32807, 32336, 11, 0),
+	Position(32807, 32337, 11, 0),
+	Position(32806, 32337, 11, 0),
+	Position(32805, 32337, 11, 0),
+	Position(32805, 32338, 11, 0),
+	Position(32805, 32339, 11, 0),
+	Position(32806, 32339, 11, 0),
+	Position(32806, 32338, 11, 0),
+	Position(32807, 32338, 11, 0),
+	Position(32808, 32338, 11, 0),
+	Position(32808, 32337, 11, 0),
+	Position(32809, 32337, 11, 0),
+	Position(32810, 32337, 11, 0),
+	Position(32811, 32337, 11, 0),
+	Position(32811, 32338, 11, 0),
+	Position(32806, 32338, 11, 0),
+	Position(32810, 32338, 11, 0),
+	Position(32810, 32339, 11, 0),
+	Position(32809, 32339, 11, 0),
+	Position(32809, 32338, 11, 0),
+	Position(32811, 32336, 11, 0),
+	Position(32811, 32335, 11, 0),
+	Position(32810, 32335, 11, 0),
+	Position(32809, 32335, 11, 0),
+	Position(32808, 32335, 11, 0),
+	Position(32809, 32334, 11, 0),
+	Position(32809, 32333, 11, 0),
+	Position(32810, 32333, 11, 0),
+	Position(32811, 32333, 11, 0),
+	Position(32806, 32338, 11, 0),
+	Position(32810, 32334, 11, 0),
+	Position(32811, 32334, 11, 0),
+	Position(32812, 32334, 11, 0),
+	Position(32813, 32334, 11, 0),
+	Position(32814, 32334, 11, 0),
+	Position(32812, 32333, 11, 0),
+	Position(32810, 32334, 11, 0),
+	Position(32812, 32335, 11, 0),
+	Position(32813, 32335, 11, 0),
+	Position(32814, 32335, 11, 0),
+	Position(32814, 32333, 11, 0),
+	Position(32813, 32333, 11, 0)
 }
 
 local holeId = {
@@ -83,16 +83,16 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	if ground and isInArray(ropeSpots, ground.itemid) or tile:getItemById(14435) then
-		player:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1}, false)
+		player:teleportTo(Position(toPosition.x, toPosition.y + 1, toPosition.z - 1), false)
 	elseif isInArray(holeId, target.itemid) then
 		toPosition.z = toPosition.z + 1
 		tile = toPosition:getTile()
 		if tile then
 			local thing = tile:getTopVisibleThing()
 			if thing:isItem() and thing:getType():isMovable() then
-				return thing:moveTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1})
+				return thing:moveTo(Position(toPosition.x, toPosition.y + 1, toPosition.z - 1))
 			elseif thing:isCreature() and thing:isPlayer() then
-				return thing:teleportTo({x = toPosition.x, y = toPosition.y + 1, z = toPosition.z - 1})
+				return thing:teleportTo(Position(toPosition.x, toPosition.y + 1, toPosition.z - 1))
 			end
 		end
 	elseif (target.uid <= 65535 or target.actionid > 0) and (target.itemid == 354 or target.itemid == 355) then
@@ -170,7 +170,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
 				for x = -1, 1 do
 					for y = -1, 1 do
-						Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_YELLOWENERGY)
+						Position(player:getPosition().x + x, player:getPosition().y + y, player:getPosition().z):sendMagicEffect(CONST_ME_YELLOWENERGY)
 					end
 				end
 			end
@@ -181,8 +181,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				for x = -1, 1 do
 					for y = -1, 1 do
 						if math.random(2) == 2 then
-							Game.createMonster('rat', {x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z})
-							Position({x = player:getPosition().x + x, y = player:getPosition().y + y, z = player:getPosition().z}):sendMagicEffect(CONST_ME_TELEPORT)
+							Game.createMonster('rat', Position(player:getPosition().x + x, player:getPosition().y + y, player:getPosition().z))
+							Position(player:getPosition().x + x, player:getPosition().y + y, player:getPosition().z):sendMagicEffect(CONST_ME_TELEPORT)
 						end
 					end
 				end
@@ -214,8 +214,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:setStorageValue(Storage.postman.Mission02, 2)
 				toPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
-		-- Secret Service Quest
-		elseif target.actionid == 12566 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then
+		elseif target.actionid == 12566 and player:getStorageValue(Storage.secretService.TBIMission06) == 1 then -- Secret Service Quest
 			local playerOutfit = player:getOutfit()
 			local yelling = Position(32204, 31157, 8)
 			if playerOutfit.lookType == 137 then -- amazon lookType
@@ -276,19 +275,23 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			Position(32550, 31378, 15),
 			Position(32550, 31379, 15)
 		}
+
 		local tile = Tile(Position(32551, 31379, 15))
 		if tile:getItemById(9341) then
 			tile:getItemById(9341):remove()
 		end
+
 		if tile:getItemById(1304) then
 			tile:getItemById(1304):remove()
 		end
+
 		for i = 1, #positions do
 			local ground = Tile(positions[i]):getGround()
 			if ground and ground.itemid == 598 then
 				ground:transform(5815)
 			end
 		end
+
 		local portal = Game.createItem(1387, 1, Position(32551, 31376, 15))
 		if portal then
 			portal:setActionId(50126)
@@ -300,6 +303,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		target:transform(5731)
 		target:decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+	elseif isInArray({1499, 11099}, target.itemid) then -- Wild growth
+		target:remove()
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 	else
 		return false
