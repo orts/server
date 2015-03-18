@@ -85,7 +85,7 @@ local function revertCask(position)
 	end
 end
 
-function onDestroyItem(player, target, toPosition)
+function onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 	if target.uid <= 65535 or target.actionid > 0 then
 		return false
 	end
