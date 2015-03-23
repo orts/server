@@ -123,9 +123,13 @@ function onDestroyItem(player, target, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 
 	--spiderweb
-	elseif isInArray({7538, 7539}, target.itemid) then
+	elseif target.itemid == 7538 or target.itemid == 7539 then
 		if math.random(7) == 1 then
-			target:transform(target.itemid == 7538 and 7544 or 7545)
+			if target.itemid == 7538 then
+				target:transform(7544)
+			elseif target.itemid == 7539 then
+				target:transform(7545)
+			end
 			target:decay()
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
@@ -142,9 +146,13 @@ function onDestroyItem(player, target, toPosition)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 
 	--wooden bar
-	elseif isInArray({3798, 3799}, target.itemid) then
+	elseif target.itemid == 3798 or target.itemid == 3799 then
 		if math.random(3) == 1 then
-			target:transform(target.itemid == 3798 and 3959 or 3958)
+			if target.itemid == 3798 then
+				target:transform(3959)
+			elseif target.itemid == 3799 then
+				target:transform(3958)
+			end
 			target:decay()
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
@@ -398,7 +406,7 @@ function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 
 		iterateArea(
 			function(position)
-				local groundItem = Tile(position):getGround()
+				local groundItem groundItem = Tile(position):getGround()
 				if groundItem and groundItem.itemid == 598 then
 					groundItem:transform(5815)
 				end
