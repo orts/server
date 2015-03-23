@@ -682,6 +682,7 @@
 	<action itemid="20224" script="other/rafzanElevator.lua" />
 	<action itemid="18395" script="other/muckremover.lua" />
 	<action fromaid="50006" toaid="50010" script="other/horestisjars.lua" />
+	<action itemid="13546" script="other/shimmerSwimmer.lua" />
 
 	<!-- Market -->
 	<action itemid="14405" function="market" />
