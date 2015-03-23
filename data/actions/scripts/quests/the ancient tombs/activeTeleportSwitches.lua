@@ -24,7 +24,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	Game.setStorageValue(storage, Game.getStorageValue(storage) + 1)
-	item:transform(1946)
+	Item(item.uid):transform(1946)
 	addEvent(resetScript, 4 * 60 * 1000, toPosition, storage)
 	return true
 end

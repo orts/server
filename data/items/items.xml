@@ -26466,6 +26466,10 @@
 		<attribute key="partnerDirection" value="west" />
 		<attribute key="maleSleeper" value="20204" />
 		<attribute key="femaleSleeper" value="20208" />
+
+		<!-- temporary hack because of inconsistency in dat -->
+		<attribute key="alwaysOnTop" value="false" />
+		<attribute key="topOrder" value="0" />
 	</item>
 	<item id="20201" article="a" name="canopy bed">
 		<attribute key="type" value="bed" />
@@ -26486,6 +26490,10 @@
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="west" />
 		<attribute key="maleSleeper" value="20200" />
+
+		<!-- temporary hack because of inconsistency in dat -->
+		<attribute key="alwaysOnTop" value="false" />
+		<attribute key="topOrder" value="0" />
 	</item>
 	<item id="20205" article="a" name="canopy bed">
 		<attribute key="type" value="bed" />

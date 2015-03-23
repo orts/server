@@ -14,6 +14,6 @@ function onStepIn(creature, item, position, fromPosition)
 
 	player:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
 	player:addCondition(condition)
-	item:transform(417)
+	Item(item.uid):transform(417)
 	return true
 end

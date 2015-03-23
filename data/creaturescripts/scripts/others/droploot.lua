@@ -19,6 +19,7 @@ function onDeath(player, corpse, killer, mostDamage, unjustified, mostDamage_unj
 			player:removeItem(ITEM_AMULETOFLOSS, 1, -1, false)
 		end
 	else
+		local corpse = Container(corpse)
 		for i = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
 			local item = player:getSlotItem(i)
 			if item then
