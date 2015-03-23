@@ -238,11 +238,12 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 		player:addItem(21250, 1)
 		player:setStorageValue(Storage.GravediggerOfDrefia.Mission68, 1)
 
-	-- ???
+	-- The Hidden City of Beregar Quest
 	elseif target.actionid == 50118 then
 		local wagonItem = Tile(Position(32717, 31492, 11)):getItemById(7131)
 		if wagonItem then
-			Game.createItem(8749, 1, wagonItem:getPosition())
+			local targetItem = Game.createItem(8749, 1, wagonItem:getPosition())
+			targetItem:setActionId(50117)
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		end
 
