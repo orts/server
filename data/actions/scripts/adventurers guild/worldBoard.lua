@@ -23,9 +23,9 @@ local strings = {
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	for i = 0, #strings do
-		local t = strings[i]
-		local value = t.value or 1
-		if t.isOverValue and Game.getStorageValue(t.storage) >= value or Game.getStorageValue(t.storage) == value then
+		local worldChange = strings[i]
+		local value = worldChange.value or 1
+		if worldChange.isOverValue and Game.getStorageValue(worldChange.storage) >= value or Game.getStorageValue(worldChange.storage) == value then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, strings.string)
 		end
 	end
