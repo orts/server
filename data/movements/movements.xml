@@ -231,6 +231,9 @@
 	<movevent event="StepIn" fromaid="2040" toaid="2063" script="quests/pits of inferno/fireTiles.lua"/>
 	<movevent event="StepIn" uniqueid="2002" script="quests/pits of inferno/ladder.lua"/>
 	<movevent event="StepOut" uniqueid="2002" script="quests/pits of inferno/ladder.lua"/>
+	<movevent event="StepIn" actionid="4001" script="quests/pits of inferno/stone.lua"/>
+	<movevent event="StepIn" actionid="4002" script="quests/pits of inferno/drawbridge.lua"/>
+	<movevent event="StepOut" actionid="4002" script="quests/pits of inferno/drawbridge.lua"/>
 	<movevent event="StepIn" fromaid="8816" toaid="8817" script="quests/pits of inferno/shortcuts.lua"/>
 	<movevent event="StepIn" fromuid="2080" touid="2086" script="quests/pits of inferno/thrones.lua"/>
 	<movevent event="StepIn" fromuid="2000" touid="2001" script="quests/pits of inferno/tibleTile.lua"/>
