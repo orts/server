@@ -1,18 +1,24 @@
-local config = {
-	{wagon = 7131, stopPos = Position(32717, 31492, 11)},
-	{wagon = 8749, stopPos = Position(32699, 31492, 11)}
+local wagons = {
+	[7131] = Position(32717, 31492, 11),
+	[8749] = Position(32699, 31492, 11)
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	for i = 1, #config do
-		local table = config[i]
-		local wagonPos = table.wagon:getPosition()
-		if table.wagon == 7131 and wagonPos ~= table.stopPos then
-			Tile(wagonPos):getTopTopItem():moveTo(wagonPos, x + 2)
-		elseif table.wagon == 8749 and wagonPos ~= table.stopPos then
-			Tile(wagonPos):getTopTopItem():moveTo(wagonPos, x - 2)
+	local lastPosition = wagons[item.itemid]
+	if lastPosition then
+		local wagonPosition = item:getPosition()
+		if wagonPosition ~= lastPosition then
+			local tile = Tile(wagonPosition)
+			if item.itemid == 7131 then
+				wagonPosition.x = wagonPosition.x + 2
+				tile:getTopTopItem():moveTo(wagonPosition)
+			elseif item.itemid == 8749 and item.actionid == 50117 then
+				wagonPosition.x = wagonPosition.x - 2
+				tile:getItemById(7131):moveTo(wagonPosition)
+				tile:getItemById(8749):moveTo(wagonPosition)
+			end
+			player:say("SQUEEEEAK", TALKTYPE_MONSTER_SAY, false, 0, wagonPosition)
 		end
-	player:say("SQUEEEEAK", TALKTYPE_MONSTER_SAY, false, 0, wagonPos)
 	end
 	return true
 end

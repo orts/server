@@ -938,6 +938,8 @@ Storage = {
 
 GlobalStorage = {
 	FuryGates = 100,
+	Yasir = 101,
+	Chyllfroest = 102,
 	TheirMastersVoice = {
 		CurrentServantWave = 984,
 		ServantsKilled = 985

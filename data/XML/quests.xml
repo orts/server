@@ -962,12 +962,12 @@
 			<missionstate id="13" description="You have reported back that you have completed the mission."/>
 		</mission>
 		<mission name="Mission 7 - Measurements" storageid="12456" startvalue="1" endvalue="8">
-			<missionstate id="1" description="Kevin wants you to bring him the measurements of Ben, Lokur, Dove, Liane, Chrystal and Olrik."/>
-			<missionstate id="2" description="You have received the measurements from 1 of 6 postofficers."/>
-			<missionstate id="3" description="You have received the measurements from 2 of 6 postofficers."/>
-			<missionstate id="4" description="You have received the measurements from 3 of 6 postofficers."/>
-			<missionstate id="5" description="You have received the measurements from 4 of 6 postofficers."/>
-			<missionstate id="6" description="You have received the measurements from 5 of 6 postofficers."/>
+			<missionstate id="1" description="Kevin wants you to bring him the measurements of Benjamin, Lokur, Dove, Liane, Chrystal and Olrik."/>
+			<missionstate id="2" description="You have received the measurements from 1 of 6 post officers."/>
+			<missionstate id="3" description="You have received the measurements from 2 of 6 post officers."/>
+			<missionstate id="4" description="You have received the measurements from 3 of 6 post officers."/>
+			<missionstate id="5" description="You have received the measurements from 4 of 6 post officers."/>
+			<missionstate id="6" description="You have received the measurements from 5 of 6 post officers."/>
 			<missionstate id="7" description="You have received all measurements, report back to Kevin!"/>
 			<missionstate id="8" description="You have reported back that you have completed the mission."/>
 		</mission>
