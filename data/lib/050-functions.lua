@@ -64,7 +64,7 @@ function getAccountNumberByPlayerName(name)
 
 	local resultId = db.storeQuery("SELECT `account_id` FROM `players` WHERE `name` = " .. db.escapeString(name))
 	if resultId ~= false then
-		local accountId = result.getDataInt(resultId, "account_id")
+		local accountId = result.getNumber(resultId, "account_id")
 		result.free(resultId)
 		return accountId
 	end
@@ -79,6 +79,11 @@ function iterateArea(func, from, to)
 			end
 		end
 	end
+end
+
+-- Creature -- 
+function Creature.isTile(self)
+	return false
 end
 
 -- Game --
@@ -121,6 +126,10 @@ end
 
 
 -- Item --
+function Item.isTile(self)
+	return false
+end
+
 function Item.setText(self, text)
 	if text ~= '' then
 		self:setAttribute(ITEM_ATTRIBUTE_TEXT, text)
@@ -318,13 +327,25 @@ function Tile.relocateTo(self, toPosition, pushMove, monsterPosition)
 	return true
 end
 
-function Tile.isPz(self)
-	return self:hasFlag(TILESTATE_PROTECTIONZONE)
+function Tile.isCreature(self)
+	return false
 end
 
 function Tile.isHouse(self)
 	local house = self:getHouse()
-	return house and true or false
+	return not not house
+end
+
+function Tile.isItem(self)
+	return false
+end
+
+function Tile.isPz(self)
+	return self:hasFlag(TILESTATE_PROTECTIONZONE)
+end
+
+function Tile.isTile(self)
+	return true
 end
 
 -- Vocation --
