@@ -13,6 +13,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	elseif isInArray({8669, 8670, 10039, 10040}, target.itemid) then -- Bellow => Shimmer Ball
 		player:addItem(13944, 1)
 	end
+
 	item:remove(1)
+	target:remove()
+	player:getPosition():sendMagicEffect(CONST_ME_BUBBLES)
 	return true
 end
