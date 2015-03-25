@@ -16,6 +16,5 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	item:remove(1)
 	target:remove()
-	player:getPosition():sendMagicEffect(CONST_ME_BUBBLES)
 	return true
 end
