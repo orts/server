@@ -929,6 +929,12 @@ Storage = {
 		Reward = 9050
 	},
 
+	WorldChanges = {
+		TwistedWaters = {
+			DailyFish = 62353
+		}
+	},
+
 	EruaranGreeting = 3250,
 	Factions = 50716,
 	MaryzaCookbook = 50721,
