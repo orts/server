@@ -74,6 +74,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				return true
 			end
 		elseif isInArray({13547, 13548, 13549, 13550, 13551, 13552}, targetId) then
+			if player:getStorageValue(Storages.WorldChanges.TwistedWaters.DailyFish) > os.time() then
+				player:addItem(13546, 1)
+				player:setStorageValue(Storages.WorldChanges.TwistedWaters.DailyFish, os.time() + 24 * 60 * 60)
 			else
 				toPosition:sendMagicEffect(CONST_ME_POFF)
 			end
