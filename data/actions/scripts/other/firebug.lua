@@ -7,6 +7,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
+	-- The Hidden City of Beregar
+	if target.itemid == 8642 and target.actionid == 50119 then
+		target:transform(8641)
+		return true
+	end
+
 	local random = math.random(10)
 	if random >= 4 then --success 6% chance
 		if target.itemid == 7538 then --Destroy spider webs/North - South

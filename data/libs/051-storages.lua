@@ -929,6 +929,12 @@ Storage = {
 		Reward = 9050
 	},
 
+	WorldChanges = {
+		TwistedWaters = {
+			DailyFish = 62353
+		}
+	},
+
 	EruaranGreeting = 3250,
 	Factions = 50716,
 	MaryzaCookbook = 50721,
@@ -938,6 +944,8 @@ Storage = {
 
 GlobalStorage = {
 	FuryGates = 100,
+	Yasir = 101,
+	Chyllfroest = 102,
 	TheirMastersVoice = {
 		CurrentServantWave = 984,
 		ServantsKilled = 985

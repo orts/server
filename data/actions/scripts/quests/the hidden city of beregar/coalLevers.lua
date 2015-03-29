@@ -11,14 +11,18 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	local crucible = Tile(Position(32699, 31494, 11)):getItemById(8641)
-	if crucible.actionid == 50121 then
+	local machine = Tile(Position(32699, 31494, 11)):getItemById(8641)
+	if not machine then
+		return false
+	end
+
+	if machine.actionid == 50121 then
 		local wagon = Game.createItem(7132, 1, useItem.wagonPos)
 		if wagon then
 			wagon:setActionId(useItem.actionId)
 		end
 
-		crucible:transform(8642)
+		machine:transform(8642)
 	end
 
 	item:transform(item.itemid == 10044 and 10045 or 10044)

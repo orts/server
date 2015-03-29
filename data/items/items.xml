@@ -2876,8 +2876,9 @@
 	<item id="2331" article="a" name="present">
 		<attribute key="weight" value="1200" />
 	</item>
-	<item id="2332" name="Waldo's post horn">
-		<attribute key="weight" value="2200" />
+	<item id="2332" article="a" name="Waldo's post horn">
+		<attribute key="description" value="It's property of the Postmaster's Guild and only rewarded to loyal members." />
+		<attribute key="weight" value="1500" />
 	</item>
 	<item id="2333" article="a" name="letter to Markwin">
 		<attribute key="weight" value="50" />
