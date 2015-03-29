@@ -1,6 +1,6 @@
 # ORTS, a real map datapack
- * Client version 10.41
- * Map version 10.35
+ * Client version 10.76
+ * Map version 10.76
 
 # Contributions
 Every contribution is highly appreciated as this resembles a community project. You can help by either finding and reporting bugs or by submitting a pull request.
