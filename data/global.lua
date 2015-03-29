@@ -1,4 +1,4 @@
-dofile('data/libraries.lua')
+dofile('data/libs.lua')
 
 TRUE = true
 FALSE = false
