@@ -23,6 +23,7 @@ local itemsTable = {
 	["Leaf Golem Santa"] = {itemId = 22643, count = 250},
 	["Santa Music Box"] = {itemId = 22647, count = 250},
 	["Santa Teddy"] = {itemId = 11255, count = 500},
+	["Maxxen Santa"] = {itemId = 24321, count = 250},
 	["Present Bag"] = {itemId = 6497, count = 1}
 }
 
