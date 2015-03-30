@@ -46,7 +46,16 @@ local dolls = {
 		"Hail TibiaNordic!",
 		"So cold..",
 		"Run, mammoth!"
-	}
+	},
+	[23806] = {
+		"I can hear their whisperings... Revenge!",
+		"You shall feel pain and terror, |PLAYERNAME|",
+		"I do not need a sword to slaughter you",
+		"My sword is broken, but my spirit is not dead",
+		"I can say 469 and more...",
+		"My dark magic lies on tibialatina.wikia.com"
+	},
+	[24331] = {"Hail Tibia Brasileiros! (União&Força)"}
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

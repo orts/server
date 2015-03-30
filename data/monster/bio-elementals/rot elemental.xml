@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Rot Elemental" nameDescription="a rot elemental" race="blood" experience="150" speed="200" manacost="490">
 	<health now="260" max="260"/>
-	<look type="615" corpse="5962"/>
+	<look type="615" corpse="23481"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="1"/>

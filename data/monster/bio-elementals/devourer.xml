@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Devourer" nameDescription="a devourer" race="blood" experience="1800" speed="200" manacost="0">
 	<health now="1900" max="1900"/>
-	<look type="617" corpse="5962"/>
+	<look type="617" corpse="23484"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>

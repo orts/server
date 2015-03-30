@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Worm Priestess" nameDescription="a worm priestess" race="blood" experience="1500" speed="200" manacost="0">
 	<health now="1100" max="1100"/>
-	<look type="613" corpse="5962"/>
+	<look type="613" corpse="23470"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>

@@ -393,18 +393,19 @@
 	<monster name="Marid" file="djinn/marid.xml"/>
 
 	<!-- Dragons -->
-	<monster name="Dragon Lord" file="dragons/dragon lord.xml"/>
+	<monster name="Dragon Hatchling" file="dragons/dragon hatchling.xml"/>
 	<monster name="Dragon Lord Hatchling" file="dragons/dragon lord hatchling.xml"/>
+	<monster name="Dragon Lord" file="dragons/dragon lord.xml"/>
 	<monster name="Dragon" file="dragons/dragon.xml"/>
 	<monster name="Dragonling" file="dragons/dragonling.xml"/>
-	<monster name="Dragon Hatchling" file="dragons/dragon hatchling.xml"/>
-	<monster name="Elder Wyrm" file="dragons/elder wyrm.xml"/>
-	<monster name="Frost Dragon" file="dragons/frost dragon.xml"/>
-	<monster name="Frost Dragon Hatchling" file="dragons/frost dragon hatchling.xml"/>
-	<monster name="Undead Dragon" file="dragons/undead dragon.xml"/>
-	<monster name="Wyrm" file="dragons/wyrm.xml"/>
-	<monster name="Ghastly Dragon" file="dragons/ghastly dragon.xml"/>
 	<monster name="Draptor" file="dragons/draptor.xml"/>
+	<monster name="Elder Wyrm" file="dragons/elder wyrm.xml"/>
+	<monster name="Frost Dragon Hatchling" file="dragons/frost dragon hatchling.xml"/>
+	<monster name="Frost Dragon" file="dragons/frost dragon.xml"/>
+	<monster name="Ghastly Dragon" file="dragons/ghastly dragon.xml"/>
+	<monster name="Undead Dragon" file="dragons/undead dragon.xml"/>
+	<monster name="Wounded Cave Draptor" file="dragons/wounded cave draptor.xml"/>
+	<monster name="Wyrm" file="dragons/wyrm.xml"/>
 
 	<!-- Dreamhaunters -->
 	<monster name="Bad Dream" file="dreamhaunters/bad dream.xml"/>

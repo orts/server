@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Mooh'Tah Warrior" nameDescription="a mooh'tah warrior" race="blood" experience="900" speed="200" manacost="0">
 	<health now="1200" max="1200"/>
-	<look type="611" corpse="5962"/>
+	<look type="611" corpse="23463"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
 		<flag summonable="0"/>
