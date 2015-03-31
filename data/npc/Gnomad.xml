@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Gnomad" script="default.lua" walkinterval="0" floorchange="0">
+<npc name="Gnomad" script="Gnomad.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
 	<look type="493" head="78" body="94" legs="94" feet="114" addons="0" />
 	<parameters>

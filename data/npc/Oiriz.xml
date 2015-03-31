@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Oiriz" script="default.lua" walkinterval="2000">
+<npc name="Oiriz" script="Oiriz.lua" walkinterval="2000">
 	<health now="100" max="100" />
 	<look type="66" head="60" body="100" legs="82" feet="114" addons="1" />
 	<voices>

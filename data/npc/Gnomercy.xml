@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Gnomercy" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Gnomercy" script="Gnomercy.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="507" head="94" body="114" legs="98" feet="115"/>
 	<parameters>

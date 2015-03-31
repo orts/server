@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Yanni" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Yanni" script="Yanni.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="131" head="22" body="22" legs="22" feet="57" addons="0" />
 <voices>

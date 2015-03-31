@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Tokel" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Tokel" script="Tokel.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="128" head="78" body="96" legs="30" feet="114" addons="0" />
 	<parameters>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Ray" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Ray" script="Ray.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="128" head="19" body="115" legs="126" feet="58" addons="0" />
 <voices>

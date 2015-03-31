@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Gnomenursey" script="default.lua" walkinterval="0" floorchange="0">
+<npc name="Gnomenursey" script="Gnomenursey.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
 	<look type="507" head="66" body="47" legs="66" feet="46" addons="0" />
 	<parameters>

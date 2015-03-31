@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Tanaro" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Tanaro" script="Tanaro.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="144" head="113" body="0" legs="97" feet="115" addons="1" />
 	<parameters>

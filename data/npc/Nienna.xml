@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Nienna" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Nienna" script="Nienna.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="159" head="78" body="85" legs="58" feet="76" addons="0" />
 	<parameters>

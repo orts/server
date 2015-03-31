@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Peggy" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Peggy" script="Peggy.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="136" head="38" body="36" legs="48" feet="38" addons="0" />
 <voices>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Satsu" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Satsu" script="Satsu.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="158" head="78" body="96" legs="118" feet="96" addons="0" />
 	<parameters>

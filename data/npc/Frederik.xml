@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Frederik" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Frederik" script="Frederik.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="128" head="76" body="85" legs="96" feet="91" addons="2" />
 <voices>

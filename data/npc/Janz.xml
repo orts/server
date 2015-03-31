@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Janz" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Janz" script="Janz.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="143" head="58" body="119" legs="118" feet="120" addons="1" />
 <voices>

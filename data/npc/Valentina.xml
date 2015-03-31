@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Valentina" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Valentina" script="Valentina.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="157" head="116" body="116" legs="98" feet="45" addons="1" />
 </npc>

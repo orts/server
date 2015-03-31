@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Santa Claus" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Santa Claus" script="Santa Claus.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
  	<look type="160" head="0" body="112" legs="93" feet="95"/>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Tamoril" script="default.lua" walkinterval="2000">
+<npc name="Tamoril" script="Tamoril.lua" walkinterval="2000">
 	<health now="100" max="100" />
 	<look type="39" />
 <voices>

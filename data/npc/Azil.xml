@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Azil" script="default.lua" walkinterval="0" floorchange="0">
+<npc name="Azil" script="Azil.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
 	<look type="146" head="95" body="9" legs="12" feet="123" addons="0" />
 	<parameters>
