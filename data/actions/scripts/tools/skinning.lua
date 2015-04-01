@@ -6,6 +6,9 @@ local config = {
 		[2866] = {value = 25000, newItem = 5878},
 		[2876] = {value = 25000, newItem = 5878},
 		[3090] = {value = 25000, newItem = 5878},
+		[23463] = {value = 25000, newItem = 5878},
+		[23467] = {value = 25000, newItem = 5878},
+		[23471] = {value = 25000, newItem = 5878},
 
 		-- Low Class Lizards
 		[4259] = {value = 25000, newItem = 5876},

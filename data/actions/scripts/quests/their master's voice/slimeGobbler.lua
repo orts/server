@@ -3,25 +3,18 @@ local position = {
 	Position(33313, 31865, 9),
 	Position(33313, 31881, 9),
 	Position(33328, 31860, 9),
-	Position(33328, 31873, 9),
 	Position(33328, 31885, 9),
 	Position(33308, 31873, 9),
 	Position(33320, 31873, 9),
-	Position(33335, 31873, 9),
-	Position(33360, 31873, 9),
 	Position(33336, 31914, 9),
 	Position(33343, 31914, 9),
-	Position(33353, 31914, 9),
 	Position(33361, 31914, 9),
-	Position(33345, 31900, 9),
 	Position(33352, 31900, 9),
-	Position(33355, 31854, 9),
 	Position(33355, 31861, 9),
 	Position(33355, 31885, 9),
 	Position(33345, 31864, 9),
 	Position(33345, 31881, 9),
 	Position(33309, 31867, 9),
-	Position(33317, 31879, 9),
 	Position(33311, 31854, 9),
 	Position(33334, 31889, 9),
 	Position(33340, 31890, 9),
@@ -59,7 +52,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout) < os.time() then
 		target:transform(13590)
-		player:setStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout, os.time() + 15)
+		player:setStorageValue(Storage.TheirMastersVoice.SlimeGobblerTimeout, os.time() + 5)
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		if not getFungusInArea(Position(33306, 31847, 9), Position(33369, 31919, 9)) then
 			for i = 1, #position do

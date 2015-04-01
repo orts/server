@@ -41,6 +41,7 @@ local function getTable(player)
 		{id = 12503, buy = 4000},		-- Exquisite Wood
 		{id = 12500, buy = 600},		-- Faded Last Will
 		{id = 4845, buy = 1000},		-- Family Brooch
+		{id = 7708, buy = 15000},		-- Family Signet Ring
 		{id = 10308, buy = 10000},		-- Fan Club Membership Card
 		{id = 10616, buy = 1000},		-- Filled Carrying Device
 		{id = 8766, buy = 7000},		-- Fishnapped Goldfish
@@ -72,12 +73,13 @@ local function getTable(player)
 		{id = 12297, buy = 1000},		-- Sacred Earth
 		{id = 10155, buy = 12500},		-- Shadow Orb
 		{id = 4854, buy = 500},			-- Sheet of Tracing Paper
-		{id = 7697, buy = 15000},		-- Signet Ring
+		{id = 7697, buy = 15000},		-- Suspicious Signet Ring
 		{id = 4846, buy = 8000},		-- Snake Destroyer
 		{id = 10945, buy = 666},		-- Soul Contract
 		{id = 14323, buy = 5000},		-- Special Flask
 		{id = 12502, buy = 4000},		-- Spectral Cloth
 		{id = 4847, buy = 15000},		-- Spectral Dress
+		{id = 2345, buy = 3000},		-- Spyreport
 		{id = 10166, buy = 12500},		-- Stabilizer
 		{id = 15389, buy = 5000},		-- Strange Powder
 		{id = 12504, buy = 4000},		-- Strong Sinew
