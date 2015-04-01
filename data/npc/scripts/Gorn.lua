@@ -46,7 +46,7 @@ keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, tex
 keywordHandler:addAliasKeyword({'tibianus'})
 keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = "Magic? Ask a sorcerer or druid about that."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = "I am Gorn. My goods are known all over Tibia."})
-keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "It is exactly " .. getTibianTime() .. ". Maybe you want to buy a watch?"})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, text = "It is exactly |TIME|. Maybe you want to buy a watch?"})
 keywordHandler:addKeyword({'druids'}, StdModule.say, {npcHandler = npcHandler, text = "This druids are nice people, you will find them in the east of the town."})
 keywordHandler:addKeyword({'knights'}, StdModule.say, {npcHandler = npcHandler, text = "Even the strong knights need my equipment on their travels though Tibia."})
 keywordHandler:addKeyword({'sorcerers'}, StdModule.say, {npcHandler = npcHandler, text = "You can find him in the sorcerer guild."})

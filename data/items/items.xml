@@ -30343,13 +30343,13 @@
 	<item id="23523" article="a" name="strangely coloured glooth">
 		<attribute key="description" value="This glooth is of a strange blue colour." />
 	</item>
-	<!--<item id="23529" article="a" name="glooth spear">
+	<item id="23529" article="a" name="glooth spear">
 		<attribute key="attack" value="55" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="gloothspear" />
 		<attribute key="range" value="3" />
 		<attribute key="weight" value="2600" />
-	</item>-->
+	</item>
 	<item id="23535" article="a" name="glooth cape">
 		<attribute key="armor" value="9" />
 		<attribute key="slotType" value="body" />

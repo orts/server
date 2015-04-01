@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globalevents>
 	<!-- Wrath Of The Emperor Quest -->
-	<globalevent name="WotESpyHoles" interval="5000" script="wrath of the emperor quest/spyHoles.lua"/>
+	<globalevent name="WotESpyHoles" interval="5000" script="wrath of the emperor quest/spyHoles.lua" />
 
 	<!-- Demon Oak Quest -->
-	<globalevent name="DemonOakVoices" interval="15000" script="demon oak quest/voices.lua"/>
+	<globalevent name="DemonOakVoices" interval="15000" script="demon oak quest/voices.lua" />
 
 	<!-- Rent Horses -->
-	<globalevent name="RentedMounts" interval="15000" script="others/checkMount.lua"/>
+	<globalevent name="RentedMounts" interval="15000" script="others/checkMount.lua" />
 
 	<!-- Blooming Griffinclaw -->
-	<globalevent name="GriffinclawFlower" type="startup" script="others/griffinclawFlower.lua"/>
+	<globalevent name="GriffinclawFlower" type="startup" script="others/griffinclawFlower.lua" />
 
 	<!-- World Changes -->
-	<globalevent name="FuryGates" type="startup" script="worldchanges/furygates.lua"/>
-	<globalevent name="Yasir" type="startup" script="worldchanges/yasir.lua"/>
+	<globalevent name="FuryGates" type="startup" script="worldchanges/furygates.lua" />
+	<globalevent name="Yasir" type="startup" script="worldchanges/yasir.lua" />
 
 	<!-- Others -->
-	<globalevent type="startup" name="ServerStartup" script="startup.lua"/>
-	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
-	<globalevent name="ServerSave" time="09:55:00" script="serversave.lua"/>
+	<globalevent type="startup" name="ServerStartup" script="startup.lua" />
+	<globalevent type="record" name="PlayerRecord" script="record.lua" />
+	<globalevent name="ServerSave" time="09:55:00" script="serversave.lua" />
 
 	<!-- Spawn -->
-	<globalevent name="RaidSystem" interval="10000" script="spawn/raids.lua"/>
-	<globalevent name="BossSystem" interval="3600000" script="spawn/BossSpawn.lua"/>
-	<globalevent type="startup" name="RashidSpawn" script="spawn/RashidSpawn.lua"/>
-	<globalevent type="startup" name="CilliaSpawn" script="spawn/CilliaSpawn.lua"/>
+	<globalevent name="RaidSystem" interval="10000" script="spawn/raids.lua" />
+	<globalevent name="BossSystem" interval="3600000" script="spawn/BossSpawn.lua" />
+	<globalevent type="startup" name="RashidSpawn" script="spawn/RashidSpawn.lua" />
+	<globalevent type="startup" name="CilliaSpawn" script="spawn/CilliaSpawn.lua" />
 </globalevents>
