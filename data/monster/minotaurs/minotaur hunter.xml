@@ -67,10 +67,10 @@
 		<item id="5912" chance="1600"/>					<!-- blue piece of cloth -->
 		<item id="5910" chance="1400"/>					<!-- green piece of cloth -->
 		<item id="5911" chance="1300"/>					<!-- red piece of cloth -->
-		<!-- mino shield -->
+		<item id="23546" chance="750"/>					<!-- mino shield -->
 		<item id="2154" chance="470"/>					<!-- yellow gem -->
 		<item id="2156" chance="400"/>					<!-- red gem -->
 		<item id="7401" chance="190"/>					<!-- minotaur trophy -->
-		<!-- mooh'tah plate -->
+		<item id="23537" chance="110"/>					<!-- mooh'tah plate -->
 	</loot>
 </monster>

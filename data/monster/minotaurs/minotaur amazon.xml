@@ -57,7 +57,7 @@
 		<item id="2152" countmax="3" chance="59000"/>		<!-- platinum coin -->
 		<item id="2671" chance="56000"/>					<!-- ham -->
 		<item id="5878" chance="19000"/>					<!-- minotaur leather -->
-		<!-- cowbell -->
+		<item id="23575" chance="19000"/>					<!-- cowbell -->
 		<item id="7591" chance="9800"/>						<!-- great health potion -->
 		<item id="7590" chance="9800"/>						<!-- great mana potion -->
 		<item id="12428" countmax="2" chance="7800"/>		<!-- minotaur horn -->
@@ -68,9 +68,9 @@
 		<item id="7368" countmax="5" chance="4000"/>		<!-- assassin star -->
 		<item id="2150" countmax="2" chance="3900"/>		<!-- small amethyst -->
 		<item id="2149" countmax="2" chance="3900"/>		<!-- small emerald -->
-		<!-- mino shield -->
-		<!-- mino lance -->
+		<item id="23546" chance="2850"/>					<!-- mino shield -->
 		<item id="5911" chance="1900"/>						<!-- red piece of cloth -->
+		<item id="23545" chance="1780"/>					<!-- mino lance -->
 		<item id="2156" chance="650"/>						<!-- red gem -->
 		<item id="2197" chance="650"/>						<!-- stone skin amulet -->
 		<item id="2154" chance="650"/>						<!-- yellow gem -->

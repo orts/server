@@ -20402,7 +20402,7 @@
 		<attribute key="floorchange" value="north" />
 	</item>
 	<item id="12322" name="clay ground" />
-	<item id="12323" name="the tail of the Keeper">
+	<item id="12323" article="the" name="tail of the Keeper">
 		<attribute key="weight" value="450" />
 	</item>
 	<item id="12324" article="a" name="sceptre part">
@@ -29066,6 +29066,32 @@
 		<attribute key="weight" value="180" />
 		<attribute key="description" value="The blood in the vial is of a strange colour, as if tainted." />
 	</item>
+	<item id="21420" article="a" name="dead lion">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21421" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21421" article="a" name="dead lion">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21422" />
+		<attribute key="duration" value="900" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21422" article="a" name="dead lion">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21423" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21423" article="a" name="dead lion">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+	</item>
 	<item id="21427" article="a" name="dowser">
 		<attribute key="weight" value="360" />
 	</item>
@@ -30323,7 +30349,7 @@
 		<attribute key="shootType" value="gloothspear" />
 		<attribute key="range" value="3" />
 		<attribute key="weight" value="2600" />
-	</item>
+	</item>-->
 	<item id="23535" article="a" name="glooth cape">
 		<attribute key="armor" value="9" />
 		<attribute key="slotType" value="body" />
@@ -30379,8 +30405,7 @@
 		<attribute key="weight" value="3200" />
 	</item>
 	<item id="23544" article="a" name="moohtant cudgel">
-		<attribute key="defense" value="20" />
-		<attribute key="extradef" value="1" />
+		<attribute key="defense" value="21" />
 		<attribute key="attack" value="47" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
@@ -30437,11 +30462,11 @@
 		<attribute key="elementEarth" value="26" />
 		<attribute key="charges" value="2" />
 		<attribute key="weight" value="1900" />
-	</item>-->
+	</item>
 	<item id="23553" article="a" name="glob of glooth">
 		<attribute key="weight" value="10" />
 	</item>
-	<!--<item id="23554" article="a" name="glooth amulet">
+	<item id="23554" article="a" name="glooth amulet">
 		<attribute key="slotType" value="necklace" />
 		<attribute key="charges" value="20" />
 		<attribute key="showcharges" value="1" />
@@ -30449,7 +30474,7 @@
 		<attribute key="absorbPercentMagic" value="10" />
 		<attribute key="showattributes" value="1" />
 		<attribute key="weight" value="220" />
-	</item>-->
+	</item>
 	<item id="23557" article="a" name="control unit">
 		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
@@ -30503,13 +30528,13 @@
 	<item id="23592" article="a" name="jammed sewer grate">
 		<attribute key="description" value="This grate won't budge." />
 	</item>
-	<!--<item id="23590" article="an" name="one hit wonder">
+	<item id="23590" article="an" name="one hit wonder">
 		<attribute key="defense" value="22" />
 		<attribute key="attack" value="49" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="9600" />
-	</item>-->
+	</item>
 	<item id="23662" name="juicy roots">
 		<attribute key="weight" value="200" />
 	</item>
@@ -30554,8 +30579,8 @@
 	</item>
 	<item id="23816" article="a" name="war backpack">
 		<attribute key="weight" value="1800" />
-		<attribute key="containerSize" value="20" />
-		<attribute key="slotType" value="backpack" />
+		<attribute key="writeable" value="1" />
+		<attribute key="maxTextLen" value="99" />
 		<attribute key="description" value="Carry all you need for battle in it. Sponsored by TibiaWars.com." />
 	</item>
 	<item id="24321" article="a" name="maxxen santa">

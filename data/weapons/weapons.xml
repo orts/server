@@ -197,6 +197,11 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23550" level="75" unproperly="1" action="removecount">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="23548" level="25" unproperly="1" />
 		<!-- Fire -->
 	<melee id="7744" />
 	<melee id="7745" level="50" unproperly="1" />
@@ -361,6 +366,12 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23551" level="75" unproperly="1" action="removecount">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="23547" level="55" unproperly="1" />
+	<melee id="23545" level="45" unproperly="1" />
 		<!-- Fire -->
 	<melee id="7749" level="20" unproperly="1" />
 	<melee id="7750" level="25" unproperly="1" />
@@ -515,6 +526,14 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23590" level="70" unproperly="1" />
+	<melee id="23549" level="75" unproperly="1" action="removecount">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="23544" level="60" unproperly="1" />
+	<melee id="23543" level="25" unproperly="1" />
+	<melee id="23542" level="55" unproperly="1" />
 		<!-- Fire -->
 	<melee id="7754" level="20" unproperly="1" />
 	<melee id="7755" level="35" unproperly="1" />

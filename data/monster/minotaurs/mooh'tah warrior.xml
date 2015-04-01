@@ -46,7 +46,7 @@
 	<loot>
 		<item id="2148" countmax="120" chance="100000"/>	<!-- gold coin -->
 		<item id="2152" countmax="3" chance="40000"/>		<!-- platinum coin -->
-		<!-- mooh'tah shell -->
+		<item id="23573" chance="15120"/>					<!-- mooh'tah shell -->
 		<item id="7589" chance="7000"/>						<!-- strong mana potion -->
 		<item id="7588" chance="6000"/>						<!-- strong health potion -->
 		<item id="5878" chance="5000"/>						<!-- minotaur leather -->
@@ -55,9 +55,9 @@
 		<item id="2150" chance="5000"/>						<!-- small amethyst -->
 		<item id="9970" chance="5000"/>						<!-- small topaz -->
 		<item id="12428" countmax="2" chance="4700"/>		<!-- minotaur horn -->
-		<!-- cowtana -->
+		<item id="23548" chance="1420"/>					<!-- cowtana -->
 		<item id="2207" chance="1100"/>						<!-- sword ring -->
-		<!-- mooh'tah plate -->
+		<item id="23537" chance="1000"/>					<!-- mooh'tah plate -->
 		<item id="2515" chance="1000"/>						<!-- guardian shield -->
 		<item id="2477" chance="710"/>						<!-- knight legs -->
 		<item id="5911" chance="650"/>						<!-- red piece of cloth -->
