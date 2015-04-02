@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	{ text = 'Where did I put my broom? Mother? }',
+	{ text = 'Where did I put my broom? Mother?' },
 	{ text = 'Mother?! Oh no, now I have to do this all over again' },
 	{ text = 'Mhmhmhmhm.' },
 	{ text = 'Lalala...' }
