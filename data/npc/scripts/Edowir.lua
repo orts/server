@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'I\'m just an old man, but I know a lot about Tibia.' }
+local voices = { {text = 'I\'m just an old man, but I know a lot about Tibia.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I gather wisdom and knowledge. I am also an astrologer."})

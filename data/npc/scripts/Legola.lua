@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Teaching paladin spells! Just come to me!' }
+local voices = { {text = 'Teaching paladin spells! Just come to me!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Sniper Gloves

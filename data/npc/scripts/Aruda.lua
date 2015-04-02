@@ -9,7 +9,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Hey there, up for a chat?' }
+local voices = { {text = 'Hey there, up for a chat?'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

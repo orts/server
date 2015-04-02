@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Feel the wind in your hair during one of my carpet rides!' }
+local voices = { {text = 'Feel the wind in your hair during one of my carpet rides!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Travel

@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Have you moved to a new home? I\'m the specialist for equipping it.' }
+local voices = { {text = 'Have you moved to a new home? I\'m the specialist for equipping it.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'furniture'}, StdModule.say, {npcHandler = npcHandler, text = "Well, as you can see, I sell furniture. Ask me for a {trade} if you're interested to see my wares."})

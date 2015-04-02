@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Better deposit your money in the bank where it\'s safe.' }
+local voices = { {text = 'Better deposit your money in the bank where it\'s safe.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

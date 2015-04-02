@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Passages to Kazordoon! Gotta try the beer there.' }
+local voices = { {text = 'Passages to Kazordoon! Gotta try the beer there.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Travel

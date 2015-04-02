@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'You\'ll sleep much better after a hunt once you have sold your loot and brought your money to our bank.' }
+local voices = { {text = 'You\'ll sleep much better after a hunt once you have sold your loot and brought your money to our bank.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

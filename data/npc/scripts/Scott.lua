@@ -7,6 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Hey there, adventurer! Need a little rest in my inn? Have some food!' }
+local voices = { {text = 'Hey there, adventurer! Need a little rest in my inn? Have some food!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 npcHandler:addModule(FocusModule:new())

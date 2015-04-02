@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'May enlightenment be your path.' }
+local voices = { {text = 'May enlightenment be your path.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

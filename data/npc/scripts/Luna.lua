@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Selling herbs, mushrooms and flowers, all picked under the light of the full moon!' }
+local voices = { {text = 'Selling herbs, mushrooms and flowers, all picked under the light of the full moon!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'offers'}, StdModule.say, {npcHandler = npcHandler, text = "I'm selling various herbs, mushrooms, and flowers. If you'd like to see my offers, ask me for a {trade}."})

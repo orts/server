@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Please, not so loud, not so loud. Some of us are trying to rest in peace here.' }
+local voices = { {text = 'Please, not so loud, not so loud. Some of us are trying to rest in peace here.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Twist of Fate

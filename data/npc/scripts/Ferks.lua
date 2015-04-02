@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Entrust us with your money and we will keep it safe in the bank.' }
+local voices = { {text = 'Entrust us with your money and we will keep it safe in the bank.'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

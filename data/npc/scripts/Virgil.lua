@@ -10,7 +10,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Glooth papers rising! Capital!' }
+local voices = { {text = 'Glooth papers rising! Capital!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

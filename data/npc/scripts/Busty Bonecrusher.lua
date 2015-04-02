@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Behave yourself as long as you are in Carlin, commoner!' }
+local voices = { {text = 'Behave yourself as long as you are in Carlin, commoner!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local condition = Condition(CONDITION_FIRE)

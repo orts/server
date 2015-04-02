@@ -12,7 +12,7 @@ function onCreatureSay(creature, type, msg)
 end
 function onThink()				npcHandler:onThink()					end
 
-local voices = { text = 'AHHHH THE PAIN OF AGESSS! THE PAIN!' }
+local voices = { {text = 'AHHHH THE PAIN OF AGESSS! THE PAIN!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)

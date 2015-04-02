@@ -7,7 +7,7 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
-local voices = { text = 'Any time\'s a good time to buy some furniture!' }
+local voices = { {text = 'Any time\'s a good time to buy some furniture!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Wooden Stake
