@@ -9,7 +9,7 @@
 			dark armor, 2489, 1500;
 			dark helmet, 2490, 1000;
 			ice rapier, 2396, 5000;
-			serpent sword, 2409, 6000 "/>
+			serpent sword, 2409, 6000 " />
 		<parameter key="shop_sellable" value="
 			ancient shield, 2535, 900;
 			dark armor, 2489, 400;
@@ -37,6 +37,6 @@
 			titan axe, 7413, 4000;
 			tower shield, 2528, 8000;
 			vampire shield, 2534, 15000;
-			warrior helmet, 2475, 5000 "/>
+			warrior helmet, 2475, 5000 " />
 	</parameters>
 </npc>

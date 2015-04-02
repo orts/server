@@ -3,14 +3,14 @@
 	<health now="100" max="100" />
 	<look type="132" head="97" body="79" legs="113" feet="114" addons="0" />
 <voices>
-<voice text="Potions, wands and runes for aspiring magicians." interval2="120" margin="1" yell="no"/>
+<voice text="Potions, wands and runes for aspiring magicians." interval2="120" margin="1" yell="no" />
 </voices>
 <parameters>
  <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="magic;" />
 		<parameter key="keyword_reply1" value="Okay, then just browse through all of my wares." />
-		<parameter key="message_greet" value="Be greeted |PLAYERNAME|, student of the arcane. If you're looking for potions, wands or runes, look at my wares."/>
-		<parameter key="message_farewell" value="Farewell, |PLAYERNAME|."/>
+		<parameter key="message_greet" value="Be greeted |PLAYERNAME|, student of the arcane. If you're looking for potions, wands or runes, look at my wares." />
+		<parameter key="message_farewell" value="Farewell, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Farewell, |PLAYERNAME|." />
 		<parameter key="message_sendtrade" value="Of course, just browse through my wares. Or do you want to look only at {potions}, {wands} or {runes}?" />
 		<parameter key="module_shop" value="1" />

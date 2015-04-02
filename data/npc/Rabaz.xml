@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Rabaz" script="Rabaz.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="130" head="39" body="38" legs="1" feet="1" addons="0"/>
+	<look type="130" head="39" body="38" legs="1" feet="1" addons="0" />
 	<voices>
-<voice text="Potions, runes, wands and rods, all here in the great Malunga's house." interval2="90" margin="1" yell="no"/>
+<voice text="Potions, runes, wands and rods, all here in the great Malunga's house." interval2="90" margin="1" yell="no" />
 </voices>
 <parameters>
 		<parameter key="keywords" value="magic;" />
 	<parameter key="module_shop" value="1" />
 		<parameter key="keyword_reply1" value="I'm selling spirit, health and mana potions, runes, wands, rods and spellbooks. If you'd like to see my offers, ask me for a {trade}." />
-		<parameter key="message_greet" value="Hi there and welcome to my little {magic} shop."/>
-		<parameter key="message_farewell" value="Yeah, bye."/>
+		<parameter key="message_greet" value="Hi there and welcome to my little {magic} shop." />
+		<parameter key="message_farewell" value="Yeah, bye." />
 		<parameter key="message_walkaway" value="However." />
 		<parameter key="message_sendtrade" value="Of course, just browse through my wares. Or do you want to look only at {potions}, {wands} or {runes}?" />
 		<parameter key="module_shop" value="1" />

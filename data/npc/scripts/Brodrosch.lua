@@ -1,23 +1,14 @@
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
-
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)         npcHandler:onCreatureAppear(cid)            end
-function onCreatureDisappear(cid)      npcHandler:onCreatureDisappear(cid)         end
-function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)    end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
-local lastSound = 0
-
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say('Passage to Cormaya! Unforgettable steamboat ride!', TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = { text = 'Passage to Cormaya! Unforgettable steamboat ride!' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function creatureSayCallback(cid, type, msg)
 

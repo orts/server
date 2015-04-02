@@ -5,16 +5,10 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say("By direct edict of the honorable Henricus, we are ordered to give passage for all recruits to Thais.", TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+function onThink()		npcHandler:onThink()		end
+
+local voices = { text = 'By direct edict of the honorable Henricus, we are ordered to give passage for all recruits to Thais.' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Travel
 local travelKeyword = keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Thais for |TRAVELCOST|?', cost = 210, discount = 'postman'})

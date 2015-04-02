@@ -5,27 +5,19 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'I am a MAN! Get me out you drunken fools!',
-	'GET ME OUT OF HERE!',
-	'Get me out! It was all part of the plan, you fools!',
-	'If I ever get out of here, I\'ll kill you all! All of you!',
-	'I am NOT Princess Lumelia, you fools!',
-	'Get a locksmith and free me or you will regret it, you foolish pirates!',
-	'I am not a princess, I am an actor!'
+	{ text = 'I am a MAN! Get me out you drunken fools!' },
+	{ text = 'GET ME OUT OF HERE!' },
+	{ text = 'Get me out! It was all part of the plan, you fools!' },
+	{ text = 'If I ever get out of here, I\'ll kill you all! All of you!' },
+	{ text = 'I am NOT Princess Lumelia, you fools!' },
+	{ text = 'Get a locksmith and free me or you will regret it, you foolish pirates!' },
+	{ text = 'I am not a princess, I am an actor!' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = "I am a great and famous actor! Not a princess, at all. I was only PRETENDING to be a princess. But try explaining that to those stupid pirates."})
 keywordHandler:addKeyword({'actor'}, StdModule.say, {npcHandler = npcHandler, text = "Stage acting was a waste of my immense talent. Not only am I a born leader, my talent is more profitable when it is used for conning people."})

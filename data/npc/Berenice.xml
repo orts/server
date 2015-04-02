@@ -3,12 +3,12 @@
 	<health now="100" max="100" />
 	<look type="140" head="5" body="87" legs="104" feet="106" addons="0" />
 <voices>
-<voice text="Need orichalcum pearls or an atlas? Get those here." interval2="100" margin="1" yell="no"/>
-<voice text="Hiring courageous explorers for a mission!" interval2="120" margin="1" yell="no"/>
+<voice text="Need orichalcum pearls or an atlas? Get those here." interval2="100" margin="1" yell="no" />
+<voice text="Hiring courageous explorers for a mission!" interval2="120" margin="1" yell="no" />
 </voices>
 <parameters>
-		<parameter key="message_greet" value="Greetings, what can I do for you? If you're interested in the {explorer society}, just ask me."/>
-		<parameter key="message_farewell" value="Good bye."/>
+		<parameter key="message_greet" value="Greetings, what can I do for you? If you're interested in the {explorer society}, just ask me." />
+		<parameter key="message_farewell" value="Good bye." />
 		<parameter key="message_walkaway" value="How rude!" />
 		<parameter key="message_sendtrade" value="Of course." />
 		<parameter key="module_shop" value="1" />

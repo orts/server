@@ -5,17 +5,10 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say('Behave yourself as long as you are in Carlin, commoner!', TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = { text = 'Behave yourself as long as you are in Carlin, commoner!' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 local condition = Condition(CONDITION_FIRE)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)

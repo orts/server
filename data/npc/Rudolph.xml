@@ -13,7 +13,7 @@
 			leather legs,2649,10;
 			leather boots,2643,2;
 			sandals,2642,2;
-			scarf,2661,15;"/>
+			scarf,2661,15;" />
 		<parameter key="shop_sellable" value="belted cape,8872,500;" />
 	</parameters>
 </npc>

@@ -3,10 +3,10 @@
 	<health now="100" max="100" />
 	<look type="65" />
 	<parameters>
-		<parameter key="message_greet" value="Welcome |PLAYERNAME|!"/>
-		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_greet" value="Welcome |PLAYERNAME|!" />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|." />
-		<parameter key="message_sendtrade" value="I'm currently interested in these materials."/>
+		<parameter key="message_sendtrade" value="I'm currently interested in these materials." />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
 			black hood,10562,190;
@@ -22,6 +22,6 @@
 			flask of embalming fluid,12422,30;
 			strange symbol,2174,200;
 			unholy bone,11233,480;
-			witch broom,10569,60;"/>
+			witch broom,10569,60;" />
 	</parameters>
 </npc>

@@ -4,7 +4,7 @@
 	<look type="136" head="79" body="77" legs="112" feet="116" addons="0" />
 
 	<voices>
-<voice text="Have a look at my beautiful flowers!" interval2="100" margin="1" yell="no"/>
+<voice text="Have a look at my beautiful flowers!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
 		<parameter key="message_greet" value="Welcome to Crunor's finest warehouse, |PLAYERNAME|." />

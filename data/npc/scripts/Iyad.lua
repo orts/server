@@ -5,21 +5,14 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
+
 local voices = {
-	'A... aargh. I wish I had some e... earmuffs to put over this useless t... turban.',
-	'Oh p.. please. P... lease let me fly us out of this c... cold.'
+	{ text = 'A... aargh. I wish I had some e... earmuffs to put over this useless t... turban.' },
+	{ text = 'Oh p.. please. P... lease let me fly us out of this c... cold.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Travel
 local function addTravelKeyword(keyword, text, cost, destination)

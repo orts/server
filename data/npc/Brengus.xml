@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="132" head="79" body="76" legs="76" feet="114" addons="0" />
 <voices>
-<voice text="Best weapons and armors in town!" interval2="100" margin="1" yell="no"/>
+<voice text="Best weapons and armors in town!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
-		<parameter key="message_greet" value="Be greeted, |PLAYERNAME|. If you want to buy or sell weapons and armors, ask me for a {trade}."/>
-		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_greet" value="Be greeted, |PLAYERNAME|. If you want to buy or sell weapons and armors, ask me for a {trade}." />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
 	arrow,2544,3;

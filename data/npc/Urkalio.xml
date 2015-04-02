@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="128" head="97" body="59" legs="120" feet="114" addons="0" />
 	<voices>
-		<voice text="Enjoy a good drink in the Hard Rock Tavern!." interval2="100" margin="1" yell="no"/>
+		<voice text="Enjoy a good drink in the Hard Rock Tavern!." interval2="100" margin="1" yell="no" />
 	</voices>
 	<parameters>
-		<parameter key="message_greet" value="Welcome to the pits of the Hard Rock Tavern, Trunkillo. Want a {drink} or some {food}?"/>
-		<parameter key="message_farewell" value="Have a good fight, |PLAYERNAME|."/>
+		<parameter key="message_greet" value="Welcome to the pits of the Hard Rock Tavern, Trunkillo. Want a {drink} or some {food}?" />
+		<parameter key="message_farewell" value="Have a good fight, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Have a good fight, |PLAYERNAME|." />
 		<parameter key="message_sendtrade" value="Have any food or drinks you like." />
 		<parameter key="shop_buyable" value="

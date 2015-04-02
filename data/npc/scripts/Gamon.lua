@@ -5,17 +5,10 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say('Any time\'s a good time to buy some furniture!', TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = { text = 'Any time\'s a good time to buy some furniture!' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 -- Wooden Stake
 local stakeKeyword = keywordHandler:addKeyword({'stake'}, StdModule.say, {npcHandler = npcHandler, text = 'Making a stake from a chair? Are you insane??! I won\'t waste my chairs on you for free! You will have to pay for it, but since I consider your plan a blasphemy, it will cost 5000 gold pieces. Okay?'},

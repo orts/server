@@ -3,14 +3,14 @@
 	<health now="100" max="100" />
 	<look type="134" head="116" body="57" legs="97" feet="59" addons="0" />
 <voices>
-<voice text="Support your local weapon dealer!" interval2="100" margin="1" yell="no"/>
+<voice text="Support your local weapon dealer!" interval2="100" margin="1" yell="no" />
 </voices>
 <parameters>
 <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="wares;" />
 		<parameter key="keyword_reply1" value="My offers are weapons, ammunition, armors, helmets, legs, and shields. If you'd like to see my offers, ask me for a {trade}." />
-   		<parameter key="message_greet" value="Hello |PLAYERNAME|. Have a look at my {wares}."/>
-		<parameter key="message_farewell" value="Bye |PLAYERNAME|."/>
+   		<parameter key="message_greet" value="Hello |PLAYERNAME|. Have a look at my {wares}." />
+		<parameter key="message_farewell" value="Bye |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="However." />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="

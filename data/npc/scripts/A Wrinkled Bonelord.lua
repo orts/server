@@ -5,22 +5,14 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'485611800364197.',
-	'78572611857643646724.'
+	{ text = '485611800364197.' },
+	{ text = '78572611857643646724.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 25  then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'death'}, StdModule.say, {npcHandler = npcHandler, text = "Yes, yes, I will kill you soon enough, now let me continue my investigation on you."})
 keywordHandler:addKeyword({'god'}, StdModule.say, {npcHandler = npcHandler, text = "They will mourn the day they abandoned us."})

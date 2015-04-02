@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Rock In A Hard Place" script="Rock In A Hard Place.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
-	<look typeex="14898"/>
+	<look typeex="14898" />
 	<parameters>
 		<parameter key="module_shop" value="1" />
-		<parameter key="message_greet" value="Everyone on this island has gone crazy! Except for me and you, it seems. Let's {trade} like normal people would."/>
+		<parameter key="message_greet" value="Everyone on this island has gone crazy! Except for me and you, it seems. Let's {trade} like normal people would." />
    	 	<parameter key="message_farewell" value="Promise to come back sometime, will ya?" />
    		<parameter key="message_walkaway" value="Hey! Don't leave me alone with all these lunatics!" />
 		<parameter key="shop_sellable" value="Vial,2006,5;
@@ -125,7 +125,7 @@ Spidris Mandible,15485,450;
 Spitter Nose,15481,340;
 Swarmer Antenna,15479,130;
 Waspoid Claw,15483,320;
-Waspoid Wing,15484,190"/>
+Waspoid Wing,15484,190" />
 		<parameter key="shop_buyable" value="
 stone shower rune,2288,37;
 thunderstorm rune,2315,37;

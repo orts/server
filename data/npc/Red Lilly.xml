@@ -3,14 +3,14 @@
 	<health now="100" max="100" />
 	<look type="136" head="96" body="57" legs="28" feet="47" addons="0" />
 	<voices>
-		<voice text="Come visit my little pawnshop! General equipment and such. Don't miss it!" interval2="120" margin="1" yell="no"/>
+		<voice text="Come visit my little pawnshop! General equipment and such. Don't miss it!" interval2="120" margin="1" yell="no" />
 	</voices>
 	<parameters>
 		<parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="equipment;" />
 		<parameter key="keyword_reply1" value="I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff. Just ask me for a {trade}." />
-		<parameter key="message_greet" value="Hello sweetie. If you need general {equipment}, stuff like that, let me know."/>
-		<parameter key="message_farewell" value="Good bye sweetie."/>
+		<parameter key="message_greet" value="Hello sweetie. If you need general {equipment}, stuff like that, let me know." />
+		<parameter key="message_farewell" value="Good bye sweetie." />
 		<parameter key="message_walkaway" value="Good bye sweetie." />
 		<parameter key="message_sendtrade" value="Of course, just browse through my wares. Remember that if you buy vials of oil, there's a deposit of 5 gold on the empty one." />
 		<parameter key="module_shop" value="1" />

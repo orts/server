@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="140" head="77" body="82" legs="71" feet="114" addons="0" />
 	<voices>
-<voice text="I have gems and beautiful jewellery for you!" interval2="100" margin="1" yell="no"/>
+<voice text="I have gems and beautiful jewellery for you!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
 		<parameter key="module_shop" value="1" />

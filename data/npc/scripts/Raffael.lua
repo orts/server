@@ -8,27 +8,20 @@ local transfer = {}
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
+
 local voices = {
-	"Get your shovels, ropes and torches here!",
-	"Do you need health potions, young knight? All the potions you could wish for are here!",
-	"Aaaaaall basic equipment for your adventure at Raffael's!",
-	"If you don't want to spend your money, I can also deposit it on your bank account for you. Or even better, withdraw it so you can shop!",
-	"Lost in the dark and out of mana to cast a light spell? Buy a torch now!",
-	"Cheapest offers on the whole island! - Well, the only offers!",
-	"Special offers for premium customers!",
-	"Don't leave for mainland without stopping by!"
+	{ text = "Get your shovels, ropes and torches here!" },
+	{ text = "Do you need health potions, young knight? All the potions you could wish for are here!" },
+	{ text = "Aaaaaall basic equipment for your adventure at Raffael's!" },
+	{ text = "If you don't want to spend your money, I can also deposit it on your bank account for you. Or even better, withdraw it so you can shop!" },
+	{ text = "Lost in the dark and out of mana to cast a light spell? Buy a torch now!" },
+	{ text = "Cheapest offers on the whole island! - Well, the only offers!" },
+	{ text = "Special offers for premium customers!" },
+	{ text = "Don't leave for mainland without stopping by!" }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	count[cid], transfer[cid] = nil, nil

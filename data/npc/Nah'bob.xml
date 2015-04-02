@@ -9,7 +9,7 @@
 			noble armor, 2486, 8000;
 			obsidian lance, 2425, 3000;
 			spike sword, 2383, 8000;
-			war hammer, 2391, 10000 "/>
+			war hammer, 2391, 10000 " />
 		<parameter key="shop_sellable" value="
 			angelic axe, 7436, 5000;
 			blue robe, 2656, 10000;
@@ -45,6 +45,6 @@
 			shadow sceptre, 7451, 10000;
 			spike sword, 2383, 1000;
 			thaian sword, 7391, 16000;
-			war hammer, 2391, 1200 "/>
+			war hammer, 2391, 1200 " />
 	</parameters>
 </npc>

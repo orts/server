@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="128" head="58" body="61" legs="25" feet="57" addons="0" />
 <voices>
-<voice text="Bows, crossbows and ammunition for sale." interval2="100" margin="1" yell="no"/>
+<voice text="Bows, crossbows and ammunition for sale." interval2="100" margin="1" yell="no" />
 </voices>
 <parameters>
 		<parameter key="message_greet" value="Welcome, |PLAYERNAME|! I trade with distance weapons and ammunition. If you are interested, just ask me for a trade." />

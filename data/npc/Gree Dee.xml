@@ -3,12 +3,12 @@
 	<health now="100" max="100" />
 	<look type="129" head="97" body="77" legs="87" feet="115" addons="0" />
 <voices>
-<voice text="Come and buy at a cheap rate!" interval2="100" margin="1" yell="no"/>
-<voice text="Feel FREE to buy my ITEMS!" interval2="120" margin="1" yell="yes"/>
+<voice text="Come and buy at a cheap rate!" interval2="100" margin="1" yell="no" />
+<voice text="Feel FREE to buy my ITEMS!" interval2="120" margin="1" yell="yes" />
 </voices>
 <parameters>
 		<parameter key="module_shop" value="1" />
-		 <parameter key="message_farewell" value="You really should have bought some extra stuff, just in case."/>
+		 <parameter key="message_farewell" value="You really should have bought some extra stuff, just in case." />
 		 <parameter key="message_walkaway" value="You really should have bought some extra stuff, just in case." />
 		<parameter key="message_sendtrade" value="You will not believe how cheap my items are." />
 		<parameter key="message_greet" value="Be greeted esteemed customer with a full purse!" />

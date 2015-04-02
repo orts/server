@@ -7,17 +7,10 @@ local Price = {}
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25  then
-			Npc():say("Hey there, up for a chat?", TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = { text = 'Hey there, up for a chat?' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	if Player(cid):getSex() == PLAYERSEX_FEMALE then

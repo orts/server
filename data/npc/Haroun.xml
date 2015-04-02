@@ -14,7 +14,7 @@
 			garlic necklace, 2199, 100;
 			elven amulet, 2198, 500;
 			stone skin amulet, 2197, 5000;
-			magic light wand, 2162, 120 "/>
+			magic light wand, 2162, 120 " />
 		<parameter key="shop_sellable" value="
 			axe ring, 2208, 100;
 			club ring, 2209, 100;
@@ -38,6 +38,6 @@
 			magic light wand, 2162, 35;
 			life crystal, 4851, 50;
 			mind stone, 2178, 100;
-			orb, 2176, 750 "/>
+			orb, 2176, 750 " />
 	</parameters>
 </npc>

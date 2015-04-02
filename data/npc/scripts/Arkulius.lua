@@ -5,26 +5,18 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	"...the arithmetical paradox has the same value in a metaphysical way, then...",
-	"Oh my! Alverus!! Did you really...?!?! I have to recalculate it to make sure that I made no mistake.",
-	"<mumbles>",
-	"...the minimum square deviation could cause a dislocation, in a matter of fact...",
-	"...it could be possible to bring the sphere to a destination where...",
-	"Yes, that's it! The elementary particle are corresponding to the... the ... UNBELIEVEABLE!!!"
+	{ text = "...the arithmetical paradox has the same value in a metaphysical way, then..." },
+	{ text = "Oh my! Alverus!! Did you really...?!?! I have to recalculate it to make sure that I made no mistake." },
+	{ text = "<mumbles>" },
+	{ text = "...the minimum square deviation could cause a dislocation, in a matter of fact..." },
+	{ text = "...it could be possible to bring the sphere to a destination where..." },
+	{ text = "Yes, that's it! The elementary particle are corresponding to the... the ... UNBELIEVEABLE!!!" }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local greetMsg = {
 	"...if the expected constant is higher than... Hmmm, who are you?? What do you want?",

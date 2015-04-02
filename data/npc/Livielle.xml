@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="138" head="114" body="94" legs="132" feet="132" addons="0" />
 <voices>
-<voice text="Ah, salut! Come 'ere and 'ave some of my delicious fruits!" interval2="100" margin="1" yell="no"/>
+<voice text="Ah, salut! Come 'ere and 'ave some of my delicious fruits!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
 		<parameter key="message_greet" value="Ah, 'ello, |PLAYERNAME|! I can see you're longing for my delicious {fruits}, ch?ri." />

@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="128" head="0" body="112" legs="107" feet="113" addons="0" />
 	<parameters>
-		<parameter key="module_shop" value="1"/>
+		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
 			black pearl,2144,280;
 			blue crystal shard,18413,1500;

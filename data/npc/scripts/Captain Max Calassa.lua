@@ -5,16 +5,10 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say("Whoah. That was a large shadow passing by.", TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+function onThink()		npcHandler:onThink()		end
+
+local voices = { text = 'Whoah. That was a large shadow passing by.' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 local travelNode = keywordHandler:addKeyword({'liberty bay'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want go back to Liberty Bay?'})
 	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 0, destination = Position(32298, 32895, 6) })

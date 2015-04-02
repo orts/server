@@ -3,14 +3,14 @@
 	<health now="100" max="100" />
 	<look type="160" head="115" body="127" legs="123" feet="76" />
 <voices>
-<voice text="Beds, chairs, tables, statues and everything you could imagine for decorating your home!" interval2="100" margin="1" yell="no"/>
+<voice text="Beds, chairs, tables, statues and everything you could imagine for decorating your home!" interval2="100" margin="1" yell="no" />
 </voices>
 <parameters>
 <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="furniture;" />
 		<parameter key="keyword_reply1" value="I have {beds}, {chairs}, {containers}, {decoration}, {flowers}, {instruments}, {pillows}, {pottery}, {statues}, {tapestries} and {tables}. Which of those would you like to see?" />
-		<parameter key="message_greet" value="Hiho |PLAYERNAME|! Welcome to Kazordoon furniture store."/>
-		<parameter key="message_farewell" value="Guut bye."/>
+		<parameter key="message_greet" value="Hiho |PLAYERNAME|! Welcome to Kazordoon furniture store." />
+		<parameter key="message_farewell" value="Guut bye." />
 		<parameter key="message_walkaway" value="Guut bye." />
 		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
 		<parameter key="module_shop" value="1" />

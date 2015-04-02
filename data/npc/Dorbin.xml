@@ -3,14 +3,14 @@
 	<health now="100" max="100" />
 	<look type="128" head="95" body="61" legs="39" feet="115" addons="0" />
 <voices>
-<voice text="Hey, need some furniture for your house? Come to my shop!" interval2="100" margin="1" yell="no"/>
+<voice text="Hey, need some furniture for your house? Come to my shop!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
 		<parameter key="module_shop" value="1" />
 <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="furniture;" />
 		<parameter key="keyword_reply1" value="I have {beds}, {chairs}, {containers}, {decoration}, {flowers}, {instruments}, {pillows}, {pottery}, {statues}, {tapestries} and {tables}. Which of those would you like to see?" />
-		<parameter key="message_farewell" value="Good bye."/>
+		<parameter key="message_farewell" value="Good bye." />
 		<parameter key="message_walkaway" value="Good bye." />
 		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
 		<parameter key="message_greet" value="Be greeted, visitor. If you're interested in buying furniture, ask me for a trade." />

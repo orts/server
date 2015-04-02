@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="128" head="39" body="58" legs="58" feet="115" addons="0" />
 	<voices>
-		<voice text="Come to my tavern if you're hungry or thirsty, traveller." interval2="120" margin="1" yell="no"/>
+		<voice text="Come to my tavern if you're hungry or thirsty, traveller." interval2="120" margin="1" yell="no" />
 	</voices>
 	<parameters>
-		<parameter key="message_greet" value="Hi there and welcome to my tavern. Have a drink."/>
-		<parameter key="message_farewell" value="Good bye."/>
+		<parameter key="message_greet" value="Hi there and welcome to my tavern. Have a drink." />
+		<parameter key="message_farewell" value="Good bye." />
 		<parameter key="message_walkaway" value="Good bye." />
 		<parameter key="message_sendtrade" value="Take a good look, but not too deep into the glasses." />
 		<parameter key="module_shop" value="1" />

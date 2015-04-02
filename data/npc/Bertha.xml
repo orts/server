@@ -5,8 +5,8 @@
 <parameters>
 <parameter key="module_keywords" value="1" />
 		<parameter key="keywords" value="goods;" />
-		<parameter key="keyword_reply1" value="My inventory of general goods and paperware is large, ask me for a {trade} to take a look."/>
-		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="keyword_reply1" value="My inventory of general goods and paperware is large, ask me for a {trade} to take a look." />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|." />
 		<parameter key="message_greet" value="Oh, please come in, |PLAYERNAME|. What sort of {goods} do you need?" />
 		<parameter key="module_shop" value="1" />

@@ -3,8 +3,8 @@
 	<health now="100" max="100" />
 	<look type="99" />
 	<voices>
-		<voice text="My old bones feel a storm approaching. chuckles" interval2="90" margin="1" yell="no"/>
-		<voice text="chuckles!" interval2="90" margin="1" yell="no"/>
+		<voice text="My old bones feel a storm approaching. chuckles" interval2="90" margin="1" yell="no" />
+		<voice text="chuckles!" interval2="90" margin="1" yell="no" />
 	</voices>
 	<parameters>
 		<parameter key="module_keywords" value="1" />

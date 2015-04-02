@@ -8,21 +8,14 @@ local transfer = {}
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
+
 local voices = {
-	'Need to send some items to a friend? Buy a parcel here! And don\'t forget to write farewell letters.',
-	'If you want your banking business to be taken care of before you leave, I\'m your dwarf.'
+	{ text = 'Need to send some items to a friend? Buy a parcel here! And don\'t forget to write farewell letters.' },
+	{ text = 'If you want your banking business to be taken care of before you leave, I\'m your dwarf.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	count[cid], transfer[cid] = nil, nil

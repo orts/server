@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="160" head="115" body="100" legs="105" feet="76" addons="0" />
 	<voices>
-		<voice text="The right tools are the secret of a green thumb." interval2="100" margin="1" yell="no"/>
+		<voice text="The right tools are the secret of a green thumb." interval2="100" margin="1" yell="no" />
 	</voices>
 	<parameters>
 		<parameter key="message_greet" value="Greetings, |PLAYERNAME|, traveller from afar... if you need gardening tools, just ask me for a {trade}." />

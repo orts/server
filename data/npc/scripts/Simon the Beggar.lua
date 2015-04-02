@@ -5,23 +5,15 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Alms! Alms for the poor!',
-	'Sir, Ma\'am, have a gold coin to spare?',
-	'I need help! Please help me!'
+	{ text = 'Alms! Alms for the poor!' },
+	{ text = 'Sir, Ma\'am, have a gold coin to spare?' },
+	{ text = 'I need help! Please help me!' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 function BeggarFirst(cid, message, keywords, parameters, node)
 	if not npcHandler:isFocused(cid) then

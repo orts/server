@@ -5,22 +5,14 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Can I finally have some peace...?',
-	'Please leave me alone in my mourning.'
+	{ text = 'Can I finally have some peace...?' },
+	{ text = 'Please leave me alone in my mourning.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 25 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 keywordHandler:addKeyword({'mourning'}, StdModule.say, {npcHandler = npcHandler, text = "All is lost. With {Winfred} dead, my love has died and I'm only an empty shell without hope or purpose."})
 keywordHandler:addKeyword({'port hope'}, StdModule.say, {npcHandler = npcHandler, text = "We put all our hope in this far away colony. Sadly, we never made it there and I will never know what our life would have been like in Port Hope."})

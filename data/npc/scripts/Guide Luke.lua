@@ -5,24 +5,16 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Free escort to the depot for newcomers!',
-	'Hello, is this your first visit to Thais? I can show you around a little.',
-	'Need some help finding your way through Thais? Let me assist you.',
-	'Talk to me if you need directions.'
+	{ text = 'Free escort to the depot for newcomers!' },
+	{ text = 'Hello, is this your first visit to Thais? I can show you around a little.' },
+	{ text = 'Need some help finding your way through Thais? Let me assist you.' },
+	{ text = 'Talk to me if you need directions.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local configMarks = {
 	{mark = "shops", position = Position(32367, 32197, 7), markId = MAPMARK_BAG, description = "Shops"},
@@ -41,7 +33,6 @@ local function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, "yes") and npcHandler.topic[cid] == 1 then
 		npcHandler:say("Here you go.", player)
 		local mark
-
 		for i = 1, #configMarks do
 			mark = configMarks[i]
 			player:addMapMark(mark.position, mark.markId, mark.description)

@@ -3,7 +3,7 @@
 	<health now="100" max="100" />
 	<look type="140" head="79" body="37" legs="71" feet="70" addons="0" />
 		<voices>
-<voice text="mumbling Smelled like fish anyway." interval2="100" margin="1" yell="no"/>
+<voice text="mumbling Smelled like fish anyway." interval2="100" margin="1" yell="no" />
 </voices>
 <parameters>
 		<parameter key="module_shop" value="1" />

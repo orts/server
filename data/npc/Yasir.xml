@@ -1,6 +1,6 @@
 <npc name="Yasir" script="Yasir.lua" walkinterval="2000" floorchange="0">
-  	<health now="150" max="150"/>
-	<look type="146" head="85" body="7" legs="12" feet="19" addons="2"/>
+  	<health now="150" max="150" />
+	<look type="146" head="85" body="7" legs="12" feet="19" addons="2" />
 	<parameters>
 		<parameter key="message_greet" value="Yasu me halaka. greets you friendly" />
 		<parameter key="module_shop" value="1" />

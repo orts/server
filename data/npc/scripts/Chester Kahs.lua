@@ -5,25 +5,17 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Too many possibilities to become a servant of darkness to trust ANYONE!',
-	'Don\'t tell me I didn\'t warn you.',
-	'It\'s all a big conspiracy, mark my words.',
-	'Not everything that walks our streets is human ... or even living.',
-	'We are surrounded by myths, living and dead.'
+	{ text = 'Too many possibilities to become a servant of darkness to trust ANYONE!' },
+	{ text = 'Don\'t tell me I didn\'t warn you.' },
+	{ text = 'It\'s all a big conspiracy, mark my words.' },
+	{ text = 'Not everything that walks our streets is human ... or even living.' },
+	{ text = 'We are surrounded by myths, living and dead.' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local fire = Condition(CONDITION_FIRE)
 fire:setParameter(CONDITION_PARAM_DELAYED, true)

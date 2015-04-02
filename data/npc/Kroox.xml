@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="160" head="0" body="120" legs="82" feet="95" />
 <voices>
-<voice text="By the sons of fire! Best weapons in town!" interval2="100" margin="1" yell="no"/>
+<voice text="By the sons of fire! Best weapons in town!" interval2="100" margin="1" yell="no" />
 </voices>
 	<parameters>
-		<parameter key="message_greet" value="Welcome to Kroox Quality Armor, |PLAYERNAME|! Wanna take a look, ask me for a {trade}."/>
-		<parameter key="message_farewell" value="Good bye. Come back soon."/>
+		<parameter key="message_greet" value="Welcome to Kroox Quality Armor, |PLAYERNAME|! Wanna take a look, ask me for a {trade}." />
+		<parameter key="message_farewell" value="Good bye. Come back soon." />
 		<parameter key="message_walkaway" value="Good bye. Come back soon." />
 		<parameter key="message_sendtrade" value="You look, you like, you buy!" />
 		<parameter key="module_shop" value="1" />

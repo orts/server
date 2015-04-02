@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Orockle" script="Orockle.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
-	<look typeex="14892"/>
+	<look typeex="14892" />
 	<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="

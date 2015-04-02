@@ -16,8 +16,8 @@
 	<talkaction words="/summon" separator=" " script="place_summon.lua" />
 
 	<!-- Achievements Commands -->
-	<talkaction words="/addach" separator=" " script="achievements.lua"/>
-	<talkaction words="/removeach" separator=" " script="achievements.lua"/>
+	<talkaction words="/addach" separator=" " script="achievements.lua" />
+	<talkaction words="/removeach" separator=" " script="achievements.lua" />
 
 	<!-- Gamemasters -->
 	<talkaction words="/save" script="save.lua" />
@@ -38,26 +38,26 @@
 	<talkaction words="/kick" separator=" " script="kick.lua" />
 	<talkaction words="/B" separator=" " script="broadcast.lua" />
 	<talkaction words="/looktype" separator=" " script="looktype.lua" />
-	<talkaction words="/mounts" separator=" " script="allmounts.lua"/>
-	<talkaction words="/addons" separator=" " script="alladdons.lua"/>
+	<talkaction words="/mounts" separator=" " script="allmounts.lua" />
+	<talkaction words="/addons" separator=" " script="alladdons.lua" />
 
 	<!-- Senior Tutors -->
 	<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
 	<talkaction words="/removetutor" separator=" " script="remove_tutor.lua" />
 
 	<!-- player talkactions -->
-	<talkaction words="!buypremium" script="buyprem.lua"/>
-	<talkaction words="!buyhouse" script="buyhouse.lua"/>
-	<talkaction words="!leavehouse" script="leavehouse.lua"/>
-	<talkaction words="!changesex" script="changesex.lua"/>
-	<talkaction words="!uptime" script="uptime.lua"/>
-	<talkaction words="!deathlist" script="deathlist.lua"/>
-	<talkaction words="!kills" script="kills.lua"/>
-	<talkaction words="!online" script="online.lua"/>
-	<talkaction words="!serverinfo" script="serverinfo.lua"/>
-	<talkaction words="!addon" script="addon.lua"/>
+	<talkaction words="!buypremium" script="buyprem.lua" />
+	<talkaction words="!buyhouse" script="buyhouse.lua" />
+	<talkaction words="!leavehouse" script="leavehouse.lua" />
+	<talkaction words="!changesex" script="changesex.lua" />
+	<talkaction words="!uptime" script="uptime.lua" />
+	<talkaction words="!deathlist" script="deathlist.lua" />
+	<talkaction words="!kills" script="kills.lua" />
+	<talkaction words="!online" script="online.lua" />
+	<talkaction words="!serverinfo" script="serverinfo.lua" />
+	<talkaction words="!addon" script="addon.lua" />
 
 	<!-- test talkactions -->
-	<talkaction words="!z" separator=" " script="magiceffect.lua"/>
-	<talkaction words="!x" separator=" " script="animationeffect.lua"/>
+	<talkaction words="!z" separator=" " script="magiceffect.lua" />
+	<talkaction words="!x" separator=" " script="animationeffect.lua" />
 </talkactions>

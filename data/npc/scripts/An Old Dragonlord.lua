@@ -10,17 +10,10 @@ function onCreatureSay(creature, type, msg)
 	end
 	npcHandler:onCreatureSay(creature, type, msg)
 end
+function onThink()				npcHandler:onThink()					end
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say("AHHHH THE PAIN OF AGESSS! THE PAIN!", TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+local voices = { text = 'AHHHH THE PAIN OF AGESSS! THE PAIN!' }
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	local player = Player(cid)

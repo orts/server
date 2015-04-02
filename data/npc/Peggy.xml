@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="136" head="38" body="36" legs="48" feet="38" addons="0" />
 <voices>
-<voice text="Heya. Furniture on sale! Don't miss the opportunity." interval2="120" margin="1" yell="no"/>
+<voice text="Heya. Furniture on sale! Don't miss the opportunity." interval2="120" margin="1" yell="no" />
 </voices>
 	<parameters>
-		<parameter key="message_greet" value="Hi there, |PLAYERNAME|."/>
-		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+		<parameter key="message_greet" value="Hi there, |PLAYERNAME|." />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|." />
 		<parameter key="message_walkaway" value="Rude as a Venorean." />
 		<parameter key="message_sendtrade" value="Have a look. Most furniture comes in handy kits. Just use them in your house to assemble the furniture. Do you want to see only a certain {type} of furniture?" />
 		<parameter key="module_shop" value="1" />

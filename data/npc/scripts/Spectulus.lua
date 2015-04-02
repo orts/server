@@ -5,24 +5,16 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()		npcHandler:onThink()		end
 
 local voices = {
-	'Precisely.',
-	'So my initial calculations had been correct!',
-	'Looks like I have to find another way then.',
-	'Hm, I need to recapitulate my equipment...'
+	{ text = 'Precisely.' },
+	{ text = 'So my initial calculations had been correct!' },
+	{ text = 'Looks like I have to find another way then.' },
+	{ text = 'Hm, I need to recapitulate my equipment...' }
 }
 
-local lastSound = 0
-function onThink()
-	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
-		if math.random(100) < 20 then
-			Npc():say(voices[math.random(#voices)], TALKTYPE_SAY)
-		end
-	end
-	npcHandler:onThink()
-end
+npcHandler:addModule(VoiceModule:new(voices))
 
 local function releasePlayer(cid)
 	if not Player(cid) then

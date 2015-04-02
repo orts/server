@@ -3,11 +3,11 @@
 	<health now="100" max="100" />
 	<look type="69" />
 <voices>
-<voice text="Hiho adventurers, get your runes, potions, wands and rods here!" interval2="100" margin="1" yell="no"/>
+<voice text="Hiho adventurers, get your runes, potions, wands and rods here!" interval2="100" margin="1" yell="no" />
 </voices>
 <parameters>
-		<parameter key="message_greet" value="Welcome to the magic store, |PLAYERNAME|! Ask me for a {trade} if you need something."/>
-		<parameter key="message_farewell" value="Good bye. Come back soon."/>
+		<parameter key="message_greet" value="Welcome to the magic store, |PLAYERNAME|! Ask me for a {trade} if you need something." />
+		<parameter key="message_farewell" value="Good bye. Come back soon." />
 		<parameter key="message_walkaway" value="Good bye. Come back soon." />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="avalanche rune,2274,45;
