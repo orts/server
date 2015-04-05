@@ -101,14 +101,15 @@ if Modules == nil then
 
 		local player = Player(cid)
 		if player:isPremium() then
-			if player:isPromoted() then
+			if player:getStorageValue(Storage.Promotion) == 1 then
 				npcHandler:say("You are already promoted!", cid)
 			elseif player:getLevel() < parameters.level then
 				npcHandler:say("I am sorry, but I can only promote you once you have reached level " .. parameters.level .. ".", cid)
 			elseif not player:removeMoney(parameters.cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			else
-				player:setVocation(Vocation(player:getVocation():getPromotion():getId()))
+				player:setStorageValue(Storage.Promotion, 1)
+				player:setVocation(player:getVocation():getPromotion())
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say(parameters.text or "Congratulations! You are now promoted.", cid)
 			end
@@ -556,7 +557,7 @@ if Modules == nil then
 
 		local player = Player(cid)
 		if not isPlayerPremiumCallback or isPlayerPremiumCallback(player) or shop_premium[cid] ~= true then
-			if player:removeMoney(cost) ~= TRUE then
+			if not player:removeMoney(cost) then
 				npcHandler:say("You do not have enough money!", cid)
 			elseif player:isPzLocked() then
 				npcHandler:say("Get out of there with this blood.", cid)
@@ -1170,7 +1171,7 @@ if Modules == nil then
 
 		if(shop_eventtype[cid] == SHOPMODULE_SELL_ITEM) then
 			local ret = doPlayerSellItem(cid, shop_itemid[cid], shop_amount[cid], shop_cost[cid] * shop_amount[cid])
-			if(ret == LUA_NO_ERROR) then
+			if ret then
 				local msg = module.npcHandler:getMessage(MESSAGE_ONSELL)
 				msg = module.npcHandler:parseMessage(msg, parseInfo)
 				module.npcHandler:say(msg, cid)
@@ -1218,7 +1219,7 @@ if Modules == nil then
 			end
 		elseif(shop_eventtype[cid] == SHOPMODULE_BUY_ITEM_CONTAINER) then
 			local ret = doPlayerBuyItemContainer(cid, shop_container[cid], shop_itemid[cid], shop_amount[cid], shop_cost[cid] * shop_amount[cid], shop_subtype[cid])
-			if(ret == LUA_NO_ERROR) then
+			if ret then
 				local msg = module.npcHandler:getMessage(MESSAGE_ONBUY)
 				msg = module.npcHandler:parseMessage(msg, parseInfo)
 				module.npcHandler:say(msg, cid)

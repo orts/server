@@ -15,8 +15,8 @@ xCombat:setCondition(condition)
 
 function onUseWeapon(cid, var)
 	local ret = combat:execute(cid, var)
-	if ret == LUA_ERROR then
-		return LUA_ERROR
+	if not ret then
+		return false
 	end
 
 	local target = var:getNumber()

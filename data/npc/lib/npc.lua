@@ -80,7 +80,7 @@ end
 function doPlayerTakeItem(cid, itemid, count)
 	local player = Player(cid)
 	if player:getItemCount(itemid) < count then
-		return LUA_ERROR
+		return false
 	end
 
 	while count > 0 do
@@ -92,34 +92,34 @@ function doPlayerTakeItem(cid, itemid, count)
 		end
 
 		local ret = player:removeItem(itemid, tempcount)
-		if ret ~= LUA_ERROR then
+		if ret then
 			count = count - tempcount
 		else
-			return LUA_ERROR
+			return false
 		end
 	end
 
 	if count ~= 0 then
-		return LUA_ERROR
+		return false
 	end
-	return LUA_NO_ERROR
+	return true
 end
 
 function doPlayerSellItem(cid, itemid, count, cost)
 	local player = Player(cid)
-	if doPlayerTakeItem(cid, itemid, count) == LUA_NO_ERROR then
+	if doPlayerTakeItem(cid, itemid, count) then
 		if not player:addMoney(cost) then
 			error('Could not add money to ' .. player:getName() .. '(' .. cost .. 'gp)')
 		end
-		return LUA_NO_ERROR
+		return true
 	end
-	return LUA_ERROR
+	return false
 end
 
 function doPlayerBuyItemContainer(cid, containerid, itemid, count, cost, charges)
 	local player = Player(cid)
 	if not player:removeMoney(cost) then
-		return LUA_ERROR
+		return false
 	end
 
 	for i = 1, count do
@@ -129,10 +129,10 @@ function doPlayerBuyItemContainer(cid, containerid, itemid, count, cost, charges
 		end
 
 		if player:addItemEx(container, true) ~= RETURNVALUE_NOERROR then
-			return LUA_ERROR
+			return false
 		end
 	end
-	return LUA_NO_ERROR
+	return true
 end
 
 function getCount(string)

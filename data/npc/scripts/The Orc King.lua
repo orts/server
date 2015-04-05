@@ -33,7 +33,7 @@ local function creatureSayCallback(cid, type, msg)
 	-- Mission 3 - Orc Fortress
 	if msgcontains(msg, 'lamp') then
 		if efreet == 1 or marid == 1 then
-			if player:getStorageValue(Storage.DjinnWar.RecievedLamp) ~= 1 then
+			if player:getStorageValue(Storage.DjinnWar.ReceivedLamp) ~= 1 then
 				npcHandler:say({
 					'I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ...',
 					'Who do you want to trap in this cursed lamp?'
@@ -60,7 +60,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:setStorageValue(Storage.DjinnWar.MaridFaction.DoorToLamp, 1)
 			end
 
-			player:setStorageValue(Storage.DjinnWar.RecievedLamp, 1)
+			player:setStorageValue(Storage.DjinnWar.ReceivedLamp, 1)
 			player:addItem(2344, 1)
 			npcHandler:say('I was waiting for this day! Take the lamp and let Malor feel my wrath!', cid)
 		else
@@ -111,7 +111,7 @@ keywordHandler:addKeyword({'third'}, StdModule.say, {npcHandler = npcHandler, te
 keywordHandler:addKeyword({'deathwish'}, StdModule.say, {npcHandler = npcHandler, text = 'His ancient fortress on Darama was deserted as the evil Djinn fled this world after his imprisonment. Now the time has come for the evil Djinns to return to their master although this will certainly awaken the {good Djinn} too.'})
 keywordHandler:addKeyword({'good djinn'}, StdModule.say, {npcHandler = npcHandler, text = 'I will not share anything more about that topic with you {paleskins}.'})
 keywordHandler:addKeyword({'paleskins'}, StdModule.say, {npcHandler = npcHandler, text = 'You are as ugly as maggots, although not quite as as tasty.'})
-keywordHandler:addKeyword({'malor'}, StdModule.say, {npcHandler = npcHandler, text = 'This cursed djinn king! I set him free from an enchanted lamp, and he cheated me!'}, function(player) return player:getStorageValue(Storage.DjinnWar.RecievedLamp) == 1 end)
+keywordHandler:addKeyword({'malor'}, StdModule.say, {npcHandler = npcHandler, text = 'This cursed djinn king! I set him free from an enchanted lamp, and he cheated me!'}, function(player) return player:getStorageValue(Storage.DjinnWar.ReceivedLamp) == 1 end)
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

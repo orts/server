@@ -163,9 +163,7 @@ function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
 	local tile = toPosition:getTile()
 	local ground = tile:getGround()
 	if ground and isInArray(ropeSpots, ground.itemid) or tile:getItemById(14435) then
-		toPosition.y = toPosition.y + 1
-		toPosition.z = toPosition.z - 1
-		player:teleportTo(toPosition)
+		player:teleportTo(toPosition:moveUpstairs())
 		if target.itemid == 8592 then
 			if player:getStorageValue(Storage.RookgaardTutorialIsland.tutorialHintsStorage) < 22 then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have successfully used your rope to climb out of the hole. Congratulations! Now continue to the east.')
@@ -176,14 +174,11 @@ function onUseRope(player, item, fromPosition, target, toPosition, isHotkey)
 		toPosition.z = toPosition.z + 1
 		tile = toPosition:getTile()
 		if tile then
-			toPosition.y = toPosition.y + 1
-			toPosition.z = toPosition.z - 1
-
 			local thing = tile:getTopVisibleThing()
 			if thing:isItem() and thing:getType():isMovable() then
-				return thing:moveTo(toPosition)
+				return thing:moveTo(toPosition:moveUpstairs())
 			elseif thing:isCreature() and thing:isPlayer() then
-				return thing:teleportTo(toPosition)
+				return thing:teleportTo(toPosition:moveUpstairs())
 			end
 		end
 
