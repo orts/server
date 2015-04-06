@@ -81,6 +81,11 @@ function playerExists(name)
 	return false
 end
 
+-- Container --
+function Container.isContainer(self)
+	return true
+end
+
 -- Creature --
 function Creature.getClosestFreePosition(self, position, extended)
 	local usePosition = Position(position)
@@ -117,6 +122,22 @@ end
 
 function Creature.getPlayer(self)
 	return self:isPlayer() and self or nil
+end
+
+function Creature.isItem(self)
+	return false
+end
+
+function Creature.isMonster(self)
+	return false
+end
+
+function Creature.isNpc(self)
+	return false
+end
+
+function Creature.isPlayer(self)
+	return false
 end
 
 function Creature.isTile(self)
@@ -236,6 +257,22 @@ if Game.getStorageValue("stamina") == -1 then
 end
 
 -- Item --
+function Item.isContainer(self)
+	return false
+end
+
+function Item.isCreature(self)
+	return false
+end
+
+function Item.isPlayer(self)
+	return false
+end
+
+function Item.isTeleport(self)
+	return false
+end
+
 function Item.isTile(self)
 	return false
 end
@@ -591,6 +628,11 @@ function Position:moveUpstairs()
 	end
 	swap(self, defaultPosition)
 	return self
+end
+
+-- Teleport --
+function Teleport.isTeleport(self)
+	return true
 end
 
 -- Tile --
