@@ -225,6 +225,7 @@
 	<!-- Inquisition Quest -->
 	<movevent event="StepIn" fromuid="2150" touid="2180" script="quests/inquisition/teleportMain.lua" />
 	<movevent event="StepIn" uniqueid="9014" script="quests/inquisition/entrance.lua" />
+	<movevent event="StepIn" actionid="4003" script="quests/inquisition/rewardroomtext.lua" />
 
 	<!-- Pits Of Inferno Quest -->
 	<movevent event="StepIn" fromuid="2090" touid="2096" script="quests/pits of inferno/checkThrones.lua" />

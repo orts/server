@@ -7,6 +7,10 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()		npcHandler:onThink()		end
 
+local condition = Condition(CONDITION_OUTFIT)
+condition:setOutfit({lookType = 352})
+condition:setTicks(-1)
+
 local function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
@@ -40,13 +44,12 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				player:setStorageValue(Storage.WrathoftheEmperor.ZumtahStatus, 1)
 				player:setStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus, 1)
-				doSetMonsterOutfit(cid, 'brimstone bug', 10 * 1000)
+				player:addCondition(condition)
 			end
 		else
 			npcHandler:say("It's you, why did they throw you in here again? Anyway, I will just transform you once more. I also recovered your crate which will wait for you at the exit. There, feel free to go.", cid)
 			player:setStorageValue(Storage.WrathoftheEmperor.PrisonReleaseStatus, 1)
-			player:setOutfit({lookType = 352})
-			doSetMonsterOutfit(cid, 'brimstone bug', 10 * 1000)
+			player:addCondition(condition)
 		end
 	elseif msgcontains(msg, "no") then
 		if npcHandler.topic[cid] == 1 then

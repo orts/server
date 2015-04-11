@@ -7,10 +7,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local function greetCallback(cid)
-	npcHandler:say('Oh...',cid)
-	return false
-end
+npcHandler:setMessage(MESSAGE_GREET, 'Oh...')
 
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:addModule(FocusModule:new())

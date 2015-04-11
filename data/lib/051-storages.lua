@@ -382,7 +382,8 @@ Storage = {
 		WalterGuard = 12174,
 		StorkusVampiredust = 12175,
 		EnterTeleport = 12176,
-		Reward = 12177
+		Reward = 12177,
+		RewardRoomText = 12178
 	},
 	BarbarianTest = {
 		Questline = 12190, -- Storage through the Quest
