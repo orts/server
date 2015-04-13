@@ -77,7 +77,7 @@ end
 
 function doCreatureSayWithDelay(cid, text, type, delay, e, pcid)
 	if Player(pcid) then
-		e.done = FALSE
+		e.done = false
 		e.event = addEvent(func, delay < 1 and 1000 or delay, cid, text, type, e, pcid)
 	end
 end
