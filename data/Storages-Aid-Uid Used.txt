@@ -342,3 +342,7 @@ The Counterspell
 	aid: 4000
 	uid: 50148
 	storage = 12709, 12710
+
+Inq reward room tile text
+	aid: 4003
+	storage = 12178

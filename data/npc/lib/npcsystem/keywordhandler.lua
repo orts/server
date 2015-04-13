@@ -219,8 +219,7 @@ if KeywordHandler == nil then
 
 	-- Moves the current position in the keyword hierarchy count steps upwards. Count defalut value = 1.
 	--	This function MIGHT not work properly yet. Use at your own risk.
-	function KeywordHandler:moveUp(cid, count)
-		local steps = count
+	function KeywordHandler:moveUp(cid, steps)
 		if steps == nil or type(steps) ~= "number" then
 			steps = 1
 		end
