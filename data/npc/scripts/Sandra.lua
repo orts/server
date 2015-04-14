@@ -47,11 +47,11 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		elseif npcHandler.topic[cid] == 3 then
 			if player:removeItem(7634, 100) or player:removeItem(7635, 100) or player:removeItem(7636, 100) then
-				npcHandler:say("Ok here take this lottery ticket!", cid)
+				npcHandler:say("Alright, thank you very much! Here is your lottery ticket, good luck. Would you like to deposit more vials that way?", cid)
 				player:addItem(5957, 1)
 				npcHandler.topic[cid] = 0
 			else
-				npcHandler:say("You don't have 100 vials.", cid)
+				npcHandler:say("Sorry, but you don't have 100 empty flasks or vials of the SAME kind and thus don't qualify for the lottery. Would you like to deposit the vials you have as usual and receive 5 gold per vial?", cid)
 				npcHandler.topic[cid] = 0
 			end
 		elseif npcHandler.topic[cid] == 4 then
@@ -62,7 +62,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(133, 1)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			else
-				npcHandler:say("You don't have any prize to claim!", cid)
+				npcHandler:say("Sorry, but you don't have your lottery ticket with you.", cid)
 			end
 			npcHandler.topic[cid] = 0
 		end
@@ -70,7 +70,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Hello |PLAYERNAME|, welcome to the fluid and potion shop of Edron.")
+keywordHandler:addKeyword({'shop'}, StdModule.say, {npcHandler = npcHandler, text = 'I sell potions and fluids. If you\'d like to see my offers, ask me for a {trade}.'})
+
+npcHandler:setMessage(MESSAGE_GREET, "Hello |PLAYERNAME|, welcome to the fluid and potion {shop} of Edron.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Good bye, |PLAYERNAME|, please come back soon.")
 npcHandler:setMessage(MESSAGE_WALKAWAY, "Good bye, |PLAYERNAME|, please come back soon.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Of course, just browse through my wares. By the way, if you'd like to join our bonus system for depositing flasks and vial, you have to tell me about that {deposit}.")
