@@ -7,7 +7,7 @@ function onStartup()
 	end
 
 	local time = os.time()
-	db.asyncquery('TRUNCATE TABLE `players_online`')
+	db.asyncQuery('TRUNCATE TABLE `players_online`')
 	db.asyncQuery('DELETE FROM `guild_wars` WHERE `status` = 0')
 	db.asyncQuery('DELETE FROM `players` WHERE `deletion` != 0 AND `deletion` < ' .. time)
 	db.asyncQuery('DELETE FROM `ip_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. time)

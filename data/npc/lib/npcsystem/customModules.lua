@@ -89,6 +89,27 @@ function KeywordHandler:addFarewellKeyword(keys, parameters, condition, action)
 	return self:addKeyword(keys, GreetModule.farewell, parameters, condition, action)
 end
 
+-- Adds a keyword which acts as a spell word
+function KeywordHandler:addSpellKeyword(keys, parameters)
+	local keys = keys
+	keys.callback = FocusModule.messageMatcherDefault
+
+	local npcHandler, spellName, price, vocationId = parameters.npcHandler, parameters.spellName, parameters.price, parameters.vocation
+	local spellKeyword = self:addKeyword(keys, StdModule.say, {npcHandler = npcHandler, text = string.format("Do you want to learn the spell '%s' for %s?", spellName, price > 0 and price .. ' gold' or 'free')},
+		function(player)
+			local baseVocationId = player:getVocation():getBase():getId()
+			if type(vocationId) == 'table' then
+				return isInArray(vocationId, baseVocationId)
+			else
+				return vocationId == baseVocationId
+			end
+		end
+	)
+
+	spellKeyword:addChildKeyword({'yes'}, StdModule.learnSpell, {npcHandler = npcHandler, spellName = spellName, level = parameters.level, price = price})
+	spellKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe next time.', reset = true})
+end
+
 local hints = {
 	[-1] = 'If you don\'t know the meaning of an icon on the right side, move the mouse cursor on it and wait a moment.',
 	[0] = 'Send private messages to other players by right-clicking on the player or the player\'s name and select \'Message to ....\'. You can also open a \'private message channel\' and type in the name of the player.',
