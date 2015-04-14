@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Guide Elena" script="Guide Elena.lua" walkinterval="2000" floorchange="0">
+<npc name="Guide Elena" script="Guide Elena.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100" />
 	<look type="140" head="38" body="8" legs="13" feet="58" addons="0" />
-	<parameters>
-		<parameter key="message_greet" value="Welcome to Venore, |PLAYERNAME|! Would you like some {information} and a {map} guide?" />
-		<parameter key="message_farewell" value="Good bye and enjoy your stay in Venore, |PLAYERNAME|." />
-		<parameter key="module_keywords" value="1" />
-		<parameter key="keywords" value="information;map;job;" />
-		<parameter key="keyword_reply1" value="Currently, I can tell you all about the {town}, its {temple}, the {bank}, {shops} - well, {warehouses} - {spell} {trainers} and the {depot}." />
-		<parameter key="keyword_reply2" value="Would you like me to mark locations like the warehouses, temple and depot on your map?" />
-		<parameter key="keyword_reply3" value="I will help you find your way in the buzzing city of Venore. I can {mark} important locations on your {map} and give you some {information} about the town." />
-		<parameter key="module_shop" value="1" />
-	</parameters>
 </npc>
