@@ -8,10 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.InServiceofYalahar.Questline) == 17 then
 			npcHandler:say({
 				"With all the coming and going of strangers here, it would be quite tedious to explain everything again and again. So we have written a manifesto. ...",

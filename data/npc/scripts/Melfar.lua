@@ -15,10 +15,12 @@ local config = {
 }
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "mission")) then
+	end
+
+	local player = Player(cid)
+	if(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 4) then
 			npcHandler:say({
 				"Ha! Men and wood you say? Well, I might be able to relocate some of our miners to the base. Acquiring wood is an entirely different matter though. ... ",

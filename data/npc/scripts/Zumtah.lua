@@ -12,10 +12,12 @@ condition:setOutfit({lookType = 352})
 condition:setTicks(-1)
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "exit") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "exit") then
 		if player:getStorageValue(Storage.WrathoftheEmperor.ZumtahStatus) ~= 1 then
 			if npcHandler.topic[cid] < 1 then
 				npcHandler:say("Oh of course, may I show you around a bit before? You want to go straight to the exit? Would you please follow me. Oh right, I am terribly sorry but THERE IS NONE. Will you finally give it up please?", cid)

@@ -55,10 +55,12 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "cook") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "cook") then
 		if player:getStorageValue(Storage.HotCuisineQuest.QuestStart) < 1 then
 			npcHandler:say("Well, I'm not a simple cook. I travel the whole Tibian continent for the most artfully seasoned {recipes} and constantly develop new ones.", cid)
 			npcHandler.topic[cid] = 1

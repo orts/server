@@ -8,10 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "do for you") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "do for you") then
 			npcHandler:say("I run the dog sled service from this city to {Nibelor}.", cid)
 	elseif msgcontains(msg, "Nibelor") or msgcontains(msg, "passage") then
 			npcHandler:say("Do you want to Nibelor?", cid)

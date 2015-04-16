@@ -9,10 +9,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "mission")) then
+	end
+
+	local player = Player(cid)
+	if(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 17) then
 			npcHandler:say("You come here to ask us to spare your people? This land has no tolerance for the weak, we have it neither. If you want us to consider you as useful for us, you'll have to prove it in a {test} of strength and courage. ", cid)
 			npcHandler.topic[cid] = 1

@@ -9,10 +9,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "battle") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "battle") then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 24 then
 			npcHandler:say({
 				"Zo you want to enter ze arena, you know ze rulez and zat zere will be no ozer option zan deaz or victory? ...",

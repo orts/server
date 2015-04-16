@@ -8,10 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "mission") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "mission") then
 		if player:getStorageValue(Storage.TheIceIslands.Questline) == 5 then
 			npcHandler:say("I heard you have already helped our cause. Are you interested in another mission, even when it requires you to travel to a distant land?", cid)
 			npcHandler.topic[cid] = 1
