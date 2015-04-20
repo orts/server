@@ -1,6 +1,7 @@
 local magePositions = {
 	Position(33328, 31859, 9),
 	Position(33367, 31873, 9),
+	Position(33362, 31852, 9),
 	Position(33349, 31899, 9)
 }
 
