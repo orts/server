@@ -625,6 +625,7 @@
 	<action fromid="14767" toid="14771" script="other/hive_doors2.lua" />
 
 	<!-- Other -->
+	<action itemid="11339" script="other/claylump.lua" />
 	<action itemid="3955" script="other/voodoo_doll.lua" />
 	<action itemid="5468" script="other/firebug.lua" />
 	<action itemid="5928" script="other/catchFish.lua" />

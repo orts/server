@@ -116,6 +116,10 @@ function Creature.getClosestFreePosition(self, position, extended)
 	return Position()
 end
 
+function Creature.getId(self)
+	return self.uid
+end
+
 function Creature.getMonster(self)
 	return self:isMonster() and self or nil
 end
@@ -257,6 +261,26 @@ if Game.getStorageValue("stamina") == -1 then
 end
 
 -- Item --
+function Item.getActionId(self)
+	return self.actionid
+end
+
+function Item.getId(self)
+	return self.itemid
+end
+
+function Item.getSubType(self)
+	return self.type
+end
+
+function Item.getType(self)
+	return ItemType(self.itemid)
+end
+
+function Item.getUniqueId(self)
+	return self.uid
+end
+
 function Item.isContainer(self)
 	return false
 end
