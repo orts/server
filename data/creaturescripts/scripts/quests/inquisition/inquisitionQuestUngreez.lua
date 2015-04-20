@@ -13,7 +13,6 @@ function onKill(creature, target)
 		-- The Inquisition Questlog- 'Mission 6: The Demon Ungreez'
 		player:setStorageValue(Storage.TheInquisition.Mission06, 2)
 		player:setStorageValue(Storage.TheInquisition.Questline, 19)
-		player:say('You have slain Ungreez.', TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end

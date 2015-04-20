@@ -18,7 +18,6 @@ npcHandler:addModule(VoiceModule:new(voices))
 keywordHandler:addKeyword({'master'}, StdModule.say, {npcHandler = npcHandler, text = "Our. Master. Is. Gone. You. Can. Not. Visit. Him! We. Stand. {Sentry}!"})
 keywordHandler:addKeyword({'sentry'}, StdModule.say, {npcHandler = npcHandler, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
 keywordHandler:addKeyword({'slime'}, StdModule.say, {npcHandler = npcHandler, text = "{Master}. Conducted. Experiments. Great. Problems. You. Must. Go!"})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = "{Slime}. Dangerous. We. Have. It. Under. Control. ... We. Will. Stand. {Sentry}."})
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -30,6 +29,10 @@ local function creatureSayCallback(cid, type, msg)
 		if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerReceived) < 1 then
 			npcHandler:say("Defeat. {Slime}. We. Will. Why. Did. You. Kill. Us? Do. You. Want. To. Rectify. And. Help?", cid)
 			npcHandler.topic[cid] = 1
+		end
+		if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerReceived) == 1 then
+			npcHandler:say("{Slime}. Dangerous. We. Have. It. Under. Control. ... We. Will. Stand. {Sentry}.", cid)
+			npcHandler.topic[cid] = 2
 		end
 	elseif msgcontains(msg, "yes") then
 		if npcHandler.topic[cid] == 1 then
