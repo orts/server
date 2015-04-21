@@ -12,7 +12,6 @@ function onStepIn(creature, item, position, fromPosition)
 	local cutoffStorage = storages[item.actionid]
 	if player:getStorageValue(cutoffStorage) ~= 1 then
 		player:setStorageValue(cutoffStorage, 1)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You discovered a shortcut to the pits of inferno.')
 	end
 	return true
 end

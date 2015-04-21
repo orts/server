@@ -1,6 +1,5 @@
 local config = {
 	arenaPosition = Position(33154, 31415, 7),
-	exitPosition = Position(33146, 31414, 6),
 	successPosition = Position(33145, 31419, 7)
 }
 
@@ -45,9 +44,6 @@ function onStepIn(creature, item, position, fromPosition)
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 19 then
 			player:setStorageValue(Storage.TheNewFrontier.Questline, 17)
 		end
-		player:teleportTo(config.exitPosition)
-		config.exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
-		player:say('You left the arena. Ask Curos again for the mission!', TALKTYPE_MONSTER_SAY)
 	end
 	return true
 end
