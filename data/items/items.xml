@@ -30186,6 +30186,105 @@
 		<attribute key="description" value="It is a delicate box and fully stuffed with tinder as well as igniters." />
 		<attribute key="weight" value="200" />
 	</item>
+	<item fromid="22745" toid="22762" name="stone floor" />
+	<item fromid="22814" toid="22815" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22816" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22817" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22818" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22819" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22820" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22821" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22822" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item fromid="22823" toid="22824" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22825" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22826" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22827" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22828" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22829" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item id="22830" article="a" name="closed door">
+		<attribute key="type" value="door" />
+		<attribute key="blockprojectile" value="1" />
+	</item>
+	<item id="22831" article="an" name="open door">
+		<attribute key="type" value="door" />
+	</item>
+	<item fromid="22832" toid="22839" article="a" name="rosetta window" />
+	<item fromid="22841" toid="22844" name="ladder rungs">
+		<attribute key="floorchange" value="down" />
+	</item>
+	<item fromid="22845" toid="22846" article="a" name="ladder" />
+	<item fromid="22855" toid="22856" article="a" name="buttress" />
+	<item id="22862" name="stairs">
+		<attribute key="floorchange" value="north" />
+	</item>
+	<item id="22863" name="stairs">
+		<attribute key="floorchange" value="west" />
+	</item>
+	<item id="22864" name="stairs" />
+	<item id="22865" name="stairs">
+		<attribute key="floorchange" value="south" />
+	</item>
+	<item fromid="22859" toid="22860" article="a" name="sewer entrance">
+		<attribute key="floorchange" value="down" />
+	</item>
+	<item id="22861" article="a" name="sewer cover" />
+	<item id="22866" name="stairs" />
+	<item id="22867" name="stairs">
+		<attribute key="floorchange" value="east" />
+	</item>
+	<item fromid="22868" toid="22871" article="a" name="street lamp" />
+	<item fromid="22889" toid="22903" article="a" name="sewer pipe" />
+	<item fromid="22904" toid="22913" name="stone floor" />
+	<item fromid="22915" toid="22940" name="stone floor" />
+	<item fromid="23019" toid="23020" article="a" name="massive metal statue" />
+	<item fromid="23023" toid="23028" name="spume" />
+	<item id="23029" name="parquet floor" />
+	<item fromid="23041" toid="23061" article="a" name="tube" />
+	<item fromid="23072" toid="23075" article="a" name="small pressure gauge" />
+	<item fromid="23076" toid="23079" article="a" name="control switch" />
+	<item fromid="23084" toid="23097" name="parquet floor" />
+	<item fromid="23116" toid="23117" article="a" name="tap" />
+	<item fromid="23158" toid="23159" article="a" name="valve" />
+	<item fromid="23160" toid="23161" article="a" name="plug" />
+	<item fromid="23162" toid="23167" name="slime" />
+	<item fromid="23168" toid="23171" article="a" name="runlet" />
+	<item id="23259" name="marble floor" />
+	<item fromid="23312" toid="23319" article="a" name="lattice" />
 	<item id="23459" name="peppermoon bells" />
 	<item id="23460" article="a" name="blue pollen">
 		<attribute key="weight" value="50" />
@@ -30547,6 +30646,18 @@
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />
 		<attribute key="weight" value="1800" />
+	</item>
+	<item fromid="23673" toid="23678" name="shallow water">
+		<attribute key="type" value="trashholder" />
+		<attribute key="effect" value="bluebubble" />
+		<attribute key="allowpickupable" value="1" />
+		<attribute key="fluidSource" value="water" />
+	</item>
+	<item fromid="23682" toid="23693" name="shallow water">
+		<attribute key="type" value="trashholder" />
+		<attribute key="effect" value="bluebubble" />
+		<attribute key="allowpickupable" value="1" />
+		<attribute key="fluidSource" value="water" />
 	</item>
 	<item id="23694" article="an" name="imported water pipe">
 		<attribute key="weight" value="200" />
