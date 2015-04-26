@@ -573,6 +573,8 @@
 	<movevent event="DeEquip" itemid="18407" slot="necklace" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="21691" slot="necklace" level="150" function="onEquipItem" />
 	<movevent event="DeEquip" itemid="21691" slot="necklace" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="23541" slot="necklace" level="75" function="onEquipItem" />
+	<movevent event="DeEquip" itemid="23541" slot="necklace" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="23554" slot="necklace" level="75" function="onEquipItem">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
