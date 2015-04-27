@@ -130,7 +130,7 @@
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000" script="quests/the new frontier/wayOut.lua" />
 	<movevent event="StepIn" actionid="8007" script="quests/the new frontier/trap.lua" />
-	<movevent event="StepIn" fromaid="12135" toaid="12136" script="quests/the new frontier/minotaurBoss.lua" />
+	<movevent event="StepIn" actionid="12135" script="quests/the new frontier/minotaurBoss.lua" />
 	<movevent event="StepIn" actionid="12138" script="quests/the new frontier/jailExit.lua" />
 
 	<!--- Unnatural Selection -->
