@@ -7,7 +7,7 @@ local exhibits = {
 			{text = 'Hail Tibiafriends!'}
 		},
 		itemid = 10719,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50031] = {
 		sounds = {
@@ -19,7 +19,7 @@ local exhibits = {
 			{text = 'There was a dream that was roleplay. You could only whisper it. Anything more than a whisper and it would vanish.'}
 		},
 		itemid = 10107,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50032] = {
 		sounds = {
@@ -29,7 +29,7 @@ local exhibits = {
 		},
 		itemid = 10063,
 		transformid = 10064,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50033] = {
 		sounds = {
@@ -38,7 +38,7 @@ local exhibits = {
 			{text = 'Run, mammoth!'}
 		},
 		itemid = 8982,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50034] = {
 		sounds = {
@@ -47,7 +47,7 @@ local exhibits = {
 			{text = 'Books are great!! Aren\'t they?'}
 		},
 		itemid = 20624,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50035] = {
 		sounds = {
@@ -57,7 +57,7 @@ local exhibits = {
 			{text = 'Fresh off the press!'}
 		},
 		itemid = 8981,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50036] = {
 		sounds = {
@@ -68,7 +68,7 @@ local exhibits = {
 			{text = 'Hug me! Feed me! Hail me!'}
 		},
 		itemid = 8977,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50037] = {
 		sounds = {
@@ -78,7 +78,7 @@ local exhibits = {
 		},
 		itemid = 8976,
 		transformid = 9003,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50038] = {
 		sounds = {
@@ -88,7 +88,7 @@ local exhibits = {
 			{text = 'MAY MY ETERNAL FLAME BE YOUR SHIELD AND PATH OF SUCCESS, |PLAYERNAME|!'}
 		},
 		itemid = 11394,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50039] = {
 		sounds = {
@@ -98,7 +98,7 @@ local exhibits = {
 			{text = 'THE POWER IS MINE!'}
 		},
 		itemid = 11754,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50040] = {
 		sounds = {
@@ -110,7 +110,7 @@ local exhibits = {
 		itemid = 13028,
 		transformid = 13029,
 		transformDuration = 13000,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50041] = {
 		sounds = {
@@ -119,7 +119,7 @@ local exhibits = {
 			{text = 'Hail |PLAYERNAME|!'}
 		},
 		itemid = 13030,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50042] = {
 		itemids = {
@@ -132,7 +132,7 @@ local exhibits = {
 				transformid = 13032
 			}
 		},
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50043] = {
 		sounds = {
@@ -140,7 +140,7 @@ local exhibits = {
 			{text = 'Hail Tibia Bariloche!'}
 		},
 		itemid = 16107,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50044] = {
 		sounds = {
@@ -149,7 +149,7 @@ local exhibits = {
 			{text = 'Hail Tibia-Market!'}
 		},
 		itemid = 18526,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50045] = {
 		sounds = {
@@ -163,12 +163,12 @@ local exhibits = {
 		itemid = 21731,
 		transformid = 21732,
 		transformDuration = 7000,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50046] = {
 		itemid = 18550,
 		transformid = 18551,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50047] = {
 		sounds = {
@@ -176,7 +176,7 @@ local exhibits = {
 			{text = 'Where isss my body?!? I\'ll kill you!!!'}
 		},
 		itemid = 16105,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50048] = {
 		sounds = {
@@ -184,7 +184,7 @@ local exhibits = {
 		},
 		itemid = 16103,
 		transformid = 16104,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50049] = {
 		sounds = {
@@ -195,7 +195,7 @@ local exhibits = {
 		},
 		itemid = 13948,
 		transformid = 13949,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50050] = {
 		itemids = {
@@ -213,7 +213,7 @@ local exhibits = {
 				transformid = 13950
 			}
 		},
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50051] = {
 		sounds = {
@@ -222,7 +222,7 @@ local exhibits = {
 			{text = 'Fire is fascinating. But whether it is going to light your path or burning you till death, you can never tell.'}
 		},
 		itemid = 13946,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50052] = {
 		sounds = {
@@ -232,7 +232,7 @@ local exhibits = {
 			{text = 'Have fun with FunTibia.com!'}
 		},
 		itemid = 13559,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50053] = {
 		sounds = {
@@ -241,7 +241,7 @@ local exhibits = {
 			{text = '|PLAYERNAME|, you are worthy to feel the power of Tibiafans.se! HAIL TIBIAFANS!'}
 		},
 		itemid = 12667,
-		dir = WEST
+		dir = DIRECTION_WEST
 	},
 	[50054] = {
 		sounds = {
@@ -251,7 +251,7 @@ local exhibits = {
 			{text = 'Yummy...'}
 		},
 		itemid = 11756,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50055] = {
 		sounds = {
@@ -260,7 +260,7 @@ local exhibits = {
 			{text = 'According to tibia-wiki.net, star and sling herbs taste like cinnamon and vanilla.'}
 		},
 		itemid = 11773,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 	[50056] = {
 		sounds = {
@@ -271,7 +271,7 @@ local exhibits = {
 		itemid = 11401,
 		transformid = 11402,
 		transformDuration = 7000,
-		dir = NORTH
+		dir = DIRECTION_NORTH
 	},
 
 	leverDuration = 6000,
