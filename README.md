@@ -1,4 +1,6 @@
 # ORTS, a real map datapack
+
+[![Join the chat at https://gitter.im/orts/server](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orts/server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
  * Client version 10.76
  * Map version 10.76
 
