@@ -18,9 +18,8 @@ function onStartup()
 			npc:setMasterPos(config[os.date('%A')])
 		end
 	else
-		local npc, position
-		for i = 1, #config do
-			position = config[i]
+		local npc
+		for k, position in pairs(config) do
 			npc = Game.createNpc('Rashid', position, false, true)
 			if npc then
 				npc:setMasterPos(position)
