@@ -70,6 +70,27 @@ local function revertItem(position, itemId, transformId)
 	end
 end
 
+local function revertIce(toPosition)
+	local tile = toPosition:getTile()
+	if tile then
+		local thing = tile:getItemById(7186)
+		if thing then
+			thing:transform(7185)
+		end
+	end
+end
+
+local function revertHole(toPosition)
+	local tile = toPosition:getTile()
+
+	if tile then
+		local thing = tile:getItemById(469)
+		if thing then
+			thing:transform(8579)
+		end
+	end
+end
+
 local function removeRemains(toPosition)
 	local item = Tile(toPosition):getItemById(2248)
 	if item then
