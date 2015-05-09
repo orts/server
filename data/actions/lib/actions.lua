@@ -227,7 +227,7 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
 		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
 		target:transform(469)
-		addEvent(revertHole, 30 * 1000, toPosition, 469, 8579)
+		addEvent(revertItem, 30 * 1000, toPosition, 469, 8579)
 
 	-- Gravedigger Quest
 	elseif targetActionId == 4654 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission49) == 1 and player:getStorageValue(Storage.GravediggerOfDrefia.Mission50) < 1 then
@@ -338,7 +338,7 @@ function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 		local crackItem = Tile(toPosition):getItemById(7185)
 		if crackItem then
 			crackItem:transform(7186)
-			addEvent(revertIce, 60 * 1000, toPosition, 7186, 7185)
+			addEvent(revertItem, 60 * 1000, toPosition, 7186, 7185)
 		end
 
 		local chakoyas = {"chakoya toolshaper", "chakoya tribewarden", "chakoya windcaller"}
