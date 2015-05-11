@@ -11,8 +11,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return false
 		end
 
-		player:addOutfitAddon(430, 1)
-		player:addOutfitAddon(431, 1)
+		player:addOutfitAddon(430, 2)
+		player:addOutfitAddon(431, 2)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:setStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueMask, 1)
 		player:say('You gained a plague mask for your outfit.', TALKTYPE_MONSTER_SAY, false, player)
@@ -28,8 +28,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return false
 		end
 
-		player:addOutfitAddon(430, 2)
-		player:addOutfitAddon(431, 2)
+		player:addOutfitAddon(430, 1)
+		player:addOutfitAddon(431, 1)
 		player:getPosition():sendMagicEffect(CONST_ME_POFF)
 		player:setStorageValue(Storage.OutfitQuest.Afflicted.AddonPlagueBell, 1)
 		player:say('You gained a plague bell for your outfit.', TALKTYPE_MONSTER_SAY, false, player)
