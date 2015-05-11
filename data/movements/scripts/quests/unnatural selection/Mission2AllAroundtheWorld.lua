@@ -4,7 +4,7 @@ local config = {
 	[3] = {text = 'Thanita gives you a really strange look as you hold up the skull, but oh well.', position = Position(32537, 31772, 1)},
 	[4] = {text = 'That was a real easy one. And you are used to getting strange looks now, so whatever!', position = Position(33216, 32450, 1)},
 	[5] = {text = 'Wow, it\'s hot up here. Luckily the skull can\'t get a sunburn any more, but you can, so you better descend again!', position = Position(33151, 32845, 2)},
-	[6] = {text = 'Considering that higher places around here aren\'t that easy to reach, you think the view from here is tolerably good.', position = Position(32580, 32743, 4)},
+	[6] = {text = 'Considering that higher places around here aren\'t that easy to reach, you think the view from here is tolerably good.', position = Position(32588, 32801, 4)},
 	[7] = {text = 'Yep, that\'s a pretty high spot. If Lazaran ever sees what the skull sees, he\'d be pretty satisfied with that nice view.', position = Position(32346, 32808, 2)},
 	[8] = {text = 'Well, there are higher spots around here, but none of them is as easily reachable as this one. It just has to suffice.', position = Position(32789, 31238, 3)},
 	[9] = {text = 'Nice! White in white as far as the eye can see. Time to leave before your fingers turn into icicles.', position = Position(32236, 31096, 2)},
