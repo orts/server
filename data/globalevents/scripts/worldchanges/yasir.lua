@@ -51,8 +51,10 @@ function onStartup()
 					local tile = Tile(position)
 					if tile then
 						local items = tile:getItems()
-						for i = 1, #items do
-							items[i]:remove()
+						if items then
+							for i = 1, #items do
+								items[i]:remove()
+							end
 						end
 
 						local ground = tile:getGround()
