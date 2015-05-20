@@ -530,9 +530,10 @@
 
 	<!-- Ghosts -->
 	<monster name="Ghost" file="ghosts/ghost.xml" />
-	<monster name="Phantasm Summon" file="ghosts/phantasm summon.xml" />
-	<monster name="Souleater" file="ghosts/souleater.xml" />
 	<monster name="Phantasm" file="ghosts/phantasm.xml" />
+	<monster name="Phantasm Summon" file="ghosts/phantasm summon.xml" />
+	<monster name="Rift Phantom" file="ghosts/rift phantom.xml" />
+	<monster name="Souleater" file="ghosts/souleater.xml" />
 	<monster name="Spectre" file="ghosts/spectre.xml" />
 	<monster name="Tarnished Spirit" file="ghosts/tarnished spirit.xml" />
 	<monster name="Tormented Ghost" file="ghosts/tormented ghost.xml" />
