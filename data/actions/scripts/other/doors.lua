@@ -17,8 +17,8 @@ local function isDoorLocked(keyId, position)
 end
 
 local function toggleDoorLock(doorItem, locked)
-	local doorId = dooritemId
-	local keyId = doorItem.actionid
+	local doorId = doorItem:getId()
+	local keyId = doorItem:getActionId()
 	local doorPosition = doorItem:getPosition()
 
 	if locked then
@@ -43,9 +43,9 @@ local function toggleDoorLock(doorItem, locked)
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local itemId = item:getId()
+	local itemId, actionId = item:getId(), item:getActionId()
 	if isInArray(questDoors, itemId) then
-		if player:getStorageValue(item.actionid) ~= -1 then
+		if player:getStorageValue(actionId) ~= -1 then
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		else
@@ -54,7 +54,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 
 	elseif isInArray(levelDoors, itemId) then
-		if item.actionid > 0 and player:getLevel() >= item.actionid - 1000 then
+		if actionId > 0 and player:getLevel() >= actionId - 1000 then
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		else
@@ -63,17 +63,18 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 
 	elseif isInArray(keys, itemId) then
+		local targetId, targetActionId = target:getId(), target:getActionId()
 		if not target:isItem()
-				or not target:getType():isDoor() or isInArray(openSpecialDoors, target.itemid)
-				or isInArray(questDoors, target.itemid) or isInArray(levelDoors, target.itemid)
+				or not target:getType():isDoor() or isInArray(openSpecialDoors, targetId)
+				or isInArray(questDoors, targetId) or isInArray(levelDoors, targetId)
 				or Tile(toPosition):getHouse() then
 			return false
 		end
 
-		if target.actionid > 0 and item.actionid == target.actionid then
-			if not isDoorLocked(target.actionid, toPosition) then
+		if targetActionId > 0 and actionId == targetActionId then
+			if not isDoorLocked(targetActionId, toPosition) then
 				toggleDoorLock(target, true)
-			elseif doors[target.itemid] then
+			elseif doors[targetId] then
 				toggleDoorLock(target, false)
 			end
 		else
@@ -108,7 +109,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	end
 
 	if doors[itemId] then
-		if not isDoorLocked(item.actionid, toPosition) then
+		if not isDoorLocked(actionId, toPosition) then
 			item:transform(doors[itemId])
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "It is locked.")

@@ -245,7 +245,7 @@ end
 function SvargrondArena.getPitOccupant(pitId, ignorePlayer)
 	local creatures = SvargrondArena.getPitCreatures(pitId)
 	for i = 1, #creatures do
-		if creatures[i]:isPlayer() and creatures[i].uid ~= ignoreplayer:getId() then
+		if creatures[i]:isPlayer() and creatures[i]:getId() ~= ignorePlayer:getId() then
 			return creatures[i]
 		end
 	end
