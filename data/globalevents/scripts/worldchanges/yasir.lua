@@ -45,17 +45,17 @@ function onStartup()
 	if yasirEnabled then
 		math.randomseed(os.time())
 		if math.random(100) <= yasirChance then
-			local randTown, tile, items, ground = config[math.random(#config)]
+			local randTown = config[math.random(#config)]
 			iterateArea(
 				function(position)
-					tile = Tile(position)
+					local tile = Tile(position)
 					if tile then
-						items = tile:getItems()
+						local items = tile:getItems()
 						for i = 1, #items do
 							items[i]:remove()
 						end
 
-						ground = tile:getGround()
+						local ground = tile:getGround()
 						if ground then
 							ground:remove()
 						end

@@ -1,18 +1,4 @@
-dofile('data/libs.lua')
-
-THING_TYPE_PLAYER = CREATURETYPE_PLAYER + 1
-THING_TYPE_MONSTER = CREATURETYPE_MONSTER + 1
-THING_TYPE_NPC = CREATURETYPE_NPC + 1
-
-STACKPOS_GROUND = 0
-STACKPOS_FIRST_ITEM_ABOVE_GROUNDTILE = 1
-STACKPOS_SECOND_ITEM_ABOVE_GROUNDTILE = 2
-STACKPOS_THIRD_ITEM_ABOVE_GROUNDTILE = 3
-STACKPOS_FOURTH_ITEM_ABOVE_GROUNDTILE = 4
-STACKPOS_FIFTH_ITEM_ABOVE_GROUNDTILE = 5
-STACKPOS_TOP_CREATURE = 253
-STACKPOS_TOP_FIELD = 254
-STACKPOS_TOP_MOVEABLE_ITEM_OR_CREATURE = 255
+dofile('data/lib/libs.lua')
 
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 
@@ -76,9 +62,6 @@ levelDoors = {
 
 keys = {2086, 2087, 2088, 2089, 2090, 2091, 2092, 10032}
 
-CONTAINER_POSITION = 0xFFFF
-ITEMCOUNT_MAX = 100
-
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 	if not position then
 		position = Creature(cid):getPosition()
@@ -130,48 +113,7 @@ function getTibianTime()
 	return hours .. ':' .. minutes
 end
 
-do
-	local function CreatureIndex(self, key)
-		local methods = getmetatable(self)
-		if key == "uid" then
-			return methods.getId(self)
-		elseif key == "type" then
-			local creatureType = 0
-			if methods.isPlayer(self) then
-				creatureType = THING_TYPE_PLAYER
-			elseif methods.isMonster(self) then
-				creatureType = THING_TYPE_MONSTER
-			elseif methods.isNpc(self) then
-				creatureType = THING_TYPE_NPC
-			end
-			return creatureType
-		elseif key == "itemid" then
-			return 1
-		elseif key == "actionid" then
-			return 0
-		end
-		return methods[key]
-	end
-	rawgetmetatable("Player").__index = CreatureIndex
-	rawgetmetatable("Monster").__index = CreatureIndex
-	rawgetmetatable("Npc").__index = CreatureIndex
-end
-
-do
-	local function ItemIndex(self, key)
-		local methods = getmetatable(self)
-		if key == "itemid" then
-			return methods.getId(self)
-		elseif key == "actionid" then
-			return methods.getActionId(self)
-		elseif key == "uid" then
-			return methods.getUniqueId(self)
-		elseif key == "type" then
-			return methods.getSubType(self)
-		end
-		return methods[key]
-	end
-	rawgetmetatable("Item").__index = ItemIndex
-	rawgetmetatable("Container").__index = ItemIndex
-	rawgetmetatable("Teleport").__index = ItemIndex
+-- Stamina
+if Game.getStorageValue("stamina") == -1 then
+	Game.setStorageValue("stamina", {})
 end
