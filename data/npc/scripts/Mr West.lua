@@ -18,10 +18,12 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "mission")) then
+	end
+
+	local player = Player(cid)
+	if(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(Storage.InServiceofYalahar.Questline) == 24) then
 			if(player:getStorageValue(Storage.InServiceofYalahar.MrWestDoor) == 1) then
 				npcHandler:say("Indeed, I can see the benefits of a mutual agreement. I will later read the details and send a letter to your superior. ", cid)

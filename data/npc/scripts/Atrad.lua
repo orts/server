@@ -48,7 +48,7 @@ local function creatureSayCallback(cid, type, msg)
 				player:addOutfitAddon(156, 2)
 				player:addOutfitAddon(152, 2)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-				player:getStorageValue(Storage.OutfitQuest.AssassinSecondAddon, 2)
+				player:setStorageValue(Storage.OutfitQuest.AssassinSecondAddon, 2)
 				player:addAchievement('Swift Death')
 				npcHandler:say('I see you brought my stuff. Good. I\'ll keep my promise: Here\'s katana in return.', cid)
 			else

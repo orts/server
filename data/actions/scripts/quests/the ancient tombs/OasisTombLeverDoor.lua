@@ -30,7 +30,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You found the carrot! The door is open!')
 		item:transform(1946)
-		addEvent(revertCarrotAndLever, 4 * 1000, position, hatPosition)
+		addEvent(revertCarrotAndLever, 4 * 1000, toPosition, hatPosition)
 
 		local doorItem = Tile(doorPosition):getItemById(1243)
 		if doorItem then

@@ -41,6 +41,7 @@
 
 	<!-- Farmine -->
 	<action fromaid="9118" toaid="9121" script="farmine/elevatorLever.lua" />
+	<action fromaid="12141" toaid="12142" script="farmine/templeofequilibrium_vines.lua" />
 
 	<!-- Weapons enchanting (Gems) -->
 	<action fromid="2146" toid="2147" script="other/enchanting.lua" />
@@ -621,10 +622,12 @@
 	<action fromid="17235" toid="17238" script="other/doors.lua" />
 	<action fromid="18208" toid="18209" script="other/doors.lua" />
 	<action fromid="13020" toid="13023" script="other/doors.lua" />
+	<action fromid="22814" toid="22831" script="other/doors.lua" />
 	<action fromid="14755" toid="14760" script="other/hive_doors1.lua" />
 	<action fromid="14767" toid="14771" script="other/hive_doors2.lua" />
 
 	<!-- Other -->
+	<action itemid="11339" script="other/claylump.lua" />
 	<action itemid="3955" script="other/voodoo_doll.lua" />
 	<action itemid="5468" script="other/firebug.lua" />
 	<action itemid="5928" script="other/catchFish.lua" />
@@ -656,6 +659,8 @@
 	<action itemid="1386" script="other/teleport.lua" />
 	<action itemid="3678" script="other/teleport.lua" />
 	<action itemid="5543" script="other/teleport.lua" />
+	<action itemid="22845" script="other/teleport.lua" />
+	<action itemid="22846" script="other/teleport.lua" />
 	<action fromid="2376" toid="2404" script="other/destroy.lua" />
 	<action fromid="2406" toid="2415" script="other/destroy.lua" />
 	<action fromid="2417" toid="2419" script="other/destroy.lua" />

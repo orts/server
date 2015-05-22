@@ -9,10 +9,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "farmine")) then
+	end
+
+	local player = Player(cid)
+	if(msgcontains(msg, "farmine")) then
 		if(player:getStorageValue(Storage.TheNewFrontier.Questline) == 15) then
 			npcHandler:say("I have heard only little about this mine. I am a bit absorbed in my studies. But what does this mine have to do with me?", cid)
 			npcHandler.topic[cid] = 1

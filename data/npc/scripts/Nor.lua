@@ -8,10 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "crystal") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "crystal") then
 		if player:getStorageValue(Storage.TheIceIslands.Mission08) == 2 then
 			npcHandler:say("Here, take the memory crystal and leave immediately.", cid)
 			npcHandler.topic[cid] = 0

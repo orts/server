@@ -13,42 +13,47 @@ function msgcontains(message, keyword)
 	return message:find(keyword) and not message:find('(%w+)' .. keyword)
 end
 
-function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
-	local amount, subType, ignoreCap, item = amount or 1, subType or 0, ignoreCap and true or false, 0
+function doNpcSellItem(cid, itemId, amount, subType, ignoreCap, inBackpacks, backpack)
+	local amount = amount or 1
+	local subType = subType or 0
+	local item = 0
 	local player = Player(cid)
-	ignoreCap = false
-	if ItemType(itemid):isStackable() then
+	if ItemType(itemId):isStackable() then
+		local stuff
 		if inBackpacks then
 			stuff = Game.createItem(backpack, 1)
-			item = stuff:addItem(itemid, math.min(100, amount))
+			item = stuff:addItem(itemId, math.min(100, amount))
 		else
-			stuff = Game.createItem(itemid, math.min(100, amount))
+			stuff = Game.createItem(itemId, math.min(100, amount))
 		end
+
 		return player:addItemEx(stuff, ignoreCap) ~= RETURNVALUE_NOERROR and 0 or amount, 0
 	end
 
 	local a = 0
 	if inBackpacks then
-		local container, b = Game.createItem(backpack, 1), 1
+		local container, itemType, b = Game.createItem(backpack, 1), ItemType(backpack), 1
 		for i = 1, amount do
-			local item = container:addItem(itemid, subType)
-			if isInArray({(ItemType(backpack):getCapacity() * b), amount}, i) then
+			local item = container:addItem(itemId, subType)
+			if isInArray({(itemType:getCapacity() * b), amount}, i) then
 				if player:addItemEx(container, ignoreCap) ~= RETURNVALUE_NOERROR then
-					b = b - 1 --
+					b = b - 1
 					break
 				end
-				a = i -- a = a + i
+
+				a = i
 				if amount > i then
 					container = Game.createItem(backpack, 1)
 					b = b + 1
 				end
 			end
 		end
+
 		return a, b
 	end
 
 	for i = 1, amount do -- normal method for non-stackable items
-		local item = Game.createItem(itemid, subType)
+		local item = Game.createItem(itemId, subType)
 		if player:addItemEx(item, ignoreCap) ~= RETURNVALUE_NOERROR then
 			break
 		end
@@ -57,23 +62,23 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 	return a, 0
 end
 
-local func = function(pars)
-	local npc = Npc(pars.cid)
-	if npc == nil then
+local func = function(cid, text, type, e, pcid)
+	local npc = Npc(cid)
+	if not npc then
 		return
 	end
 
-	local player = Player(pars.pcid)
+	local player = Player(pcid)
 	if player then
-		npc:say(pars.text, pars.type, false, player, npc:getPosition())
-		pars.e.done = true
+		npc:say(text, type, false, player, npc:getPosition())
+		e.done = true
 	end
 end
 
 function doCreatureSayWithDelay(cid, text, type, delay, e, pcid)
 	if Player(pcid) then
 		e.done = false
-		e.event = addEvent(func, delay < 1 and 1000 or delay, {cid=cid, text=text, type=type, e=e, pcid=pcid})
+		e.event = addEvent(func, delay < 1 and 1000 or delay, cid, text, type, e, pcid)
 	end
 end
 

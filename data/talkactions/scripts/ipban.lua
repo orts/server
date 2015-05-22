@@ -10,7 +10,7 @@ function onSay(player, words, param)
 		return false
 	end
 
-	local ip = result.getDataLong(resultId, "lastip")
+	local ip = result.getNumber(resultId, "lastip")
 	result.free(resultId)
 
 	local targetPlayer = Player(param)

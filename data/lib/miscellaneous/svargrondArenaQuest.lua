@@ -211,10 +211,10 @@ function SvargrondArena.resetPit(pitId)
 			for z = PITS[pitId].fromPos.z, PITS[pitId].toPos.z do
 				local tile = Tile({x=x, y=y, z=z})
 				if tile then
-					local moveableItem = tile:getThing(STACKPOS_TOP_MOVEABLE_ITEM_OR_CREATURE)
-					if moveableItem and moveableItem:isItem() then
-						local itemType = ItemType(moveableItem.itemid)
-						if itemType and itemType:isMovable() and not isInArray(SvargrondArena.itemsNotErasable, moveableItem.itemid) then
+					local movableItem = tile:getThing(255)
+					if movableItem and movableItem:isItem() then
+						local itemType = ItemType(movableItem:getId())
+						if itemType and itemType:isMovable() and not isInArray(SvargrondArena.itemsNotErasable, movableItem:getId()) then
 							moveableItem:remove()
 						end
 					end
@@ -245,7 +245,7 @@ end
 function SvargrondArena.getPitOccupant(pitId, ignorePlayer)
 	local creatures = SvargrondArena.getPitCreatures(pitId)
 	for i = 1, #creatures do
-		if creatures[i]:isPlayer() and creatures[i].uid ~= ignorePlayer.uid then
+		if creatures[i]:isPlayer() and creatures[i]:getId() ~= ignorePlayer:getId() then
 			return creatures[i]
 		end
 	end

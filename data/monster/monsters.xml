@@ -380,6 +380,7 @@
 	<monster name="Nightstalker" file="demons/nightstalker.xml" />
 	<monster name="Plaguesmith" file="demons/plaguesmith.xml" />
 	<monster name="Rift Brood" file="demons/rift brood.xml" />
+	<monster name="Rift Lord" file="demons/rift lord.xml" />
 	<monster name="Rift Scythe" file="demons/rift scythe.xml" />
 	<monster name="Shadow Hound" file="demons/shadow hound.xml" />
 	<monster name="Weakened Demon" file="demons/weakened demon.xml" />
@@ -530,9 +531,10 @@
 
 	<!-- Ghosts -->
 	<monster name="Ghost" file="ghosts/ghost.xml" />
-	<monster name="Phantasm Summon" file="ghosts/phantasm summon.xml" />
-	<monster name="Souleater" file="ghosts/souleater.xml" />
 	<monster name="Phantasm" file="ghosts/phantasm.xml" />
+	<monster name="Phantasm Summon" file="ghosts/phantasm summon.xml" />
+	<monster name="Rift Phantom" file="ghosts/rift phantom.xml" />
+	<monster name="Souleater" file="ghosts/souleater.xml" />
 	<monster name="Spectre" file="ghosts/spectre.xml" />
 	<monster name="Tarnished Spirit" file="ghosts/tarnished spirit.xml" />
 	<monster name="Tormented Ghost" file="ghosts/tormented ghost.xml" />

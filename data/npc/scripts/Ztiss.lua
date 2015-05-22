@@ -9,10 +9,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "offer") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "offer") then
 		if player:getStorageValue(Storage.TheNewFrontier.Questline) == 23 then
 		npcHandler:say("You are ztill a captive and your life is forfeit. Zere might be a way for you to ezcape if you agree to {work} for my mazter.", cid)
 			npcHandler.topic[cid] = 1

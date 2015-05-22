@@ -18,10 +18,12 @@ local function greetCallback(cid)
 end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "Yes") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "Yes") then
 		if player:getStorageValue(Storage.OutfitQuest.MageSummoner.AddonWand) < 1 then
 			npcHandler:say("OI will tell you a small secret now. My friend Lynda in Thais can create a blessed wand. Greet her from me, maybe she will aid you.", cid)
 			player:setStorageValue(Storage.OutfitQuest.MageSummoner.AddonWand, 1)

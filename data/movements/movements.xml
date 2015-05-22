@@ -130,7 +130,7 @@
 	<!--- The New Frontier Quest -->
 	<movevent event="StepIn" actionid="8000" script="quests/the new frontier/wayOut.lua" />
 	<movevent event="StepIn" actionid="8007" script="quests/the new frontier/trap.lua" />
-	<movevent event="StepIn" fromaid="12135" toaid="12136" script="quests/the new frontier/minotaurBoss.lua" />
+	<movevent event="StepIn" actionid="12135" script="quests/the new frontier/minotaurBoss.lua" />
 	<movevent event="StepIn" actionid="12138" script="quests/the new frontier/jailExit.lua" />
 
 	<!--- Unnatural Selection -->
@@ -225,6 +225,7 @@
 	<!-- Inquisition Quest -->
 	<movevent event="StepIn" fromuid="2150" touid="2180" script="quests/inquisition/teleportMain.lua" />
 	<movevent event="StepIn" uniqueid="9014" script="quests/inquisition/entrance.lua" />
+	<movevent event="StepIn" actionid="4003" script="quests/inquisition/rewardroomtext.lua" />
 
 	<!-- Pits Of Inferno Quest -->
 	<movevent event="StepIn" fromuid="2090" touid="2096" script="quests/pits of inferno/checkThrones.lua" />
@@ -373,6 +374,8 @@
 	<movevent event="StepOut" itemid="12196" script="closingdoor.lua" />
 	<movevent event="StepOut" itemid="12203" script="closingdoor.lua" />
 	<movevent event="StepOut" itemid="12205" script="closingdoor.lua" />
+	<movevent event="StepOut" itemid="22822" script="closingdoor.lua"/>
+	<movevent event="StepOut" itemid="22831" script="closingdoor.lua"/>
 
 	<!-- Snow footprint tiles -->
 	<movevent event="StepOut" itemid="670" script="snow.lua" />
@@ -572,6 +575,8 @@
 	<movevent event="DeEquip" itemid="18407" slot="necklace" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="21691" slot="necklace" level="150" function="onEquipItem" />
 	<movevent event="DeEquip" itemid="21691" slot="necklace" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="23541" slot="necklace" level="75" function="onEquipItem" />
+	<movevent event="DeEquip" itemid="23541" slot="necklace" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="23554" slot="necklace" level="75" function="onEquipItem">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />

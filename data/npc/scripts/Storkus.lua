@@ -8,10 +8,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif(msgcontains(msg, "mission")) then
+	end
+
+	local player = Player(cid)
+	if(msgcontains(msg, "mission")) then
 		if(player:getStorageValue(Storage.TheInquisition.Questline) == 6) then
 			if(player:getStorageValue(Storage.TheInquisition.StorkusVampiredust) < 0) then
 				player:setStorageValue(Storage.TheInquisition.StorkusVampiredust, 0)

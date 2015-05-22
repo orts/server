@@ -30,7 +30,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		altar.position:sendMagicEffect(CONST_ME_TELEPORT)
 		Game.createItem(altar.itemId, 1, altar.position)
 		item:transform(1946)
-		addEvent(revertLever, 4 * 1000, position)
+		addEvent(revertLever, 4 * 1000, toPosition)
 	end
 	return true
 end

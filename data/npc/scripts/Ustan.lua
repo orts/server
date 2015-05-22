@@ -9,10 +9,12 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()		npcHandler:onThink()		end
 
 local function creatureSayCallback(cid, type, msg)
-	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
 		return false
-	elseif msgcontains(msg, "cough syrup") then
+	end
+
+	local player = Player(cid)
+	if msgcontains(msg, "cough syrup") then
 		npcHandler:say("I had some cough syrup a while ago. It was stolen in an ape raid. I fear if you want more cough syrup you will have to buy it in the druids guild in carlin.", cid)
 	elseif msgcontains(msg, "addon") then
 		if player:getStorageValue(Storage.OutfitQuest.DruidBodyAddon) < 1 then

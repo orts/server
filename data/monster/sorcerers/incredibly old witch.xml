@@ -17,31 +17,31 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Rat" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Rat" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Chicken" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Chicken" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Green Frog" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Green Frog" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Pig" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Pig" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Bug" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Bug" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Kongra" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Kongra" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Dog" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Dog" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Skunk" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Skunk" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
-		<attack name="outfit" interval="2000" chance="75" range="5" radius="5" target="1" monster="Donkey" duration="20000">
+		<attack name="outfit" interval="4000" chance="75" range="5" radius="5" target="1" monster="Donkey" duration="20000">
 			<attribute key="areaEffect" value="teleport" />
 		</attack>
 	</attacks>
