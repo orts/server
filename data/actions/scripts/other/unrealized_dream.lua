@@ -4,7 +4,7 @@ local items = {
 	{485, "Piggy Bank", "You try to concentrate and your dream comes true. You just thought about your wealth."},
 	{956, "Blue Rose", "You try to concentrate and your dream comes true. You just thought about spring."},
 	{481, "Lute", "You try to concentrate and your dream comes true. Well, part of. You thought about getting rich and a pile of loot..."},
-	{960, "Present", "You try to concentrate and your dream comes true. You were that curious for the surprise."},
+	{960, 8110, "You try to concentrate and your dream comes true. You were that curious for the surprise."},
 	{956, "Simple Dress", "You try to concentrate and ... Oops, where did that dream come from?"},
 	{188, "Silver Prison Key", "You try to concentrate and your dream comes true. You just thought about a true challenge."},
 	{419, "Spellwand", "You try to concentrate and your dream comes true. Somehow you seemed to get distracted when you thought of Ferumbras."},
