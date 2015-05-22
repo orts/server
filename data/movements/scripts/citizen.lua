@@ -13,7 +13,8 @@ local config = {
 	[9067] = 13,
 	[9068] = 14,
 	[9240] = 28,
-	[9500] = 29
+	[9500] = 29,
+	[9501] = 33
 }
 
 function onStepIn(creature, item, position, fromPosition)

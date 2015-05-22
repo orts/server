@@ -9001,7 +9001,7 @@
 	<item id="5791" article="a" name="stuffed dragon">
 		<attribute key="weight" value="850" />
 	</item>
-	<item fromid="5792" toid="5797" article="a" name="dice">
+	<item fromid="5792" toid="5797" article="a" name="die">
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="5798" article="an" name="abacus">
@@ -24106,9 +24106,13 @@
 	<item id="16096" article="a" name="dung ball">
 		<attribute key="weight" value="190" />
 	</item>
-	<item id="16099" article="a" name="cake cabinet kit">
-		<attribute key="description" value="Use it in your house to construct a cake cabinet." />
-		<attribute key="weight" value="7500" />
+	<item id="16097" article="a" name="cake cabinet">
+		<attribute key="containerSize" value="8" />
+		<attribute key="rotateTo" value="16098" />
+	</item>
+	<item id="16098" article="a" name="cake cabinet">
+		<attribute key="containerSize" value="8" />
+		<attribute key="rotateTo" value="16097" />
 	</item>
 	<item id="16101" article="a" name="premium scroll">
 		<attribute key="description" value="Using this scroll will add 30 days of premium time to your account once." />
@@ -30648,7 +30652,7 @@
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="9600" />
 	</item>
-	<item id="23662" name="juicy roots">
+	<item id="23662" name="juicy roots" plural="juicy roots">
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="23663" article="a" name="feedbag">

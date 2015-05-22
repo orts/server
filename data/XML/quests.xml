@@ -1334,4 +1334,7 @@
 			<missionstate id="1" description="You completed this Quest!" />
 		</mission>
 	</quest>
+	<quest name="Oramond" startstorageid="10060" startstoragevalue="1">
+		<mission name="To Take Roots" storageid="20061" startvalue="0" endvalue="1000" description="Five Juicy roots from the outskirts of Rathleton may already help feed the poor. Try to find a city official to deliver them to or go to the Rathleton poor house./n/nRoots harvested: |STATE|/5" />
+	</quest>
 </quests>
