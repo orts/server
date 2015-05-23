@@ -51,14 +51,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	
 	for i = 1, #spectators do
 		local spectator = spectators[i]
-		if spectator.uid == player.uid then
-			continue = true
+		if spectator.uid ~= player.uid then
+			-- should it send some message if player isn't near the dreamcatcher device?
+			return false
 		end
-	end
-	
-	if not continue then
-		-- should it send some message if player isn't near the dreamcatcher device?
-		return false
 	end
 	
 	randomizeItem()
