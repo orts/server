@@ -13,7 +13,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, 'precious necklace') then
 		if player:getItemCount(8768) > 0 then
 			npcHandler:say('Would you like to buy my precious necklace for 5000 gold?', cid)
@@ -36,7 +35,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:setStorageValue(Storage.WhatAFoolishQuest.ScaredCarina, 1)
 			npcHandler:say('IIIEEEEEK!', cid)
 			npcHandler.topic[cid] = 0

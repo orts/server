@@ -31,7 +31,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, 'mission') then
 		local cStorage = player:getStorageValue(Storage.SeaOfLightQuest.Questline)
 		if cStorage == -1 then
@@ -87,7 +86,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler:say('Put the mirror crystal into the special carrying device I gave you and bring it directly to me.', cid)
 				return true
 			end
-			
+
 			npcHandler:say('Do you have the mirror crystal? Unbelievable! Alright I will extract the crystal from the device myself, would you please give me the device with the crystal and step back?', cid)
 			npcHandler.topic[cid] = 7
 		end
@@ -132,7 +131,7 @@ local function creatureSayCallback(cid, type, msg)
 				npcHandler.topic[cid] = 0
 				return true
 			end
-			
+
 			player:addItem(2145, 10)
 			player:addItem(2154, 1)
 			player:addExperience(1000, true)

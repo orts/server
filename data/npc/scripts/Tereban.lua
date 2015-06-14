@@ -31,7 +31,7 @@ local config = {
 		itemId = 12503
 	},
 	['spectral cloth'] = {
-		storage = Storage.FathersBurdenQuest.Cloth, 
+		storage = Storage.FathersBurdenQuest.Cloth,
 		messages = {
 			deliever = 'Could you find the cloth I am looking for?',
 			success = 'It looks a bit scary but I guess sorcerers might even find that appealing. Thank you very much.',
