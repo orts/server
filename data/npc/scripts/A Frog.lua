@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 keywordHandler:addKeyword({'prince'}, StdModule.say, {npcHandler = npcHandler, text = "If another prince comes to kiss me, I'll kick his ass so bad that he'll need a sedan chair to get away."})
 keywordHandler:addKeyword({'princess'}, StdModule.say, {npcHandler = npcHandler, text = "If another prince comes to kiss me, I'll kick his ass so bad that he'll need a sedan chair to get away."})

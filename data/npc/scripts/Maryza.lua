@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -13,7 +13,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, 'cookbook') then
 		if player:getStorageValue(Storage.MaryzaCookbook) ~= 1 then
 			npcHandler:say('The cookbook of the famous dwarven kitchen. You\'re lucky. I have a few copies on sale. Do you like one for 150 gold?', cid)
@@ -21,7 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('I\'m sorry but I sell only one copy to each customer. Otherwise they would have been sold out a long time ago.', cid)
 		end
-
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
 			if not player:removeMoney(150) then
@@ -40,8 +38,8 @@ local function creatureSayCallback(cid, type, msg)
 end
 
 npcHandler:setMessage(MESSAGE_GREET, 'Welcome to the Jolly Axeman, |PLAYERNAME|. Have a good time and eat some food!')
-
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
 local focusModule = FocusModule:new()
 focusModule:addGreetMessage('hello, maryza')
 npcHandler:addModule(focusModule)

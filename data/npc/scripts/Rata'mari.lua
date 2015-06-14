@@ -4,14 +4,13 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local function greetCallback(cid)
 	if Player(cid):getStorageValue(Storage.DjinnWar.MaridFaction.Mission02) == -1 then
 		return false
 	end
-
 	return true
 end
 
@@ -21,7 +20,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, 'spy report') then
 		local reportProgress = player:getStorageValue(Storage.DjinnWar.MaridFaction.RataMari)
 		if reportProgress < 1 then

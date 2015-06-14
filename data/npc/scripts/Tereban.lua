@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local config = {
 	['strong sinew'] = {
@@ -112,7 +112,6 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if npcHandler.topic[cid] == 0 then
 		if msgcontains(msg, 'mission') then
 			if player:getStorageValue(Storage.FathersBurdenQuest.Status) == 1 then

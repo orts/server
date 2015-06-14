@@ -4,15 +4,14 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()		npcHandler:onThink()		end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local voices = { {text = 'Pssst!'} }
 npcHandler:addModule(VoiceModule:new(voices))
 
 local function greetCallback(cid)
 	local player = Player(cid)
-
 	if player:getStorageValue(Storage.secretService.AVINMission01) == 1 and player:getItemCount(14326) > 0 then
 		player:setStorageValue(Storage.secretService.AVINMission01, 2)
 		npcHandler:say("I don't like the way you look. Help me boys!", cid)
@@ -32,7 +31,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, "letter") then
 		if player:getStorageValue(Storage.secretService.AVINMission01) == 2 then
 			npcHandler:say("You have a letter for me?", cid)

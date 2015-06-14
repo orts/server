@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 keywordHandler:addKeyword({'chosen'}, StdModule.say, {npcHandler = npcHandler, text = "The lizards here are the chosen ones of their kind. We believe them to be the strongest warriors in these lands.So I lead my people here to learn their ways. We are mere assassins but they are using foreign techniques and seem to be far more efficient"})
 keywordHandler:addAliasKeyword({'lizard'})

@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 -- Mission (Tibia Tales: Rest In Hallowed Ground)
 local startMissionKeyword = keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, text = 'Well, I would do it myself but I can\'t leave town for a longer time. Would you be so kind to bring me a vial of holy water from the White Raven Monastery?'}, function(player) return player:getStorageValue(Storage.TibiaTales.RestInHallowedGround.Questline) == -1 end)
