@@ -7,8 +7,8 @@ local transfer = {}
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()		npcHandler:onThink()		end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local voices = {
 	{ text = 'Hey, send a letter to your friend now and then. Keep in touch, you know.' },

@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local travelNode = keywordHandler:addKeyword({'teleport'}, StdModule.say, {npcHandler = npcHandler, text = 'You will now be travelled out of here. Are you sure that you want to face that teleport?'})
 	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, destination = Position(32834, 32275, 9) })

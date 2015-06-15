@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 keywordHandler:addKeyword({'soldiers'}, StdModule.say, {npcHandler = npcHandler, text = "It was the elite of the whole army. They were called the Red Legion (also known as the bloody legion)."})
 keywordHandler:addKeyword({'orcs'}, StdModule.say, {npcHandler = npcHandler, text = "The orcs attacked the workers from time to time and so they disturbed the WORKS on the city."})

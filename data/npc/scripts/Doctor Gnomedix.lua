@@ -12,7 +12,7 @@ function onCreatureSay(cid, type, msg)
 	end
 	npcHandler:onCreatureSay(cid, type, msg)
 end
-function onThink()				npcHandler:onThink()					end
+function onThink()						npcHandler:onThink()						end
 
 local function creatureSayCallback(cid, type, msg)
 	if(not npcHandler:isFocused(cid)) then

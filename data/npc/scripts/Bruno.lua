@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, text = "Well, I sell freshly caught fish. You like some? Of course, you can buy more than one at once. *grin* Just ask me for a {trade}."})
 keywordHandler:addKeyword({'buy'}, StdModule.say, {npcHandler = npcHandler, text = "Well, I sell freshly caught fish. You like some? Of course, you can buy more than one at once. *grin* Just ask me for a {trade}."})

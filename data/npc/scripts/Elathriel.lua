@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 keywordHandler:addKeyword({'business'}, StdModule.say, {npcHandler = npcHandler, text = 'I am the leader of the Kuridai and the Az\'irel of Ab\'Dendriel. Humans would call it {sheriff}, executioner, or avenger.'})
 keywordHandler:addKeyword({'sheriff'}, StdModule.say, {npcHandler = npcHandler, text = 'Sometimes people get imprisoned for some time. True criminals will be cast out and for comitting the worst crimes offenders are thrown into the hellgate.'})

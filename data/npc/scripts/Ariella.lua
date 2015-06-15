@@ -4,8 +4,8 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()		npcHandler:onThink()		end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
 
 local voices = { {text = 'Have a drink in Meriana\'s only tavern!'} }
 npcHandler:addModule(VoiceModule:new(voices))
@@ -16,7 +16,6 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
 	if msgcontains(msg, 'cookie') then
 		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31
 				and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Ariella) ~= 1 then

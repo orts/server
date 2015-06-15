@@ -10,7 +10,7 @@ function onCreatureSay(creature, type, msg)
 	end
 	npcHandler:onCreatureSay(creature, type, msg)
 end
-function onThink()				npcHandler:onThink()					end
+function onThink()						npcHandler:onThink()						end
 
 local voices = { {text = 'AHHHH THE PAIN OF AGESSS! THE PAIN!'} }
 npcHandler:addModule(VoiceModule:new(voices))
