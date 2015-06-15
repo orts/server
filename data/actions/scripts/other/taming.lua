@@ -74,7 +74,7 @@ local config = {
 		id = 4,
 		type = TYPE_MONSTER,
 		chance = 25,
-		fail = { 
+		fail = {
 			{run = true, sound = 'Baaaah', text = 'The black sheep ran away.'},
 			{broke = true, text = 'Oh no! The reins were torn.'},
 			{sound = 'Baaaah', text = 'The black sheep is trying to run away.'}

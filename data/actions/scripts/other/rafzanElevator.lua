@@ -1,6 +1,6 @@
 local elevatorPosition = {
-	Position(33051, 32099, 6), 
-	Position(33051, 32099, 7) 
+	Position(33051, 32099, 6),
+	Position(33051, 32099, 7)
 }
 
 local config = {

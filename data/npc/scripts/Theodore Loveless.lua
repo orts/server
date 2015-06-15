@@ -20,7 +20,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 			return true
 		end
-		
+
 		player:setStorageValue(Storage.WhatAFoolishQuest.Cigar, 1)
 		Npc():getPosition():sendMagicEffect(CONST_ME_EXPLOSIONHIT)
 		npcHandler:say({

@@ -8,4 +8,4 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:sendTutorial(9)
 		player:setStorageValue(Storage.RookgaardTutorialIsland.cockroachBodyMsgStorage, 1)
 	end
-end	
+end
