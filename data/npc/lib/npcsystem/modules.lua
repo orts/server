@@ -258,17 +258,17 @@ if Modules == nil then
 		self.npcHandler = handler
 
 		local greetWords = self.greetWords or FOCUS_GREETWORDS
-		for i = 1, #greetWords do
+		for i, word in pairs(greetWords) do
 			local obj = {}
-			obj[#obj + 1] = greetWords[i]
+			obj[#obj + 1] = word
 			obj.callback = self.greetCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 		end
 
 		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
-		for i = 1, #farewellWords do
+		for i, word in pairs(farewellWords) do
 			local obj = {}
-			obj[#obj + 1] = farewellWords[i]
+			obj[#obj + 1] = word
 			obj.callback = self.farewellCallback or FocusModule.messageMatcherDefault
 			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
 		end
@@ -284,10 +284,10 @@ if Modules == nil then
 
 
 		if type(message) == 'string' then
-			self.greetWords[#self.greetWords + 1] = message
+			table.insert(self.greetWords, message)
 		else
 			for i = 1, #message do
-				self.greetWords[#self.greetWords + 1] = message[i]
+				table.insert(self.greetWords, message[i])
 			end
 		end
 	end
@@ -299,10 +299,10 @@ if Modules == nil then
 		end
 
 		if type(message) == 'string' then
-			self.farewellWords[#self.farewellWords + 1] = message
+			table.insert(self.farewellWords, message)
 		else
 			for i = 1, #message do
-				self.farewellWords[#self.farewellWords + 1] = message
+				table.insert(self.farewellWords, message[i])
 			end
 		end
 	end
@@ -335,9 +335,7 @@ if Modules == nil then
 
 	-- Custom message matching callback function for greeting messages.
 	function FocusModule.messageMatcherDefault(keywords, message)
-		local word
-		for i = 1, #keywords do
-			word = keywords[i]
+		for i, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -348,9 +346,7 @@ if Modules == nil then
 	end
 
 	function FocusModule.messageMatcherStart(keywords, message)
-		local word
-		for i = 1, #keywords do
-			word = keywords[i]
+		for i, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.starts(message, word) then
 					return true
@@ -827,9 +823,9 @@ if Modules == nil then
 		self.noText = handler:getMessage(MESSAGE_DECLINE)
 
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
-			for i = 1, #SHOP_TRADEREQUEST do
+			for i, word in pairs(SHOP_TRADEREQUEST) do
 				local obj = {}
-				obj[#obj + 1] = SHOP_TRADEREQUEST[i]
+				obj[#obj + 1] = word
 				obj.callback = SHOP_TRADEREQUEST.callback or ShopModule.messageMatcher
 				handler.keywordHandler:addKeyword(obj, ShopModule.requestTrade, {module = self})
 			end
@@ -840,9 +836,7 @@ if Modules == nil then
 
 	-- Custom message matching callback function for requesting trade messages.
 	function ShopModule.messageMatcher(keywords, message)
-		local word
-		for i = 1, #keywords do
-			word = keywords[i]
+		for i, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -896,7 +890,7 @@ if Modules == nil then
 		end
 
 		if names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE then
-			for i = 1, #names do
+			for i, name in pairs(names) do
 				local parameters = {
 						itemid = itemid,
 						cost = cost,
@@ -908,7 +902,7 @@ if Modules == nil then
 
 				keywords = {}
 				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = names[i]
+				keywords[#keywords + 1] = name
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -950,7 +944,7 @@ if Modules == nil then
 	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
 		if names ~= nil then
-			for i = 1, #names do
+			for i, name in pairs(names) do
 				local parameters = {
 						container = container,
 						itemid = itemid,
@@ -963,7 +957,7 @@ if Modules == nil then
 
 				keywords = {}
 				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = names[i]
+				keywords[#keywords + 1] = name
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -984,13 +978,13 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or ItemType(itemid):getName()}
+				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or ItemType(itemid):getName()})
 			else
 				shopItem.sell = cost
 			end
 		end
 
-		if(names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE) then
+		if (names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE) then
 			for i = 1, #names do
 				local parameters = {
 					itemid = itemid,
@@ -1001,8 +995,8 @@ if Modules == nil then
 				}
 
 				keywords = {}
-				keywords[#keywords + 1] = "sell"
-				keywords[#keywords + 1] = names[i]
+				table.insert(keywords, "sell")
+				table.insert(keywords, name)
 				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
@@ -1134,10 +1128,10 @@ if Modules == nil then
 
 		local itemWindow = {}
 		for i = 1, #module.npcHandler.shopItems do
-			itemWindow[#itemWindow + 1] = module.npcHandler.shopItems[i]
+			table.insert(itemWindow, module.npcHandler.shopItems[i])
 		end
 
-		if(itemWindow[1] == nil) then
+		if itemWindow[1] == nil then
 			local parseInfo = { [TAG_PLAYERNAME] = Player(cid):getName() }
 			local msg = module.npcHandler:parseMessage(module.npcHandler:getMessage(MESSAGE_NOSHOP), parseInfo)
 			module.npcHandler:say(msg, cid)

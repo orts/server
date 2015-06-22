@@ -156,9 +156,8 @@ if NpcHandler == nil then
 
 	-- Function used to verify if npc is focused to certain player
 	function NpcHandler:isFocused(focus)
-		local focuses = self.focuses
-		for i = 1, #focuses do
-			if focuses[i] == focus then
+		for _, v in pairs(self.focuses) do
+			if v == focus then
 				return true
 			end
 		end
@@ -168,9 +167,7 @@ if NpcHandler == nil then
 	-- This function should be called on each onThink and makes sure the npc faces the player it is talking to.
 	--	Should also be called whenever a new player is focused.
 	function NpcHandler:updateFocus()
-		local focus
-		for i = 1, #self.focuses do
-			focus = self.focuses[i]
+		for _, focus in pairs(self.focuses) do
 			if focus ~= nil then
 				doNpcSetCreatureFocus(focus)
 				return
@@ -182,16 +179,16 @@ if NpcHandler == nil then
 	-- Used when the npc should un-focus the player.
 	function NpcHandler:releaseFocus(focus)
 		if shop_cost[focus] ~= nil then
-			table.remove(shop_amount, focus)
-			table.remove(shop_cost, focus)
-			table.remove(shop_rlname, focus)
-			table.remove(shop_itemid, focus)
-			table.remove(shop_container, focus)
-			table.remove(shop_npcuid, focus)
-			table.remove(shop_eventtype, focus)
-			table.remove(shop_subtype, focus)
-			table.remove(shop_destination, focus)
-			table.remove(shop_premium, focus)
+			shop_amount[focus] = nil
+			shop_cost[focus] = nil
+			shop_rlname[focus] = nil
+			shop_itemid[focus] = nil
+			shop_container[focus] = nil
+			shop_npcuid[focus] = nil
+			shop_eventtype[focus] = nil
+			shop_subtype[focus] = nil
+			shop_destination[focus] = nil
+			shop_premium[focus] = nil
 		end
 
 		if self.eventDelayedSay[focus] then
@@ -208,7 +205,8 @@ if NpcHandler == nil then
 				pos = k
 			end
 		end
-		table.remove(self.focuses, pos)
+
+		self.focuses[pos] = nil
 
 		self.eventSay[focus] = nil
 		self.eventDelayedSay[focus] = nil
@@ -253,9 +251,7 @@ if NpcHandler == nil then
 	-- Calls the callback function represented by id for all modules added to this npchandler with the given arguments.
 	function NpcHandler:processModuleCallback(id, ...)
 		local ret = true
-		local module
-		for i = 1, #self.modules do
-			module = self.modules[i]
+		for _, module in pairs(self.modules) do
 			local tmpRet = true
 			if id == CALLBACK_CREATURE_APPEAR and module.callbackOnCreatureAppear ~= nil then
 				tmpRet = module:callbackOnCreatureAppear(...)
@@ -514,9 +510,7 @@ if NpcHandler == nil then
 			end
 
 			if self:processModuleCallback(CALLBACK_ONTHINK) then
-				local focus
-				for i = 1, #self.focuses do
-					focus = self.focuses[i]
+				for _, focus in pairs(self.focuses) do
 					if focus ~= nil then
 						if not self:isInRange(focus) then
 							self:onWalkAway(focus)

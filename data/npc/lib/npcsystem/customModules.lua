@@ -182,11 +182,12 @@ function VoiceModule:new(voices, timeout, chance)
 
 	obj.voices = voices
 	for i = 1, #obj.voices do
-		if obj.voices[i].yell then
-			obj.voices[i].yell = nil
-			obj.voices[i].talktype = TALKTYPE_YELL
+		local voice = obj.voices[i]
+		if voice.yell then
+			voice.yell = nil
+			voice.talktype = TALKTYPE_YELL
 		else
-			obj.voices[i].talktype = TALKTYPE_SAY
+			voice.talktype = TALKTYPE_SAY
 		end
 	end
 

@@ -86,7 +86,7 @@ local function revertCask(position)
 end
 
 function onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
-	if not (target or target:isItem()) then
+	if not target or not target:isItem() then
 		return false
 	end
 
@@ -94,70 +94,47 @@ function onDestroyItem(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
+	if toPosition.x == CONTAINER_POSITION then
+		player:sendCancelMessage(Game.getReturnMessage(RETURNVALUE_NOTPOSSIBLE))
+		return true
+	end
+
 	local targetId = target.itemid
-
-	--chest,crate,barrel...
-	if (targetId >= 1724 and targetId <= 1741) or (targetId >= 2581 and targetId <= 2588) or targetId == 1770 or targetId == 2098 or targetId == 1774 or targetId == 1775 or targetId == 2064 or (targetId >= 1747 and targetId <= 1753) or (targetId >= 1714 and targetId <= 1717) or (targetId >= 1650 and targetId <= 1653) or (targetId >= 1666 and targetId <= 1677) or (targetId >= 1614 and targetId <= 1616) or (targetId >= 3813 and targetId <= 3820) or (targetId >= 3807 and targetId <= 3810) or (targetId >= 2080 and targetId <= 2085) or (targetId >= 2116 and targetId <= 2119) or targetId == 2094 or targetId == 2095 or targetId == 1619 or targetId == 2602 or targetId == 3805 or targetId == 3806 then
-		if math.random(7) == 1 then
-			if targetId == 1738 or targetId == 1739 or (targetId >= 2581 and targetId <= 2588) or targetId == 1770 or targetId == 2098 or targetId == 1774 or targetId == 1775 or targetId == 2064 then
-				Game.createItem(2250, 1, toPosition)
-			elseif (targetId >= 1747 and targetId <= 1749) or targetId == 1740 then
-				Game.createItem(2251, 1, toPosition)
-			elseif (targetId >= 1714 and targetId <= 1717) then
-				Game.createItem(2252, 1, toPosition)
-			elseif (targetId >= 1650 and targetId <= 1653) or (targetId >= 1666 and targetId <= 1677) or (targetId >= 1614 and targetId <= 1616) or (targetId >= 3813 and targetId <= 3820) or (targetId >= 3807 and targetId <= 3810) then
-				Game.createItem(2253, 1, toPosition)
-			elseif (targetId >= 1724 and targetId <= 1737) or (targetId >= 2080 and targetId <= 2085) or (targetId >= 2116 and targetId <= 2119) or targetId == 2094 or targetId == 2095 then
-				Game.createItem(2254, 1, toPosition)
-			elseif (targetId >= 1750 and targetId <= 1753) or targetId == 1619 or targetId == 1741 then
-				Game.createItem(2255, 1, toPosition)
-			elseif targetId == 2602 then
-				Game.createItem(2257, 1, toPosition)
-			elseif isInArray({3805, 3806}, targetId) then
-				Game.createItem(2259, 1, toPosition)
-			end
-			target:remove(1)
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-
-	--large amphora
-	elseif targetId == 4996 then
-		if math.random(3) == 1 then
-			target:transform(4997)
-			target:decay()
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-
-	--spiderweb
-	elseif isInArray({7538, 7539}, targetId) then
-		if math.random(7) == 1 then
-			target:transform(targetId == 7538 and 7544 or 7545)
-			target:decay()
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-
-	--spideregg AgainstTheSpiderCult
-	elseif targetId == 7585 then
-		local storage = player:getStorageValue(Storage.TibiaTales.AgainstTheSpiderCult)
-		if storage >= 1 and storage < 5 then
-			player:setStorageValue(Storage.TibiaTales.AgainstTheSpiderCult, math.max(1, storage) + 1)
-		end
-		Game.createMonster("giant spider", Position(33181, 31869, 12))
-		target:transform(7586)
-		target:decay()
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-
-	--wooden bar
-	elseif isInArray({3798, 3799}, targetId) then
-		if math.random(3) == 1 then
-			target:transform(targetId == 3798 and 3959 or 3958)
-			target:decay()
-		end
-		toPosition:sendMagicEffect(CONST_ME_POFF)
-	else
+	local destroyId = ItemType(targetId):getDestroyId()
+	if destroyId == 0 then
 		return false
 	end
 
+	if math.random(7) == 1 then
+		local item = Game.createItem(destroyId, 1, toPosition)
+		if item ~= nil then
+			item:decay()
+		end
+
+		-- Against The Spider Cult (Spider Eggs)
+		if targetId == 7585 then
+			local eggStorage = player:getStorageValue(Storage.TibiaTales.AgainstTheSpiderCult)
+			if eggStorage >= 1 and eggStorage < 5 then
+				player:setStorageValue(Storage.TibiaTales.AgainstTheSpiderCult, math.max(1, eggStorage) + 1)
+			end
+
+			Game.createMonster("Giant Spider", Position(33181, 31869, 12))
+		end
+
+		-- Move items outside the container
+		if target:isContainer() then
+			for i = target:getSize() - 1, 0, -1 do
+   				local containerItem = target:getItem(i)
+				if containerItem then
+					containerItem:moveTo(toPosition)
+				end
+			end
+		end
+
+		target:remove(1)
+	end
+
+	toPosition:sendMagicEffect(CONST_ME_POFF)
 	return true
 end
 
