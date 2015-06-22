@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <raid>
 	 <!--Announcements-->
 	<announce delay="1000" type="event" message="Deep under Edron, the Orc population seems to grow rapidly. Be careful and take a rope with you!" />

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <raid>
 	 <!--Announcements-->
 	<announce delay="1000" type="event" message="There are more lions than usual west of Darashia." />
