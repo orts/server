@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <raid>
 <announce delay="1000" type="event" message="Feverish Citizens are invading the streets of Venore!" />
 
