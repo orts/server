@@ -63,14 +63,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 
 	elseif isInArray(keys, itemId) then
-		local targetId, targetActionId = target:getId(), target:getActionId()
-		if not target:isItem()
-				or not target:getType():isDoor() or isInArray(openSpecialDoors, targetId)
-				or isInArray(questDoors, targetId) or isInArray(levelDoors, targetId)
+		if not target
+				or not target:isItem()
+				or not target:getType():isDoor()
 				or Tile(toPosition):getHouse() then
 			return false
 		end
 
+		local targetId = target:getId()
+		if isInArray(openSpecialDoors, targetId)
+				or isInArray(questDoors, targetId)
+				or isInArray(levelDoors, targetId) then
+			return false
+		end
+
+		local targetActionId = target:getActionId()
 		if targetActionId > 0 and actionId == targetActionId then
 			if not isDoorLocked(targetActionId, toPosition) then
 				toggleDoorLock(target, true)

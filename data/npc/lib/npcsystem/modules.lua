@@ -258,7 +258,7 @@ if Modules == nil then
 		self.npcHandler = handler
 
 		local greetWords = self.greetWords or FOCUS_GREETWORDS
-		for i, word in pairs(greetWords) do
+		for _, word in pairs(greetWords) do
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = self.greetCallback or FocusModule.messageMatcherDefault
@@ -266,7 +266,7 @@ if Modules == nil then
 		end
 
 		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
-		for i, word in pairs(farewellWords) do
+		for _, word in pairs(farewellWords) do
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = self.farewellCallback or FocusModule.messageMatcherDefault
@@ -335,7 +335,7 @@ if Modules == nil then
 
 	-- Custom message matching callback function for greeting messages.
 	function FocusModule.messageMatcherDefault(keywords, message)
-		for i, word in pairs(keywords) do
+		for _, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -346,7 +346,7 @@ if Modules == nil then
 	end
 
 	function FocusModule.messageMatcherStart(keywords, message)
-		for i, word in pairs(keywords) do
+		for _, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.starts(message, word) then
 					return true
@@ -823,7 +823,7 @@ if Modules == nil then
 		self.noText = handler:getMessage(MESSAGE_DECLINE)
 
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
-			for i, word in pairs(SHOP_TRADEREQUEST) do
+			for _, word in pairs(SHOP_TRADEREQUEST) do
 				local obj = {}
 				obj[#obj + 1] = word
 				obj.callback = SHOP_TRADEREQUEST.callback or ShopModule.messageMatcher
@@ -836,7 +836,7 @@ if Modules == nil then
 
 	-- Custom message matching callback function for requesting trade messages.
 	function ShopModule.messageMatcher(keywords, message)
-		for i, word in pairs(keywords) do
+		for _, word in pairs(keywords) do
 			if type(word) == "string" then
 				if string.find(message, word) and not string.find(message, "[%w+]" .. word) and not string.find(message, word .. "[%w+]") then
 					return true
@@ -890,7 +890,7 @@ if Modules == nil then
 		end
 
 		if names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE then
-			for i, name in pairs(names) do
+			for _, name in pairs(names) do
 				local parameters = {
 						itemid = itemid,
 						cost = cost,
@@ -944,7 +944,7 @@ if Modules == nil then
 	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getName will be used)
 	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
 		if names ~= nil then
-			for i, name in pairs(names) do
+			for _, name in pairs(names) do
 				local parameters = {
 						container = container,
 						itemid = itemid,
