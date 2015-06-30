@@ -20258,6 +20258,9 @@
 		<attribute key="decayTo" value="11773" />
 		<attribute key="duration" value="2" />
 	</item>
+	<item fromid="11763" toid="11765" article="a" name="putrid growth" />
+	<item id="11766" article="" name="acid" />
+	<item fromid="11767" toid="11772" article="a" name="putrid growth" />
 	<item fromid="11775" toid="11778" name="ground" />
 	<item fromid="11785" toid="11792" name="muddy floor" />
 	<item fromid="11793" toid="11795" article="a" name="skull pillar" />
@@ -20297,17 +20300,19 @@
 	<item fromid="11972" toid="11982" name="jade ornaments" />
 	<item fromid="11983" toid="11993" name="floor" />
 	<item id="11994" article="a" name="jade ornament" />
-	<item fromid="11995" toid="11998" article="a" name="torch" />
+	<item fromid="11995" toid="11998" article="a" name="jade lamp" />
 	<item fromid="11999" toid="12002" article="a" name="dragon statue" />
-	<item id="12003" article="a" name="pillar" />
+	<item id="12003" article="a" name="glowing jade pillar" />
 	<item fromid="12004" toid="12006" article="a" name="torch" />
 	<item fromid="12007" toid="12008" article="a" name="lamp" />
 	<item id="12009" article="a" name="pillar" />
-	<item fromid="12010" toid="12011" article="a" name="torch" />
+	<item fromid="12010" toid="12011" article="a" name="skull torch" />
 	<item id="12012" article="a" name="table" />
 	<item id="12013" article="a" name="pillar" />
 	<item fromid="12014" toid="12017" article="a" name="mystic floor lamp" />
 	<item id="12024" name="timbers" />
+	<item id="12030" name="jade ornaments" />
+	<item id="12032" name="jade ornaments" />
 	<item fromid="12039" toid="12040" article="a" name="well" />
 	<item fromid="12042" toid="12043" article="a" name="dragon fountain" />
 	<item fromid="12044" toid="12045" article="a" name="weapon's rack" />
@@ -20396,7 +20401,7 @@
 	<item id="12190" article="an" name="open door">
 		<attribute key="type" value="door" />
 	</item>
-	<item fromid="12191" toid="12192" name="wall torch" />
+	<item fromid="12191" toid="12192" article="a" name="dragon claw lamp" />
 	<item id="12193" article="a" name="gate of expertise">
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="type" value="door" />
@@ -20424,7 +20429,7 @@
 	<item id="12199" article="an" name="open door">
 		<attribute key="type" value="door" />
 	</item>
-	<item fromid="12200" toid="12201" name="wall torch" />
+	<item fromid="12200" toid="12201" article="a" name="dragon claw lamp" />
 	<item id="12202" article="a" name="gate of expertise">
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="type" value="door" />
@@ -20442,12 +20447,15 @@
 	</item>
 	<item fromid="12206" toid="12207" article="a" name="mirror" />
 	<item fromid="12208" toid="12211" article="a" name="wall lamp" />
-	<!-- Missing 12212 to 12214 -->
+	<item id="12212" name="ade ornaments" />
+	<!-- Missing 12213 to 12214 -->
 	<item fromid="12215" toid="12218" article="a" name="banner" />
 	<item fromid="12219" toid="12220" article="a" name="tapestry" />
 	<item fromid="12221" toid="12227" article="a" name="dragon statue" />
 	<item fromid="12228" toid="12233" article="a" name="corrupted wall" />
+	<item fromid="12234" toid="12237" name="rutted stone" />
 	<item fromid="12266" toid="12271" article="a" name="sign" />
+	<item id="12272" name="dirt floor" />
 	<item id="12274" article="a" name="sign" />
 	<item id="12284" article="a" name="marked crate">
 		<attribute key="description" value="This crate has been marked with lizard symbols. It is large enough for a grown person to fit in." />
@@ -20718,7 +20726,7 @@
 	<item id="12449" article="a" name="safety pin">
 		<attribute key="weight" value="50" />
 	</item>
-	<item fromid="12450" toid="12465" article="a" name="molten lava well" />
+	<item fromid="12450" toid="12465" article="a" name="large dragon basin" />
 	<item id="12466" article="a" name="scroll of heroic deeds" plural="scrolls of heroic deeds">
 		<attribute key="weight" value="79" />
 	</item>
@@ -22571,6 +22579,7 @@
 		<attribute key="weight" value="13000" />
 	</item>
 	<item id="13868" name="greasy stone" />
+	<item id="13869" article="a" name="hole" />
 	<item id="13870" name="eye of a deepling">
 		<attribute key="description" value="Did it just twitch...? No, must have been an optical illusion." />
 		<attribute key="weight" value="240" />
@@ -22635,6 +22644,9 @@
 		<attribute key="description" value="Fine wax for various different uses." />
 		<attribute key="weight" value="475" />
 	</item>
+	<item fromid="13882" toid="13883" article="a" name="fire" />
+	<item id="13884" article="a" name="destroy field rune"/>
+	<item id="13885" article="a" name="pitch black gap"/>
 	<item fromid="13886" toid="13901" name="large spider web" />
 	<item fromid="13904" toid="13920" name="large spider web" />
 	<item fromid="13921" toid="13922" article="a" name="warning sign">
@@ -22656,9 +22668,24 @@
 		<attribute key="description" value="It seems to be a part of an outfit. If you own the outfit you might refine it by using the item." />
 		<attribute key="weight" value="120" />
 	</item>
+	<item id="13927" article="a" name="tarantula trap">
+		<attribute key="description" value="A good item to paralyse fast and rowdy orcs." />
+		<attribute key="weight" value="10" />
+	</item>
+	<item id="13928" article="a" name="rolling pin">
+		<attribute key="description" value="A good item to knock out unsuspicious orcs." />
+		<attribute key="weight" value="500" />
+	</item>
+	<item id="13929" article="a" name="peeing orc" />
+	<item id="13931" article="an" name="elite orc guard" />
+
 	<item id="13933" article="a" name="tarantula trap">
 		<attribute key="description" value="A good item to paralyse fast and rowdy orcs." />
 		<attribute key="weight" value="10" />
+	</item>
+
+	<item id="13936" article="a" name="trapdoor">
+		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="13937" article="a" name="inoperative uniwheel" />
 	<item id="13938" article="a" name="golden can of oil">
@@ -25750,6 +25777,7 @@
 	<item id="18975" article="a" name="ramp" />
 	<item fromid="19107" toid="19141" article="a" name="mountain" />
 	<item id="19143" article="a" name="mountain" />
+	<item id="19145" name="grass" />
 	<item id="19146" article="a" name="mountain" />
 	<item fromid="19332" toid="19342" article="a" name="brown stone wall" />
 	<item fromid="19354" toid="19375" article="an" name="ornate wall" />
@@ -25802,6 +25830,7 @@
 	<item id="19519" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item id="19596" name="cobbled pavement"/>
 	<item fromid="19598" toid="19599" article="a" name="magic door" />
 	<item id="19606" article="a" name="pillar railing" />
 	<item fromid="19610" toid="19615" article="an" name="ornament" />
@@ -28683,6 +28712,7 @@
 	<item fromid="20701" toid="20715" article="a" name="basalt crystal wall" />
 	<item fromid="20723" toid="20727" article="a" name="basalt crystal wall" />
 	<item fromid="20732" toid="20743" article="a" name="basalt crystal wall" />
+	<item id="20752" article="a" name="pick" />
 	<item fromid="20753" toid="20758" article="a" name="hedge" />
 	<item id="20759" article="a" name="lurking tree" />
 	<item id="20760" article="a" name="small birch" />
@@ -28695,6 +28725,7 @@
 	<item id="20767" article="a" name="menhir" />
 	<item id="20768" article="a" name="menhir" />
 	<item id="20769" article="a" name="small menhir" />
+	<item id="20770" name="grass" />
 	<item fromid="20771" toid="20775" name="branches" />
 	<item fromid="20776" toid="20781" name="forest floor" />
 	<item fromid="20787" toid="20797" name="branches" />
@@ -28746,6 +28777,7 @@
 	<item fromid="21171" toid="21178" article="a" name="small stream" />
 	<item fromid="21179" toid="21182" article="an" name="enormous glowing fruit" />
 	<item fromid="21183" toid="21191" name="ferns" />
+	<item id="21192" name="teal leaves" />
 	<item id="21193" article="an" name="enormous tree" />
 	<item id="21194" article="an" name="enormous tree" />
 	<item id="21197" article="a" name="mountain" />
@@ -29509,9 +29541,15 @@
 	</item>
 	<item id="22009" article="a" name="dark cypress" />
 	<item fromid="22010" toid="22011" article="a" name="tall dark cypress" />
-	<item id="22024" article="a" name="dusky cypress" />
+	<item id="22005" article="a" name="dark cypress" />
+	<item fromid="22023" toid="22024" article="a" name="dusky cypress" />
 	<item id="22026" article="a" name="tall dusky cypress" />
-	<item id="22063" article="a" name="gloomy cy press" />
+	<item id="22050" article="a" name="tall dusky cypress" />
+	<item id="22063" article="a" name="gloomy cypress" />
+	<item id="22071" article="a" name="gloomy cypress" />
+	<item id="22073" article="a" name="tall gloomy cypress" />
+	<item id="22075" article="a" name="tall gloomy cypress" />
+	<item fromid="22091" toid="22092" article="a" name="gaunt briar" />
 	<item id="22106" article="an" name="ichor thistle" />
 	<item fromid="22107" toid="22109" article="a" name="small ichor thistle" />
 	<item fromid="22110" toid="22111" article="a" name="small rock needle" />
@@ -30313,6 +30351,7 @@
 		<attribute key="weight" value="200" />
 	</item>
 	<item fromid="22745" toid="22762" name="stone floor" />
+	<item fromid="22812" toid="22813" article="an" name="open window" />
 	<item fromid="22814" toid="22815" article="a" name="closed door">
 		<attribute key="type" value="door" />
 		<attribute key="blockprojectile" value="1" />
@@ -30369,7 +30408,8 @@
 	<item id="22831" article="an" name="open door">
 		<attribute key="type" value="door" />
 	</item>
-	<item fromid="22832" toid="22839" article="a" name="rosetta window" />
+	<item fromid="22832" toid="22837" article="a" name="rosetta window" />
+	<item fromid="22838" toid="22839" article="a" name="closed window" />
 	<item fromid="22841" toid="22844" name="ladder rungs">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -30394,23 +30434,73 @@
 		<attribute key="floorchange" value="east" />
 	</item>
 	<item fromid="22868" toid="22871" article="a" name="street lamp" />
+	<item fromid="22872" toid="22875" article="a" name="candle" />
+	<item fromid="22876" toid="22879" article="a" name="gear wheel" />
 	<item fromid="22889" toid="22903" article="a" name="sewer pipe" />
 	<item fromid="22904" toid="22913" name="stone floor" />
 	<item fromid="22915" toid="22940" name="stone floor" />
+	<item id="22951" article="a" name="sewer duct" />
+	<item id="22952" article="a" name="barred sewer duct" />
+	<item id="22953" article="a" name="sewer duct" />
+	<item fromid="22967" toid="22968" name="broken bars" />
+	<item id="22969" article="a" name="broken bar" />
+	<item fromid="22970" toid="22972" article="a" name="wall" />
+	<item fromid="22974" toid="22975" article="a" name="broken wall" />
+	<item fromid="22976" toid="22978" article="a" name="wall" />
+	<item fromid="22982" toid="22983" article="a" name="wall" />
+	<item fromid="22979" toid="22980" article="a" name="broken wall" />
+	<item fromid="22995" toid="22999" name="sewer lichen" />
+	<item id="23000" article="a" name="greasy wall" />
+	<item id="23001" article="a" name="barred sewer duct" />
+	<item fromid="23002" toid="23004" article="a" name="greasy wall" />
+	<item fromid="23007" toid="23011" name="sewer lichen" />
+	<item id="23012" article="a" name="wall" />
+	<item fromid="23013" toid="23018" article="a" name="metal gargoyle" />
 	<item fromid="23019" toid="23020" article="a" name="massive metal statue" />
+	<item fromid="23021" toid="23022" article="a" name="metal statue" />
 	<item fromid="23023" toid="23028" name="spume" />
 	<item id="23029" name="parquet floor" />
+	<item fromid="23033" toid="23035" article="a" name="buttress" />
+	<item fromid="23036" toid="23039" article="a" name="wall" />
 	<item fromid="23041" toid="23061" article="a" name="tube" />
+	<item fromid="23068" toid="23071" article="a" name="pressure gauge" />
 	<item fromid="23072" toid="23075" article="a" name="small pressure gauge" />
 	<item fromid="23076" toid="23079" article="a" name="control switch" />
+	<item id="23080" name="generators" />
+	<item fromid="23081" toid="23082" article="a" name="generator" />
+	<item id="23083" name="brown marble floor" />
 	<item fromid="23084" toid="23097" name="parquet floor" />
+	<item fromid="23098" toid="23099" name="metal statue" />
+	<item fromid="23100" toid="23101" name="metal gargoyle" />
+	<item fromid="23102" toid="23103" name="metal statue" />
+	<item fromid="23104" toid="23105" article="a" name="tap dripping slime" />
+	<item fromid="23106" toid="23107" article="a" name="metal gargoyle" />
+	<item fromid="23108" toid="23115" article="a" name="metal statue" />
 	<item fromid="23116" toid="23117" article="a" name="tap" />
+	<item fromid="23121" toid="23126" name="stairs" />
+	<item id="23155" name="broken generators" />
+	<item fromid="23156" toid="23157" article="a" name="broken generator" />
 	<item fromid="23158" toid="23159" article="a" name="valve" />
 	<item fromid="23160" toid="23161" article="a" name="plug" />
 	<item fromid="23162" toid="23167" name="slime" />
 	<item fromid="23168" toid="23171" article="a" name="runlet" />
 	<item id="23259" name="marble floor" />
+	<item id="23260" article="a" name="towel" />
+	<item fromid="23268" toid="23271" name="soot" />
+	<item fromid="23272" toid="23275" name="grime" />
+	<item fromid="23276" toid="23277" article="a" name="broken wall" />
+	<item fromid="23278" toid="23279" name="grime" />
+	<item fromid="23280" toid="23283" article="a" name="cracked wall" />
+	<item fromid="23284" toid="23287" name="soot" />
+	<item fromid="23288" toid="23291" name="grime" />
+	<item fromid="23292" toid="23293" article="a" name="broken wall" />
+	<item fromid="23294" toid="23295" name="grime" />
+	<item fromid="23296" toid="23299" article="a" name="cracked wall" />
+	<item fromid="23308" toid="23311" name="rubble" />
 	<item fromid="23312" toid="23319" article="a" name="lattice" />
+	<item fromid="23320" toid="23323" article="a" name="broken wall" />
+	<item fromid="23421" toid="23422" article="a" name="winch" />
+	<item fromid="23429" toid="23430" article="a" name="winch" />
 	<item id="23459" name="peppermoon bells" />
 	<item id="23460" article="a" name="blue pollen">
 		<attribute key="weight" value="50" />
@@ -30820,6 +30910,8 @@
 		<attribute key="maxTextLen" value="99" />
 		<attribute key="description" value="Carry all you need for battle in it. Sponsored by TibiaWars.com." />
 	</item>
+	<item fromid="23846" toid="23868" name="lava" />
+	<item fromid="23857" toid="23851" name="lava" />
 	<item id="24321" article="a" name="maxxen santa">
 		<attribute key="weight" value="650" />
 	</item>
