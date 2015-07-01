@@ -1,3 +1,0 @@
-[submodule "data/world"]
-	path = data/world
-	url = https://github.com/orts/world.git
