@@ -81,5 +81,6 @@
 		<item id="7422" chance="120" /><!-- jade hammer -->
 		<item id="7428" chance="770" /><!-- bonebreaker -->
 		<item id="2177" chance="1000" /><!-- life crystal -->
+		<item id="13292" chance="100" /><!-- tin key -->
 	</loot>
 </monster>
