@@ -16,26 +16,27 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local sacrificeId, sacrifice = Tile(flame.sacrificePosition):getThing(1).itemid, true
-	if not isInArray({8298, 8299, 8302, 8303}, sacrificeId) then
-		sacrifice = false
+	local items = Tile(flame.sacrificePosition):getItems()
+	for i = 1, #items do
+		local tmpItem = items[i]
+
+		-- Looking for specific item ids (sacrifice ids)
+		if isInArray({8298, 8299, 8302, 8303}, tmpItem:getId()) then
+			-- Teleport Player
+			player:teleportTo(flame.destination)
+			position:sendMagicEffect(CONST_ME_HITBYFIRE)
+			flame.sacrificePosition:sendMagicEffect(CONST_ME_HITBYFIRE)
+			flame.destination:sendMagicEffect(CONST_ME_HITBYFIRE)
+
+			-- Remove Soil
+			tmpItem:remove()
+			return true
+		end
 	end
 
-	if not sacrifice then
-		player:teleportTo(flame.pushPosition)
-		position:sendMagicEffect(CONST_ME_ENERGYHIT)
-		flame.pushPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
-		return true
-	end
-
-	local soilItem = Tile(flame.sacrificePosition):getItemById(sacrificeId)
-	if soilItem then
-		soilItem:remove()
-	end
-
-	player:teleportTo(flame.destination)
-	position:sendMagicEffect(CONST_ME_HITBYFIRE)
-	flame.sacrificePosition:sendMagicEffect(CONST_ME_HITBYFIRE)
-	flame.destination:sendMagicEffect(CONST_ME_HITBYFIRE)
+	-- Send the player backwards if there's no sacrifice
+	player:teleportTo(flame.pushPosition)
+	position:sendMagicEffect(CONST_ME_ENERGYHIT)
+	flame.pushPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 	return true
 end
