@@ -6,9 +6,7 @@ local area = createCombatArea(AREA_WAVE4, AREADIAGONAL_WAVE4)
 combat:setArea(area)
 
 function onGetFormulaValues(player, level, maglevel)
-	min = -8
-	max = -11
-	return min, max
+	return -8, -11
 end
 
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")

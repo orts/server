@@ -108,6 +108,14 @@ function pushThing(thing)
 	return t
 end
 
+createConditionObject = Condition
+setConditionParam = Condition.setParameter
+setConditionFormula = Condition.setFormula
+addDamageCondition = Condition.addDamage
+addOutfitCondition = Condition.setOutfit
+
+function doCombat(cid, combat, var) return combat:execute(cid, var) end
+
 function isCreature(cid) return Creature(cid) ~= nil end
 function isPlayer(cid) return Player(cid) ~= nil end
 function isMonster(cid) return Monster(cid) ~= nil end
@@ -977,4 +985,11 @@ end
 function broadcastMessage(message, messageType)
 	Game.broadcastMessage(message, messageType)
 	print("> Broadcasted message: \"" .. message .. "\".")
+end
+
+function Guild.addMember(self, player)
+	return player:setGuild(guild)
+end
+function Guild.removeMember(self, player)
+	return player:getGuild() == self and player:setGuild(nil)
 end
