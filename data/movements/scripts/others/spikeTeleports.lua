@@ -7,15 +7,15 @@ local config = {
 	[4231] = {destination = Position(32237, 32605, 9)},
 	[4232] = {level = {25, 49}, destination = Position(32241, 32619, 10)},
 	[4233] = {destination = Position(32237, 32605, 10)},
-	[4234] = {level = {50, 79}, destination = Position(32228, 32591, 11)},
+	[4234] = {level = {50, 79}, destination = Position(32228, 32599, 11)},
 	[4235] = {destination = Position(32237, 32605, 11)},
-	[4236] = {level = {50, 79}, destination = Position(32237, 32613, 12)},
+	[4236] = {level = {50, 79}, destination = Position(32237, 32621, 12)},
 	[4237] = {destination = Position(32237, 32605, 12)},
-	[4238] = {level = 80, destination = Position(32243, 32610, 13)},
+	[4238] = {level = 80, destination = Position(32243, 32618, 13)},
 	[4239] = {destination = Position(32237, 32605, 13)},
-	[4240] = {level = 80, destination = Position(32243, 32581, 14)},
+	[4240] = {level = 80, destination = Position(32243, 32589, 14)},
 	[4241] = {destination = Position(32237, 32605, 14)},
-	[4242] = {level = 80, destination = Position(32225, 32599, 15)},
+	[4242] = {level = 80, destination = Position(32225, 32607, 15)},
 	[4243] = {destination = Position(32237, 32605, 15)}
 }
 

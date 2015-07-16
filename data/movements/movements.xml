@@ -215,7 +215,6 @@
 	<movevent event="StepIn" fromuid="12025" touid="12028" script="quests/ice islands/nibelorDogSled.lua" />
 
 	<!-- In Service Of Yalahar Quest -->
-	<movevent event="StepIn" fromuid="3103" touid="3106" script="quests/in service of yalahar/demonTeleport.lua" />
 	<movevent event="StepIn" fromuid="7809" touid="7810" script="quests/in service of yalahar/lastFightTeleports.lua" />
 	<movevent event="StepIn" uniqueid="3087" script="quests/in service of yalahar/morik.lua" />
 	<movevent event="StepIn" actionid="7812" script="quests/in service of yalahar/quaraVortex.lua" />
