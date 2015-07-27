@@ -98,10 +98,10 @@ addTaskKeyword({
 
 -- Hand in task items
 local function addItemKeyword(keyword, aliasKeyword, text, value, item, addonId, missionStorage, achievement)
-	local itemKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Have you gathered the mandrake and the 5 voodoo dolls from the dworcs?'}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
-		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m afraid you forgot something, my child.', reset = true}, function(player) return player:getItemCount(item[1].itemId) < item[1].count or player:getItemCount(item[2].itemId) < item[2].count end)
+	local itemKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text[1]}, function(player) return player:getStorageValue(Storage.OutfitQuest.Shaman.AddonStaffMask) == value end)
+		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[2], reset = true}, function(player) return player:getItemCount(item[1].itemId) < item[1].count or player:getItemCount(item[2].itemId) < item[2].count end)
 
-		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m proud of you my child, excellent work. This staff shall be yours from now on!', reset = true},
+		itemKeyword:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = text[3], reset = true},
 			function(player) return player:getItemCount(item[1].itemId) >= item[1].count and player:getItemCount(item[2].itemId) >= item[2].count end,
 			function(player)
 				player:removeItem(item[1].itemId, item[1].count)

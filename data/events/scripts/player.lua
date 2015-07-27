@@ -156,10 +156,9 @@ local function useStamina(player)
 		return
 	end
 
-	local playerId = player.uid
+	local playerId = player:getId()
 	local currentTime = os.time()
-	local staminaTable = Game.getStorageValue("stamina")
-	local timePassed = currentTime - staminaTable[playerId]
+	local timePassed = currentTime - nextUseStaminaTime[playerId]
 	if timePassed <= 0 then
 		return
 	end
@@ -170,10 +169,10 @@ local function useStamina(player)
 		else
 			staminaMinutes = 0
 		end
-		staminaTable[playerId] = currentTime + 120
+		nextUseStaminaTime[playerId] = currentTime + 120
 	else
 		staminaMinutes = staminaMinutes - 1
-		staminaTable[playerId] = currentTime + 60
+		nextUseStaminaTime[playerId] = currentTime + 60
 	end
 	player:setStamina(staminaMinutes)
 end
@@ -213,6 +212,10 @@ function Player:onLoseExperience(exp)
 end
 
 function Player:onGainSkillTries(skill, tries)
+	if APPLY_SKILL_MULTIPLIER == false then
+		return tries
+	end
+
 	if skill == SKILL_MAGLEVEL then
 		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
 	end

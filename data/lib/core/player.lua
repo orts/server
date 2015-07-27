@@ -1,3 +1,20 @@
+APPLY_SKILL_MULTIPLIER = true
+local addManaSpentFunc = Player.addManaSpent
+function Player.addManaSpent(...)
+	APPLY_SKILL_MULTIPLIER = false
+	local ret = addManaSpentFunc(...)
+	APPLY_SKILL_MULTIPLIER = true
+	return ret
+end
+
+local addSkillTriesFunc = Player.addSkillTries
+function Player.addSkillTries(...)
+	APPLY_SKILL_MULTIPLIER = false
+	local ret = addSkillTriesFunc(...)
+	APPLY_SKILL_MULTIPLIER = true
+	return ret
+end
+
 function Player.allowMovement(self, allow)
 	return self:setStorageValue(STORAGE.blockMovementStorage, allow and -1 or 1)
 end

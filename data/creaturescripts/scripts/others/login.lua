@@ -59,22 +59,22 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
-	local playerId = player.uid
+	local playerId = player:getId()
 
 	-- Stamina
-	Game.getStorageValue("stamina")[playerId] = 0
+	nextUseStaminaTime[playerId] = 0
 
 	-- Promotion
 	local vocation = player:getVocation()
-	local promoted = player:isPromoted()
+	local promotion = vocation:getPromotion()
 	if player:isPremium() then
 		local value = player:getStorageValue(Storage.Promotion)
-		if promoted and value ~= 1 then
+		if not promotion and value ~= 1 then
 			player:setStorageValue(Storage.Promotion, 1)
-		elseif not promoted and value == 1 then
-			player:setVocation(vocation:getPromotion())
+		elseif value == 1 then
+			player:setVocation(promotion)
 		end
-	elseif promoted then
+	elseif not promotion then
 		player:setVocation(vocation:getDemotion())
 	end
 

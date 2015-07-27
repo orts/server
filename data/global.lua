@@ -114,6 +114,6 @@ function getTibianTime()
 end
 
 -- Stamina
-if Game.getStorageValue("stamina") == -1 then
-	Game.setStorageValue("stamina", {})
+if nextUseStaminaTime == nil then
+	nextUseStaminaTime = {}
 end
