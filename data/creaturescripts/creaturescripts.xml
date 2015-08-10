@@ -55,6 +55,7 @@
 	<event type="login" name="PlayerLogin" script="others/login.lua" />
 	<event type="login" name="FirstItems" script="others/firstitems.lua" />
 	<event type="login" name="RegenerateStamina" script="others/regeneratestamina.lua" />
+	<event type="login" name="OfflineTraining" script="others/offlinetraining.lua" />
 
 	<event type="logout" name="PlayerLogout" script="others/logout.lua" />
 
