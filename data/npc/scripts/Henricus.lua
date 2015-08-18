@@ -30,7 +30,10 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		end
 	elseif msgcontains(msg, "mission") or msgcontains(msg, "report") then
-		if player:getStorageValue(Storage.TheInquisition.Questline) == 1 then
+		if player:getStorageValue(Storage.TheInquisition.Questline) < 1 then
+			npcHandler:say("Do you want to join the inquisition?", cid)
+			npcHandler.topic[cid] = 2
+		elseif player:getStorageValue(Storage.TheInquisition.Questline) == 1 then
 			npcHandler:say({
 				"Let's see if you are worthy. Take an inquisitor's field guide from the box in the back room. ...",
 				"Follow the instructions in the guide to talk to the Thaian guards that protect the walls and gates of the city and test their loyalty. Then report to me about your {mission}."
