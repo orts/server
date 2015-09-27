@@ -208,7 +208,12 @@ local function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('You look for food and rest.', cid)
 		end
-
+	elseif msgcontains(msg, 'cookie') then
+		if player:getStorageValue(Storage.WhatAFoolishQuest.Questline) == 31 and player:getStorageValue(Storage.WhatAFoolishQuest.CookieDelivery.Hairycles) ~= 1 then
+			npcHandler:say('You bring me a stinking cookie???', cid)
+			npcHandler.topic[cid] = 19
+		end
+		
 	elseif npcHandler.topic[cid] == 1 then
 		if msgcontains(msg, 'yes') then
 			npcHandler:say('To become friend of ape people a long and difficult way is. We do not trust easy but help is needed. Will you listen to story of Hairycles?', cid)
