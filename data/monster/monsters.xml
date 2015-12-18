@@ -462,7 +462,7 @@
 	<monster name="Charged Energy Elemental" file="electro-elementals/charged energy elemental.xml" />
 	<monster name="Energy Elemental" file="electro-elementals/energy elemental.xml" />
 	<monster name="Massive Energy Elemental" file="electro-elementals/massive energy elemental.xml" />
-	<monster name="Overcharged Energy Elemental" file="electro-elementals/overcharged energy elemental.xml" />
+	<monster name="Overcharged Energy Element" file="electro-elementals/overcharged energy element.xml" />
 
 	<!-- Elemental Lords -->
 	<monster name="Earth Overlord" file="elemental lords/earth overlord.xml" />
