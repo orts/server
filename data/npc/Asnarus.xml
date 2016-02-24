@@ -2,4 +2,83 @@
 <npc name="Asnarus" script="Asnarus.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="104" head="0" body="0" legs="0" feet="0" addons="0" />
+		<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Good day, Sanosuke Sdois. Ask me for a trade." />
+   	 	<parameter key="message_farewell" value="Bye." />
+   		<parameter key="message_walkaway" value="Bye." />
+		<parameter key="shop_sellable" value="
+			Bow,2456,100;
+			Bowl of Terror Sweat,22538,500;
+			Broken Visor,22518,1900;
+			Crossbow,2455,120;
+			Dead Weight,22536,450;
+			empty potion flask,7634,5;
+			empty potion flask,7635,5;
+			empty potion flask,7636,5;
+			Frazzle Skin,22533,400;
+			Frazzle Tongue,22532,700;
+			Goosebump Leather,22539,650;
+			Hemp Rope,22540,350;
+			Pool of Chitinous Glue,22541,480;
+			Sight of Surrender's Eye,22517,3000;
+			Silencer Claws,22534,390;
+			Silencer Resonating Chamber,22535,600;
+			Spear,2389,3;
+			Trapped Bad Dream Monster,22537,900;
+			vial,2006,5;" />
+		<parameter key="shop_buyable" value="
+			Arrow,2544,3;
+			Bolt,2543,4;
+			Bow,2456,400;
+			Crossbow,2455,500;
+			Crystalline Arrow,18304,20;
+			Drill Bolt,18436,12;
+			Earth Arrow,7850,5;
+			Envenomed Arrow,18437,12;
+			Flaming Arrow,7840,5;
+			Flash Arrow,7838,5;
+			Onyx Arrow,7365,7;
+			Piercing Bolt,7363,5;
+			Power Bolt,2547,7;
+			Prismatic Bolt,18435,20;
+			Royal Spear,7378,15;
+			Shiver Arrow,7839,5;
+			Sniper Arrow,7364,5;
+			Spear,2389,9;
+			Tarsal Arrow,15648,6;
+			Throwing Star,2399,42;
+			Vortex Bolt,15649,6;
+			stone shower rune,2288,37;
+			thunderstorm rune,2315,37;
+			avalanche rune,2274,45;
+			blank rune,2260,10;
+			chameleon rune,2291,210;
+			convince creature rune,2290,80;
+			cure poison rune,2266,65;
+			destroy field rune,2261,15;
+			energy field rune,2277,38;
+			energy wall rune,2279,85;
+			explosion rune,2313,31;
+			fire bomb rune,2305,117;
+			fire field rune,2301,28;
+			fire wall rune,2303,61;
+			great fireball rune,2304,45;
+			great health potion,7591,190;
+			great mana potion,7590,120;
+			great spirit potion,8472,190;
+			health potion,7618,45;
+			heavy magic missile rune,2311,12;
+			intense healing rune,2265,95;
+			light magic missile rune,2287,4;
+			mana potion,7620,50;
+			poison field rune,2285,21;
+			poison wall rune,2289,52;
+			spellbook,2175,150;
+			stalagmite rune,2292,12;
+			strong health potion,7588,100;
+			strong mana potion,7589,80;
+			sudden death rune,2268,108;
+			ultimate healing rune,2273,175;" />
+	</parameters>
 </npc>
