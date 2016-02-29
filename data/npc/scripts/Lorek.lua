@@ -15,8 +15,8 @@ local function addTravelKeyword(keyword, text, cost, destination, condition)
 end
 
 addTravelKeyword('west', 'the west end of Port Hope', 7, Position(32558, 32780, 7))
-addTravelKeyword('centre', 'the centre of Port Hope', 7, Position(32628, 32771, 7))
-addTravelKeyword('darama', nil, 30, Position(32987, 32729, 7), true)
+addTravelKeyword('center', 'the centre of Port Hope', 7, Position(32628, 32771, 7))
+addTravelKeyword('mountain', nil, 30, Position(32987, 32729, 7), true)
 addTravelKeyword('chor', nil, 30, Position(32968, 32799, 7), true)
 addTravelKeyword('banuta', nil, 30, Position(32826, 32631, 7), true)
 
