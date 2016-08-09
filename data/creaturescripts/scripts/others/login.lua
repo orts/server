@@ -37,7 +37,7 @@ local function onMovementRemoveProtection(cid, oldPosition, time)
 	end
 
 	local playerPosition = player:getPosition()
-	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() then
+	if (playerPosition.x ~= oldPosition.x or playerPosition.y ~= oldPosition.y or playerPosition.z ~= oldPosition.z) or player:getTarget() or time <= 0 then
 		player:setStorageValue(Storage.combatProtectionStorage, 0)
 		return true
 	end
