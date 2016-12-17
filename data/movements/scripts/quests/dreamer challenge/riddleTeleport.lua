@@ -1,62 +1,49 @@
-local function shuffleTable(t)
-	local newTable = {}
-	for i = 1, #t do
-		randomId = math.random(1, #t)
-		newTable[#newTable + 1] = t[randomId]
-		table.remove(t, randomId)
-	end
-	return newTable
-end
+local destination = Position(32766, 32275, 14)
 
-local arenaPosition = Position(32818, 32334, 9)
+local topLeftPosition = Position(32817, 32333, 9)
+local pillowPositions = {
+	{itemid = 1686, center = topLeftPosition + Position(2, 2, 0)},
+	{itemid = 1687, center = topLeftPosition + Position(2, 5, 0)},
+	{itemid = 1688, center = topLeftPosition + Position(5, 2, 0)},
+	{itemid = 1689, center = topLeftPosition + Position(5, 5, 0)}
+}
 
-local function doResetPillows()
-	local storePillows = {}
-	for i = 0, 3 do
-		local pillowId = 1686 + i
-		for i = 1, 9 do
-			storePillows[#storePillows + 1] = pillowId
-		end
+function onStepIn(player, item, position, fromPosition)
+	if not player:getPlayer() then
+		return true
 	end
 
-	storePillows = shuffleTable(storePillows)
-	for aX = arenaPosition.x, arenaPosition.x + 5 do
-		for aY = arenaPosition.y, arenaPosition.y + 5 do
-			local pillow = math.random(#storePillows)
-			Tile(aX, aY, 9):getThing(1):transform(storePillows[pillow])
-			table.remove(storePillows, pillow)
-		end
-	end
-	return true
-end
-
-local function checkPillows(posX, posY, item)
-	for px = posX, posX + 2 do
-		for py = posY, posY + 2 do
-			if Tile(px, py, 9):getThing(1).itemid ~= item then
-				return false
+	-- Check pillows
+	local pillows = {}
+	for i = 1, #pillowPositions do
+		local pillowPos = pillowPositions[i]
+		for x = -1, 1 do
+			for y = -1, 1 do
+				local item = Tile(pillowPos.center + Position(x, y, 0)):getThing(1)
+				if item and item.itemid == pillowPos.itemid then
+					pillows[#pillows + 1] = item
+				end
 			end
 		end
 	end
-	return true
-end
 
-function onStepIn(creature, item, position, fromPosition)
-	local player = creature:getPlayer()
-	if not player then
-		return false
-	end
-
-	if checkPillows(arenaPosition.x, arenaPosition.y, 1686)
-			and checkPillows(arenaPosition.x + 3, arenaPosition.y, 1688)
-			and checkPillows(arenaPosition.x, arenaPosition.y + 3, 1687)
-			and checkPillows(arenaPosition.x + 3, arenaPosition.y + 3, 1689) then
-		player:teleportTo(Position(32766, 32275, 14))
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		doResetPillows()
-	else
+	-- Wrong pillow arrangement
+	if #pillows < 36 then
 		player:teleportTo(fromPosition, true)
 		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
+		return true
+	end
+
+	player:teleportTo(destination)
+	destination:sendMagicEffect(CONST_ME_TELEPORT)
+
+	-- Shuffle pillows
+	for x = 1, 6 do
+		for y = 1, 6 do
+			local index = math.random(#pillows)
+			pillows[index]:moveTo(topLeftPosition + Position(x, y, 0))
+			table.remove(pillows, index)
+		end
 	end
 	return true
 end
