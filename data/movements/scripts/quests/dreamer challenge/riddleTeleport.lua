@@ -20,18 +20,17 @@ function onStepIn(player, item, position, fromPosition)
 		for x = -1, 1 do
 			for y = -1, 1 do
 				local item = Tile(pillowPos.center + Position(x, y, 0)):getThing(1)
-				if item and item.itemid == pillowPos.itemid then
-					pillows[#pillows + 1] = item
+				
+				-- Wrong pillow arrangement
+				if not item or item.itemid ~= pillowPos.itemid then
+					player:teleportTo(fromPosition, true)
+					fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
+					return true
 				end
+				
+				pillows[#pillows + 1] = item
 			end
 		end
-	end
-
-	-- Wrong pillow arrangement
-	if #pillows < 36 then
-		player:teleportTo(fromPosition, true)
-		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
-		return true
 	end
 
 	player:teleportTo(destination)
