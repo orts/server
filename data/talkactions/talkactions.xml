@@ -14,6 +14,7 @@
 	<talkaction words="/m" separator=" " script="place_monster.lua" />
 	<talkaction words="/s" separator=" " script="place_npc.lua" />
 	<talkaction words="/summon" separator=" " script="place_summon.lua" />
+	<talkaction words="/reload" separator=" " script="reload.lua" />
 
 	<!-- Achievements Commands -->
 	<talkaction words="/addach" separator=" " script="achievements.lua" />
@@ -40,6 +41,7 @@
 	<talkaction words="/looktype" separator=" " script="looktype.lua" />
 	<talkaction words="/mounts" separator=" " script="allmounts.lua" />
 	<talkaction words="/addons" separator=" " script="alladdons.lua" />
+	<talkaction words="/raid" separator=" " script="force_raid.lua" />
 
 	<!-- Senior Tutors -->
 	<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
@@ -48,6 +50,7 @@
 	<!-- player talkactions -->
 	<talkaction words="!buypremium" script="buyprem.lua" />
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
+	<talkaction words="!sellhouse" separator=" " script="sellhouse.lua" />
 	<talkaction words="!leavehouse" script="leavehouse.lua" />
 	<talkaction words="!changesex" script="changesex.lua" />
 	<talkaction words="!uptime" script="uptime.lua" />

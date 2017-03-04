@@ -13,13 +13,12 @@ table.find = function (table, value)
 	return nil
 end
 
-table.contains = function (txt, str)
-	for i, v in pairs(str) do
-		if(txt:find(v) and not txt:find('(%w+)' .. v) and not txt:find(v .. '(%w+)')) then
+table.contains = function(array, value)
+	for _, targetColumn in pairs(array) do
+		if targetColumn == value then
 			return true
 		end
 	end
-
 	return false
 end
 table.isStrIn = table.contains

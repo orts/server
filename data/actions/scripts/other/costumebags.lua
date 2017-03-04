@@ -10,7 +10,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	doSetMonsterOutfit(player, monsterNames[math.random(#monsterNames)], 5 * 60 * 60 * 1000)
+	player:setMonsterOutfit(monsterNames[math.random(#monsterNames)], 5 * 60 * 60 * 1000)
 	player:addAchievementProgress('Masquerader', 100)
 	item:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	item:remove()
