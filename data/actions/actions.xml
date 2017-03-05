@@ -703,5 +703,6 @@
 	<action itemid="13670" script="valuables/randomitems.lua" />
 	<action itemid="15572" script="valuables/randomitems.lua" />
 	<action itemid="18215" script="valuables/randomitems.lua" />
+	<action itemid="22598" script="valuables/unrealizedDream.lua"/>
 
 </actions>
