@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler:say("You can't tell by a person's appearance who is a pickpocket and who isn't. You simply can't close the city gates for everyone.", cid)
 			npcHandler.topic[cid] = 3
 		end
-	elseif(msgcontains(msg, "gods allow")) then
+	elseif(msgcontains(msg, "gods would allow")) then
 		if(npcHandler.topic[cid] == 3) then
 			npcHandler:say("If the gods had created the world a paradise, no one had to steal at all.", cid)
 			npcHandler.topic[cid] = 0
