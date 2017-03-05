@@ -226,6 +226,11 @@
 	<movevent event="StepIn" uniqueid="9014" script="quests/inquisition/entrance.lua" />
 	<movevent event="StepIn" actionid="4003" script="quests/inquisition/rewardroomtext.lua" />
 
+	<!--- Oramond -->
+	<movevent event="StepIn" actionid="42626" script="quests/oramond/enterOramond.lua" />
+	<movevent event="StepIn" actionid="42627" script="quests/oramond/enterOramond.lua" />
+	<movevent event="StepIn" actionid="42628" script="quests/oramond/enterOramond.lua" />
+
 	<!-- Pits Of Inferno Quest -->
 	<movevent event="StepIn" fromuid="2090" touid="2096" script="quests/pits of inferno/checkThrones.lua" />
 	<movevent event="StepIn" fromaid="2040" toaid="2063" script="quests/pits of inferno/fireTiles.lua" />

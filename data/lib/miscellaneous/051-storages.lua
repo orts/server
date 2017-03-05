@@ -214,6 +214,19 @@ Storage = {
 		Mission73 = 9949,
 		Mission74 = 9876
 	},
+	Oramond = {
+		QuestLine = 10060,
+		VotingPoints = 10061,
+
+		MissionToTakeRoots = 20060,
+		HarvestedRootCount = 20061,
+	},
+	RathletonQuest = {
+		QuestLine = 10080,
+		VotesCasted = 10081,
+
+		Rank = 10082,
+	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- until all outfit quests are completed
 		Ref = 12010,
@@ -752,10 +765,6 @@ Storage = {
 
 		ParchmentRoomQuest = 60994,
 
-		WarzoneReward1 = 9172,
-		WarzoneReward2 = 9173,
-		WarzoneReward3 = 9174,
-
 		FathersBurdenQuestWood = 3500,
 		FathersBurdenQuestIron = 3501,
 		FathersBurdenQuestRoot = 3502,
@@ -911,17 +920,20 @@ Storage = {
 		FreeStone = {
 			Alia = 50704,
 			Amanda = 50705,
-			Brewster = 50706,
-			Isimov = 50707,
-			Kasmir = 50708,
-			Kjesse = 50709,
-			Lorietta = 50710,
-			Maealil = 50711,
-			Quentin = 50712,
-			RockWithASoftSpot = 50713,
-			Tyrias = 50714,
-			Yberius = 50715,
-			Rahkem = 50716
+			Azalea = 50706,
+			Brewster = 50707,
+			Isimov = 50708,
+			Kasmir = 50709,
+			Kjesse = 50710,
+			Lorietta = 50711,
+			Maealil = 50712,
+			Prezil = 50713,
+			Quentin = 50714,
+			RockWithASoftSpot = 50715,
+			Tyrias = 50723,
+			Yberius = 50724,
+			Rahkem = 50725,
+			ZedrulonTheFallen = 50726
 		}
 
 	},

@@ -480,6 +480,14 @@
 	<action itemid="9750" function="decreaseItemId" />
 	<action itemid="19691" function="increaseItemId" />
 	<action itemid="19692" function="decreaseItemId" />
+	<action itemid="22868" function="increaseItemId" />
+	<action itemid="22869" function="decreaseItemId" />
+	<action itemid="22870" function="increaseItemId" />
+	<action itemid="22871" function="decreaseItemId" />
+	<action itemid="22872" function="increaseItemId" />
+	<action itemid="22873" function="decreaseItemId" />
+	<action itemid="22874" function="increaseItemId" />
+	<action itemid="22875" function="decreaseItemId" />
 
 	<!-- Food -->
 	<action itemid="2328" script="other/food.lua" />
@@ -665,7 +673,7 @@
 	<action fromid="2406" toid="2415" script="other/destroy.lua" />
 	<action fromid="2417" toid="2419" script="other/destroy.lua" />
 	<action fromid="2421" toid="2453" script="other/destroy.lua" />
-	<action fromid="5792" toid="5797" script="other/dice.lua" />
+	<action fromid="5792" toid="5797" script="other/die.lua" />
 	<action itemid="6558" script="other/concentrated_demonic_blood.lua" />
 	<action itemid="6277" script="other/baking.lua" />
 	<action itemid="8846" script="other/baking.lua" />
@@ -703,5 +711,11 @@
 	<action itemid="13670" script="valuables/randomitems.lua" />
 	<action itemid="15572" script="valuables/randomitems.lua" />
 	<action itemid="18215" script="valuables/randomitems.lua" />
+	<action itemid="22598" script="valuables/unrealizedDream.lua"/>
+
+	<!-- Oramond -->
+	<action itemid="23422" script="other/rathletonElevator.lua" />
+	<action itemid="23429" script="other/rathletonElevator.lua" />
+	<action fromid="23475" toid="23478" script="quests/oramond/totakeroots.lua" />
 
 </actions>

@@ -13,7 +13,8 @@ local config = {
 	{fromPos = Position(32785, 31274, 7), toPos = Position(32789, 31279, 7), townId = 13},
 	{fromPos = Position(33018, 31514, 11), toPos = Position(33032, 31531, 11), townId = 14},
 	{fromPos = Position(33442, 31312, 9), toPos = Position(33454, 31326, 9), townId = 28},
-	{fromPos = Position(33510, 32360, 6), toPos = Position(33516, 32366, 6), townId = 29}
+	{fromPos = Position(33510, 32360, 6), toPos = Position(33516, 32366, 6), townId = 29},
+	{fromPos = Position(33586, 31895, 6), toPos = Position(33603, 31903, 6), townId = 33}
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
