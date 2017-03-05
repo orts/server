@@ -26,7 +26,7 @@ When [creating a pull request](https://github.com/orts/server/pulls) please mind
 The map can be found in its own repository over at [https://github.com/orts/world/](https://github.com/orts/world/).
 
 ## Engine
-ORTS uses The Forgotten Server 1.2 as an engine. [The Forgotten Server 1.2](https://github.com/otland/forgottenserver) is being developed by [Mark Samman](https://github.com/marksamman). Nightly builds of The Fogotten Server can be found at [http://nightlies.otland.net](http://nightlies.otland.net).
+ORTS uses The Forgotten Server 1.3 as an engine. [The Forgotten Server 1.3](https://github.com/otland/forgottenserver) is being developed by [Mark Samman](https://github.com/marksamman). Nightly builds of The Fogotten Server can be found at [http://nightlies.otland.net](http://nightlies.otland.net).
 
 ## Client
 In order to login  [Otclient](https://github.com/edubart/otclient) by [edubart](https://github.com/edubart) can be used.
