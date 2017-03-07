@@ -9,7 +9,8 @@ local config = {
 	[50105] = Position(32687, 31470, 13),
 	[50106] = Position(32687, 31470, 13),
 	[50107] = Position(32580, 31487, 9),
-	[50108] = Position(32687, 31470, 13)
+	[50108] = Position(32687, 31470, 13),
+	[50109] = Position(32617, 31514, 9)
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -18,12 +19,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-
 	if player:getStorageValue(Storage.hiddenCityOfBeregar.OreWagon) == 1 then
 		player:teleportTo(targetPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-	else
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't know how to use this yet.")
+		return true
 	end
-	return true
+	
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't know how to use this yet.")
+
+	return false
 end
