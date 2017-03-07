@@ -313,7 +313,7 @@
 	<!-- The Hidden City of Beregar -->
 	<action actionid="12606" script="quests/the hidden city of beregar/bargateLever.lua" />
 	<action actionid="50128" script="quests/the hidden city of beregar/deeperMineWagon.lua" />
-	<action fromaid="50098" toaid="50108" script="quests/the hidden city of beregar/oreWagon.lua" />
+	<action fromaid="50098" toaid="50109" script="quests/the hidden city of beregar/oreWagon.lua" />
 	<action actionid="50112" script="quests/the hidden city of beregar/gapWagon.lua" />
 	<action actionid="50115" script="quests/the hidden city of beregar/tunnelWagon.lua" />
 	<action actionid="50117" script="quests/the hidden city of beregar/coalWagon.lua" />
@@ -321,6 +321,7 @@
 	<action fromaid="50122" toaid="50125" script="quests/the hidden city of beregar/coalExitWagons.lua" />
 	<action fromuid="50113" touid="50123" script="quests/the hidden city of beregar/wagonMazeLevers.lua" />
 	<action uniqueid="50124" script="quests/the hidden city of beregar/wagonMazeExit.lua" />
+	<action itemid="10035" script="quests/the hidden city of beregar/ladder.lua" />
 
 	<!-- Thieves Guild Quest -->
 	<action itemid="8693" script="quests/the thieves guild/dwarfDisguiseKit.lua" />
