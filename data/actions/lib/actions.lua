@@ -445,7 +445,7 @@ function onUseCrowbar(player, item, fromPosition, target, toPosition, isHotkey)
 	-- In Service Of Yalahar Quest
 	if targetUniqueId == 3071 then
 		if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe01) < 1 then
-			doSetMonsterOutfit(player, 'skeleton', 3 * 1000)
+			player:setMonsterOutfit('skeleton', 3 * 1000)
 			fromPosition:sendMagicEffect(CONST_ME_ENERGYHIT)
 			player:setStorageValue(Storage.InServiceofYalahar.SewerPipe01, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
@@ -483,7 +483,7 @@ function onUseCrowbar(player, item, fromPosition, target, toPosition, isHotkey)
 
 	elseif targetUniqueId == 3074 then
 		if player:getStorageValue(Storage.InServiceofYalahar.SewerPipe04) < 1 then
-			doSetMonsterOutfit(player, 'bog raider', 5 * 1000)
+			player:setMonsterOutfit('bog raider', 5 * 1000)
 			player:say('You have used the crowbar on a knot.', TALKTYPE_MONSTER_SAY)
 			player:setStorageValue(Storage.InServiceofYalahar.SewerPipe04, 1)
 			player:setStorageValue(Storage.InServiceofYalahar.Mission01, player:getStorageValue(Storage.InServiceofYalahar.Mission01) + 1) -- StorageValue for Questlog 'Mission 01: Something Rotten'
